@@ -1,7 +1,16 @@
+import './App.css';
 
 function App() {
   return (
-    <div>hello</div>
+    <div>
+      <div className="top">
+        <div className="box">asd</div>
+        <div className="box">asd</div>
+        <div className="box">asd</div>
+        <div className="box">asd</div>
+      </div>
+      hello
+    </div>
   );
 }
 
