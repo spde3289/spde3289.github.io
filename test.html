@@ -16,10 +16,22 @@
         width: 200px;
     }
     
+    .on{
+        left: 100px;
+        height: 300px;
+    }
+
 </style>
 
+
 <div class="flex">
-    <div class="box">안녕하세요</div>
-    <div class="box">안녕하세요</div>
-    <div class="box">안녕하세요</div>
+    <div onclick="ani()" id='box' class="box">안녕하세요</div>
 </div>
+    <script>
+        const div = document.getElementById('box');
+    
+        console.log(div.classList)
+        const ani = () => {
+            div.classList.add('on')
+        }
+    </script>
