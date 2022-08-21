@@ -2,19 +2,14 @@ import './header.css'
 
 const Header = () => {
     return(
-        <header>
-            <div><a href='https://spde3289.github.io/'>spde3289.github.io</a></div>
-            <div>
-                <img src={require('../imgs/github.png')} alt='github Link'/>
-            </div>
-            <ul>
-                <li>as</li>
-                <li><a href='/'>asd</a></li>
+        <header className="header">
+                <li><a href='https://spde3289.github.io/'>spde3289.github.io</a></li>
+            <ul className='headerMenu'>
+                <li><img src={require('../imgs/github.png')} alt='github Link'/></li>
+                <li>POST</li>
+                <li><div>검색기능</div></li>
             </ul>
-            <ol>
-                <li>a</li>
-                <li>a</li>
-            </ol>
+
         </header>
     );
 };
