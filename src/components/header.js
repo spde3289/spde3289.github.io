@@ -5,9 +5,9 @@ const Header = () => {
         <header className="header">
                 <li><a href='https://spde3289.github.io/'>spde3289.github.io</a></li>
             <ul className='headerMenu'>
-                <li><img src={require('../imgs/github.png')} alt='github Link'/></li>
-                <li>POST</li>
-                <li><div>검색기능</div></li>
+                <li><a href='https://spde3289.github.io/'>about</a></li>
+                <li>posts</li>
+                <li><div>1</div></li>
             </ul>
 
         </header>
