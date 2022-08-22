@@ -1,10 +1,11 @@
-@import url(./css/reset.css);
+@import url(../css/reset.css);
 .header{
     display:flex;
 }
 
 .headerMenu{
     display:flex;
+    margin-right: 10px;
 }
 .headerMenu img{
    width: 50px;
