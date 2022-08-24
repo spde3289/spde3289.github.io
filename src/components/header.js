@@ -7,7 +7,10 @@ const Header = () => {
             <ul className='headerMenu'>
                 <li><a href='https://spde3289.github.io/'>about</a></li>
                 <li>posts</li>
-                <li><div>1</div></li>
+                <ul className='search'>
+                    <li className="searchTextara"><input/></li>
+                    <div>1</div>
+                </ul>
             </ul>
 
         </header>
