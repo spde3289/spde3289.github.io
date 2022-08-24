@@ -1,12 +1,43 @@
 @import url(../css/reset.css);
 .header{
     display:flex;
+    justify-content: space-between;
+    margin: 20px;
 }
 
 .headerMenu{
     display:flex;
+    right: 0;
+}
+
+.header > li{
+    align-items: center;
+
+}
+
+.headerMenu > li{
     margin-right: 10px;
 }
-.headerMenu img{
-   width: 50px;
+
+.header > li > a{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.headerMenu{
+   font-size: 20px;
+   font-weight: bold;
+}
+
+
+.search{
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+.searchTextara{
+}
+
+.searchTextara > input {
+    border: none;
 }
