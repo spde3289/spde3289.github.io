@@ -1,28 +1,26 @@
 @import url(../css/reset.css);
+
 .header{
     display:flex;
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 25px;
+    width: 1000px;
+    height: 70px;
+    align-items: center;
+}
+
+.header > a{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .headerMenu{
     display:flex;
-    right: 0;
-}
-
-.header > li{
-    align-items: center;
-
 }
 
 .headerMenu > li{
     margin-right: 10px;
-}
-
-.header > li > a{
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .headerMenu{
