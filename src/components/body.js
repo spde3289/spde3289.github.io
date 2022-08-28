@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
-const Body = () => {
+const MainBody = () => {
     return(
-        <>
-        <body>
-        <Box> asd </Box>
-        </body>
-        </>
+          <Box> asd </Box>
     );
 };
 
@@ -17,6 +13,4 @@ const Box = styled.div`
     font-weight: bold;
 `;
 
-
-
-export default Body;
+export default MainBody;

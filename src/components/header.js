@@ -1,8 +1,10 @@
 import './header.css'
+import styled from "styled-components";
 
 const Header = () => {
     return(
-        <header className="header">
+        <>
+        <HeaderBar className="header">
                 <a href='https://spde3289.github.io/'>spde3289.github.io</a>
             <ul className='headerMenu'>
                 <li><a href='https://spde3289.github.io/'>about</a></li>
@@ -12,9 +14,20 @@ const Header = () => {
                     <div>1</div>
                 </ul>
             </ul>
-
-        </header>
+        </HeaderBar>
+        </>
     );
 };
+
+const HeaderBar = styled.header`
+    display:flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 1200px;
+    height: 70px;
+    align-items: center;
+`;
+
 
 export default Header;
