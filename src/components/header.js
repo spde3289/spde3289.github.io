@@ -1,4 +1,4 @@
-import './header.css'
+import '../css/reset.css'
 import styled from "styled-components";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
                 <HeaderMenuItem><a href='https://spde3289.github.io/'>about</a></HeaderMenuItem>
                 <HeaderMenuItem>posts</HeaderMenuItem>
                 <Search>
-                    <li className="searchTextara"><input/></li>
+                    <li><SearchTextara/></li>
                     <div>1</div>
                 </Search>
             </HeaderMenu>
@@ -49,6 +49,9 @@ const Search = styled.ul`
     border-bottom: 1px solid #000;
 
 `
+const SearchTextara = styled.input`
+        border: none;
+`;
 
 
 export default Header;
