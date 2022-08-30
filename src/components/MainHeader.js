@@ -1,7 +1,8 @@
+import React from 'react';
 import '../css/reset.css'
 import styled from "styled-components";
 
-const Header = () => {
+const MainHeader = () => {
     return(
         <>
         <HeaderBar>
@@ -54,4 +55,4 @@ const SearchTextara = styled.input`
 `;
 
 
-export default Header;
+export default MainHeader;
