@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/reset.css'
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const MainHeader = () => {
     return(
@@ -8,7 +9,7 @@ const MainHeader = () => {
         <HeaderBar>
                 <BlogName href='https://spde3289.github.io/'>spde3289.github.io</BlogName>
             <HeaderMenu>
-                <HeaderMenuItem><a href='https://spde3289.github.io/'>about</a></HeaderMenuItem>
+                <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
                 <HeaderMenuItem>posts</HeaderMenuItem>
                 <Search>
                     <li><SearchTextara/></li>
