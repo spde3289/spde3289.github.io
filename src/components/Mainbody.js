@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
-
 
 const MainBody = () => {
     return(
-          <Box> asd  <Link to = "/about">about</Link> </Box>
+          <Box> asd </Box>
     );
 };
 
