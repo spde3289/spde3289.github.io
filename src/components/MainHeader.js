@@ -25,10 +25,9 @@ const HeaderBar = styled.header`
     display:flex;
     justify-content: space-around;
     margin: 0 auto;
-    margin-top: 25px;
-    width: 1200px;
-    height: 70px;
+    padding: 10px;
     align-items: center;
+    border-bottom: 1px solid #000;
 `;
 
 const BlogName = styled.a`
