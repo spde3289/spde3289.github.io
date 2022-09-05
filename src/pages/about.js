@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import MainHeader from '../components/MainHeader'
+import MainHeader from '../components/Header'
+import Footer from '../components/Footer'
 
 const About = () => {
     return(
@@ -12,7 +13,9 @@ const About = () => {
         </div>
         <Box>asd</Box>
         <div><a href='https://github.com/spde3289'>깃헙</a></div>
+        <Footer></Footer>
         </div>
+    
     );
 };
 

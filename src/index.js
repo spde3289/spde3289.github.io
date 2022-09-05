@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import About from'./pages/about';
+import './css/reset.css'
 
 
 

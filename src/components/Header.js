@@ -1,12 +1,12 @@
 import React from 'react';
-import '../css/reset.css'
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-const MainHeader = () => {
+const Header = () => {
     return(
         <>
         <HeaderBar>
+            <NavBar>
                 <BlogName href='https://spde3289.github.io/'>spde3289.github.io</BlogName>
             <HeaderMenu>
                 <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
@@ -16,20 +16,24 @@ const MainHeader = () => {
                     <div>1</div>
                 </Search>
             </HeaderMenu>
+            </NavBar>
         </HeaderBar>
         </>
     );
 };
 
 const HeaderBar = styled.header`
+    border-bottom: 1px solid #666;
+`;
+
+const NavBar = styled.nav`
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
     align-items: center;
-    border-bottom: 1px solid #000;
-`;
+`
 
 const BlogName = styled.a`
     font-size: 20px;
@@ -56,4 +60,4 @@ const SearchTextara = styled.input`
 `;
 
 
-export default MainHeader;
+export default Header;
