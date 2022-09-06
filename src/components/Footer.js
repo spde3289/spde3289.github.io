@@ -1,17 +1,22 @@
 import styled from "styled-components";
+import { AiFillGithub } from 'react-icons/ai'
 
 const Footer = () => {
     return(
         <FooterBar>
-            <p><a href='https://github.com/spde3289'>깃허브 아이콘</a></p>
-            <p>myer100756@gmail.com, spde3289@naver.com</p>
+            <Footerinfo><a href='https://github.com/spde3289'><AiFillGithub size='24'/></a></Footerinfo>
+            <Footerinfo>myer100756@gmail.com, spde3289@naver.com</Footerinfo>
         </FooterBar>
     );
 };
 
 const FooterBar = styled.footer`
     padding: 40px 20px ;
-    text-align: center;
+`
+
+const Footerinfo = styled.p`
+    font-size: 15px;
+    margin-right: 10px;
 `
 
 export default Footer;

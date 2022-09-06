@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai'
 
 const Header = () => {
     return(
@@ -13,7 +14,9 @@ const Header = () => {
                 <HeaderMenuItem>posts</HeaderMenuItem>
                 <Search>
                     <li><SearchTextara/></li>
-                    <div>1</div>
+                    <li>
+                        <AiOutlineSearch/>
+                    </li>
                 </Search>
             </HeaderMenu>
             </NavBar>
