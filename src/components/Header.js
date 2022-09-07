@@ -26,7 +26,7 @@ const Header = () => {
 };
 
 const HeaderBar = styled.header`
-    border-bottom: 1px solid #666;
+    border-bottom: 0.5px solid #888;
 `;
 
 const NavBar = styled.nav`
