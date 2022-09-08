@@ -35,7 +35,7 @@ const NavBar = styled.nav`
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
-    align-items: center;
+    
 `
 
 const BlogName = styled.a`
