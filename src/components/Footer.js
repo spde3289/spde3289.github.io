@@ -5,29 +5,32 @@ import { IoLogoInstagram } from 'react-icons/io'
 const Footer = () => {
     return(
         <FooterBar>
-            Contact Information
+            <h2>Contact Information</h2>
             <Footerinfo>
                 <a href='mailto:spde3289@gmail.com'>
-                    <AiOutlineMail style={{marginBottom: -6, marginRight: 5}} size='24'/>myer100756@gmail.com
+                    <AiOutlineMail style={{marginBottom: -7, marginRight: 5}} size='24'/>myer100756@gmail.com
                 </a>
             </Footerinfo>
             <Footerinfo>
                 <a href='https://github.com/spde3289'>
-                    <AiFillGithub style={{marginBottom: -6, marginRight: 5}} size='24'/>spde3289
+                    <AiFillGithub style={{marginBottom: -7, marginRight: 5}} size='24'/>spde3289
                 </a>
             </Footerinfo>
             <Footerinfo>
                 <a href='https://www.instagram.com/98._.hun/'>
-                    <IoLogoInstagram style={{marginBottom: -6, marginRight: 5}} size='24'/>98._.hun
+                    <IoLogoInstagram style={{marginBottom: -7, marginRight: 5}} size='24'/>98._.hun
                 </a>
             </Footerinfo>
         </FooterBar>
     );
 };
 
+
 const FooterBar = styled.footer`
-    padding: 40px 20px ;
-    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 40px 30px 30px 50px ;
 `;
 
 const Footerinfo = styled.p`
