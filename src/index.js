@@ -6,7 +6,8 @@ import {
   Route
 } from 'react-router-dom';
 import App from './App';
-import About from'./pages/about';
+import About from'./pages/About';
+import Posts from'./pages/Posts';
 import './css/reset.css'
 
 
@@ -17,6 +18,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App/>}/>
       <Route path='about' element={<About/>} />
+      <Route path='posts' element={<Posts/>} />
     </Routes>
   </BrowserRouter>
 );

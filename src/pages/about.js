@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import MainHeader from '../components/Header'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const About = () => {
     return(
         <div>
-        <MainHeader></MainHeader>
+        <Header></Header>
         <AboutMain>
             <AboutMe>
                 <h2 className="title">About Me</h2>
@@ -38,7 +38,6 @@ const About = () => {
 const AboutMain = styled.main `
     height: calc(100vh - 385px);
     margin: 0 auto;
-    margin-top: 70px;
     width: 1000px;
     .title{
         margin-bottom: 15px;
@@ -75,15 +74,13 @@ const TimeLine = styled.div`
     padding-bottom: 10px;
     &:before {
         content: "";
-        align-self: center;
-        border: 2px solid #828282;
-        border-radius: 10px;
         height: 10px;
-        left: -1px;
-        position: relative;
-        transform: translatex(-50%);
         width: 10px;
+        align-self: center;
+        border: 1.5px solid #828282;
+        border-radius: 10px;
+        transform: translatex(-50%);
     }
-`
+`;
 
 export default About;

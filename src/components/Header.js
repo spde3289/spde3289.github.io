@@ -5,13 +5,12 @@ import { AiOutlineSearch } from 'react-icons/ai'
 
 const Header = () => {
     return(
-        <>
         <HeaderBar>
             <NavBar>
                 <BlogName href='https://spde3289.github.io/'>spde3289.github.io</BlogName>
             <HeaderMenu>
+                <HeaderMenuItem><Link to='/posts'>posts</Link></HeaderMenuItem>
                 <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
-                <HeaderMenuItem>posts</HeaderMenuItem>
                 <Search>
                     <li><SearchTextara/></li>
                     <li>
@@ -21,11 +20,11 @@ const Header = () => {
             </HeaderMenu>
             </NavBar>
         </HeaderBar>
-        </>
     );
 };
 
 const HeaderBar = styled.header`
+    margin-bottom: 70px;
     border-bottom: 0.5px solid #888;
 `;
 
@@ -59,7 +58,8 @@ const Search = styled.ul`
 
 `
 const SearchTextara = styled.input`
-        border: none;
+    border: none;
+    width: 120px;
 `;
 
 
