@@ -1,5 +1,5 @@
 html, header, body, footer, h1, h2, h3, h4, h5, h6, div,
-ul, li, ol, dd, dt, a{
+ul, li, ol, dd, dt, a, p{
     margin: 0;
     padding: 0;
     border: 0;
