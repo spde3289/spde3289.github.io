@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 const ContentBox = (props) => {
+    console.log(props)
     return(
         <PostBox>
             <PostBoxTitle>
@@ -11,9 +12,8 @@ const ContentBox = (props) => {
                 {props.content}
             </PostBoxContent>
             <PostBoxInfo>
-                <div>2022.09.11</div>
-                <div>웹</div>
-                <div>알고리즘</div>
+                <div>{props.date}</div>
+                <div>{props.category}</div>
             </PostBoxInfo>
         </PostBox>
     );
@@ -29,25 +29,27 @@ const PostBox = styled.div`
 `;
 
 const PostBoxTitle = styled.h2`
+    margin-bottom: 12px;
+    ${PostBox}:hover & {
+        text-decoration: underline
+    };
 `;
 
 const PostBoxContent = styled.p`
     width: 618px;
-    height:72px;
-    margin-bottom: 10px;
+    height:51px;
+    margin-bottom: 12px;
     font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
     white-space: normal;
-    line-height: 1.2;
-    word-wrap: break-word;
-    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
 `;
 
 const PostBoxInfo = styled.div`
     display: flex;
+    justify-content: space-between;
     font-size: 13px;
 `;
 

@@ -7,7 +7,7 @@ const Header = () => {
     return(
         <HeaderBar>
             <NavBar>
-                <BlogName href='https://spde3289.github.io/'>spde3289.github.io</BlogName>
+                <BlogName href='https://spde3289.github.io/'> spde3289.github.io</BlogName>
             <HeaderMenu>
                 <HeaderMenuItem><Link to='/posts'>posts</Link></HeaderMenuItem>
                 <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
@@ -45,7 +45,7 @@ const BlogName = styled.a`
 const HeaderMenu = styled.ul`
     display:flex;
     font-size: 20px;
-   font-weight: bold;
+    font-weight: bold;
 `
 
 const HeaderMenuItem = styled.li`
@@ -55,7 +55,6 @@ const HeaderMenuItem = styled.li`
 const Search = styled.ul`
     display: flex;
     border-bottom: 1px solid #000;
-
 `
 const SearchTextara = styled.input`
     border: none;
