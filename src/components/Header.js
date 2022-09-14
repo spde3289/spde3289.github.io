@@ -58,6 +58,7 @@ const Search = styled.ul`
 `
 const SearchTextara = styled.input`
     border: none;
+    box-shadow: none;
     width: 120px;
 `;
 
