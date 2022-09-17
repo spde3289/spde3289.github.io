@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContentBox from '../components/ContentBox';
+import { GrNext, GrPrevious } from 'react-icons/gr'
 
 const Home = () => {
     return(
@@ -26,19 +27,20 @@ const Home = () => {
                     <ContentBox title="나의 두번째 글"></ContentBox>
                     <ContentBox title="나의 두번째 글"></ContentBox>
                     <ContentBox title="나의 두번째 글"></ContentBox>
-                    <ContentMore>more</ContentMore>
+                    <ContentPoint>
+                        <ul className="flex">
+                            <li className='prev'><GrPrevious/></li>
+                            <li className="li active">1</li>
+                            <li className="li">2</li>
+                            <li className="li">3</li>
+                            <li className="li">4</li>
+                            <li className="li">5</li>
+                            <li className='next'><GrNext/></li>
+                        </ul>
+                    </ContentPoint>
                 </ContentBoxArea>
                 <ContentList>
-                    <Category>
-                        웹
-                        <Post>게시물 1</Post>
-                        <Post>게시물 2</Post>
-                    </Category>
-                    <Category>
-                        알고리즘
-                        <Post>게시물 1</Post>
-                        <Post>게시물 2</Post>
-                    </Category>
+
                 </ContentList>
                 </Content>
             </Main>
@@ -76,27 +78,31 @@ const ContentBoxArea = styled.div`
     justify-content: space-between;
 `;
 
-const ContentMore = styled.button`
+const ContentPoint = styled.div`
     margin: 0 auto;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #bbb;
-    border-radius: 10px;
-    text-align: center;
+    .active{
+
+    }
+    .flex{
+        display: flex;
+        align-items: center
+    }
+    .li{
+        margin: 10px;
+        text-align: center;
+    }
+    .prev{
+        margin-bottom: -4px;
+    }
+    .next{
+        margin-bottom: -4px;
+    }
 `;
 
 const ContentList = styled.div`
     border: 1px solid #000;
     width: 270px;
 `;
-
-const Category = styled.ul`
-    margin-bottom: 10px;
-`;
-
-const Post = styled.li`
-`;
-
 
 export default Home;
 

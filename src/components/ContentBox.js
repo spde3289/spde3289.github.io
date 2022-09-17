@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 
 const ContentBox = (props) => {
-    console.log(props)
     return(
         <PostBox>
             <PostBoxTitle>
