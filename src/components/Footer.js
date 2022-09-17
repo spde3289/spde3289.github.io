@@ -5,10 +5,10 @@ import { IoLogoInstagram } from 'react-icons/io'
 const Footer = () => {
     return(
         <FooterBar>
-            <h2>Contact Information</h2>
+            <h2 className="title">Contact Information</h2>
             <Footerinfo>
-                <a href='mailto:spde3289@gmail.com'>
-                    <AiOutlineMail className='Icon' size='24'/>myer100756@gmail.com
+                <a href='mailto:spde3289@naver.com'>
+                    <AiOutlineMail className='Icon' size='24'/>spde3289@naver.com
                 </a>
             </Footerinfo>
             <Footerinfo>
@@ -31,11 +31,15 @@ const FooterBar = styled.footer`
     margin: 0 auto;
     margin-top: 50px;
     padding: 40px 30px 30px 50px ;
+    .title {
+        padding-bottom: 10px;
+    }
 `;
 
 const Footerinfo = styled.p`
     font-size: 15px;
     margin-right: 10px;
+    margin-bottom: 10px;
     .Icon{
         margin-bottom: -7px;
         margin-right: 5px;
