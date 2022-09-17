@@ -1,21 +1,32 @@
 import React from 'react';
 import styled from "styled-components";
+import { useRef } from "react"; 
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 
 const Header = () => {
+    const input = useRef();
+    
+    const inputOnClick = () => {
+        input.current.focus();
+    };
+   
     return(
         <HeaderBar>
             <NavBar>
-                <BlogName href='https://spde3289.github.io/'> spde3289.github.io</BlogName>
+                <BlogName><Link to='/'>spde3289.github.io</Link></BlogName>
             <HeaderMenu>
                 <HeaderMenuItem><Link to='/posts'>posts</Link></HeaderMenuItem>
                 <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
-                <Search>
-                    <li><SearchTextara/></li>
-                    <li>
-                        <AiOutlineSearch/>
-                    </li>
+                <Search >
+                    <SearchTextara 
+                    type='text' 
+                    onChange={(e)=>{console.log(e.target.value)}} 
+                    ref={input} 
+                    placeholder='search'/>
+                    <AiOutlineSearch 
+                        onClick={()=>{inputOnClick()
+                        }}/>
                 </Search>
             </HeaderMenu>
             </NavBar>
@@ -37,7 +48,7 @@ const NavBar = styled.nav`
     
 `
 
-const BlogName = styled.a`
+const BlogName = styled.div`
     font-size: 20px;
     font-weight: bold;
 `;
@@ -52,15 +63,35 @@ const HeaderMenuItem = styled.li`
     margin-right: 10px;
 `;
 
-const Search = styled.ul`
+const Search = styled.span`
+    position: relative;
     display: flex;
-    border-bottom: 1px solid #000;
+    flex-wrap: wrap;
+    align-items: center;
+    &:hover {
+        cursor: text;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-bottom: 1px solid #000;
+    }
+    &:hover:after{
+        border-bottom: 2px solid #000;
+    }
+    &:click {
+        
+    }
 `
 const SearchTextara = styled.input`
     border: none;
-    box-shadow: none;
-    width: 120px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
 `;
-
 
 export default Header;
