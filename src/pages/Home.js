@@ -17,7 +17,7 @@ const Home = () => {
     ]);
 
     const ContentList = content.map((items)=>(
-        <ContentBox title={items.title} content={items.content} date={items.date} category={items.category}></ContentBox>
+        <ContentBox title={items.title} content={items.body} date={items.date} category={items.category}></ContentBox>
     ))
 
     return(
