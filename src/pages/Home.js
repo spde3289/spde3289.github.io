@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,6 +8,18 @@ import ContentBox from '../components/ContentBox';
 
 
 const Home = () => {
+    const [content, setcontent] = useState([
+        {key: 1, title: '타이틀', body: 'This is', date:'2022.09.13', category: '웹'},
+        {key: 2, title: '타이틀', body: 'This is', date:'2022.08.17', category: '잡담'},
+        {key: 3, title: '타이틀', body: 'This is', date:'2022.08.13', category: '서버'},
+        {key: 4, title: '타이틀', body: 'This is', date:'2022.06.13', category: '책'},
+        {key: 5, title: '타이틀', body: 'This is', date:'2022.01.13', category: '알고리즘'}
+    ]);
+
+    const ContentList = content.map((items)=>(
+        <ContentBox title={items.title} content={items.content} date={items.date} category={items.category}></ContentBox>
+    ))
+
     return(
         <div>
             <Header/>
@@ -24,16 +36,12 @@ const Home = () => {
                 <Content>
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
-                        <ContentBox title="나의 첫 글" content='보통 우리가' date='2022.09.13' category='웹'></ContentBox>
-                        <ContentBox title="나의 첫 글" content='알고리즘 관련~' date='2022.09.15' category='알고리즘'></ContentBox>
-                        <ContentBox title="나의 세번째 글"></ContentBox>
-                        <ContentBox title="나의 네번째 글"></ContentBox>
-                        <ContentBox title="나의 다섯번째 글"></ContentBox>
+                        {ContentList}
                         <Paging/>
                     </ContentBoxArea>
-                    <ContentList>
+                    <CategoryList>
                         태그들~ 카테고리들~
-                    </ContentList>
+                    </CategoryList>
                 </Content>
             </Main>
             <Footer/>
@@ -70,7 +78,7 @@ const ContentBoxArea = styled.div`
     justify-content: space-between;
 `;
 
-const ContentList = styled.div`
+const CategoryList = styled.div`
     border: 1px solid #000;
     width: 270px;
 `;
