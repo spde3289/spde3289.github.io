@@ -2,13 +2,15 @@ import React from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Paging from '../components/Paging';
 import ContentBox from '../components/ContentBox';
-import { GrNext, GrPrevious } from 'react-icons/gr'
+
+
 
 const Home = () => {
     return(
         <div>
-            <Header></Header>
+            <Header/>
             <Main>
                 <Introduction>
                 <p>
@@ -20,31 +22,21 @@ const Home = () => {
                 </p>
                 </Introduction>
                 <Content>
-                <ContentBoxArea>
-                    <h2>최신 포스트</h2> 
-                    <ContentBox title="나의 첫 글" content='보통 우리가' date='2022.09.13' category='웹'></ContentBox>
-                    <ContentBox title="나의 첫 글" content='알고리즘 관련~' date='2022.09.15' category='알고리즘'></ContentBox>
-                    <ContentBox title="나의 두번째 글"></ContentBox>
-                    <ContentBox title="나의 두번째 글"></ContentBox>
-                    <ContentBox title="나의 두번째 글"></ContentBox>
-                    <ContentPoint>
-                        <ul className="flex">
-                            <li className='prev'><GrPrevious/></li>
-                            <li className="li active">1</li>
-                            <li className="li">2</li>
-                            <li className="li">3</li>
-                            <li className="li">4</li>
-                            <li className="li">5</li>
-                            <li className='next'><GrNext/></li>
-                        </ul>
-                    </ContentPoint>
-                </ContentBoxArea>
-                <ContentList>
-
-                </ContentList>
+                    <ContentBoxArea>
+                        <h2>최신 포스트</h2> 
+                        <ContentBox title="나의 첫 글" content='보통 우리가' date='2022.09.13' category='웹'></ContentBox>
+                        <ContentBox title="나의 첫 글" content='알고리즘 관련~' date='2022.09.15' category='알고리즘'></ContentBox>
+                        <ContentBox title="나의 세번째 글"></ContentBox>
+                        <ContentBox title="나의 네번째 글"></ContentBox>
+                        <ContentBox title="나의 다섯번째 글"></ContentBox>
+                        <Paging/>
+                    </ContentBoxArea>
+                    <ContentList>
+                        태그들~ 카테고리들~
+                    </ContentList>
                 </Content>
             </Main>
-            <Footer></Footer>
+            <Footer/>
         </div>
     );
 };
@@ -76,27 +68,6 @@ const ContentBoxArea = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-`;
-
-const ContentPoint = styled.div`
-    margin: 0 auto;
-    .active{
-
-    }
-    .flex{
-        display: flex;
-        align-items: center
-    }
-    .li{
-        margin: 10px;
-        text-align: center;
-    }
-    .prev{
-        margin-bottom: -4px;
-    }
-    .next{
-        margin-bottom: -4px;
-    }
 `;
 
 const ContentList = styled.div`
