@@ -1,24 +1,39 @@
-import { React, useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Paging from '../components/Paging';
 import ContentBox from '../components/ContentBox';
 
-
-
 const Home = () => {
+    const [currentPage, setcurrentPage] = useState(1)
     const [content, setcontent] = useState([
-        {key: 1, title: '타이틀', body: 'This is', date:'2022.09.13', category: '웹'},
-        {key: 2, title: '타이틀', body: 'This is', date:'2022.08.17', category: '잡담'},
-        {key: 3, title: '타이틀', body: 'This is', date:'2022.08.13', category: '서버'},
-        {key: 4, title: '타이틀', body: 'This is', date:'2022.06.13', category: '책'},
-        {key: 5, title: '타이틀', body: 'This is', date:'2022.01.13', category: '알고리즘'}
+        {key: 1, title: '타이틀1', body: 'This is 1', date:'2022.09.13', category: '웹'},
+        {key: 2, title: '타이틀2', body: 'This is 2', date:'2022.08.17', category: '잡담'},
+        {key: 3, title: '타이틀3', body: 'This is 3', date:'2022.08.13', category: '서버'},
+        {key: 4, title: '타이틀4', body: 'This is 4', date:'2022.06.13', category: '책'},
+        {key: 5, title: '타이틀5', body: 'This is 5', date:'2022.01.13', category: '알고리즘'}
     ]);
 
     const ContentList = content.map((items)=>(
-        <ContentBox title={items.title} content={items.body} date={items.date} category={items.category}></ContentBox>
-    ))
+        <ContentBox
+        key={items.key} 
+        title={items.title} 
+        content={items.body} 
+        date={items.date} 
+        category={items.category}>
+        </ContentBox>
+    ));
+
+    let currentPagekey;
+
+    function keyIndex (key) {
+        currentPagekey = key;
+    };
+    
+    useEffect(()=> {
+        setcurrentPage(currentPagekey);
+    },[currentPagekey]);
 
     return(
         <div>
@@ -37,7 +52,7 @@ const Home = () => {
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
                         {ContentList}
-                        <Paging/>
+                        <Paging propsFunction={keyIndex} />
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
