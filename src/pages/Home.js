@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -19,28 +19,17 @@ const Home = () => {
         {key: 10, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
         {key: 11, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
     ];
-    const [post, setPost] = useState([]);
-    
-    let currentPagekey = 5;
+    const [post, setPost] = useState(content.slice(0,5));
+    const [currentPage, setCurrentPage] = useState(5);
     
     function keyIndex (key) {
-        currentPagekey = 5*key;
+        setCurrentPage(5*key);
     };
-    
-    useEffect( () => {
-        setPost([...content]
-            .slice(currentPagekey-5,currentPagekey)
-            .map((item)=>{
-                return{
-                    key: item.key,
-                    title: item.title,
-                    body: item.body,
-                    date: item.date,
-                    category: item.category
-                }
-        }))
-    })
-
+    console.log(currentPage)
+    useEffect(() => {
+        setPost(content.slice(currentPage-5,currentPage))
+    },[currentPage]);
+ 
     const PostList = post.map((items)=>(
         <ContentBox
         key={items.key} 
@@ -68,7 +57,7 @@ const Home = () => {
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
                         {PostList}
-                        <Paging propsFunction={keyIndex} />
+                        <Paging propsFunction={keyIndex} maxPage={content.length}/>
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
@@ -102,6 +91,7 @@ const Content = styled.div`
 
 const ContentBoxArea = styled.div`
     width: 640px;
+    height: 862px;
     margin: 20px;
     //border: 0.1px dashed #565655; // 나중에 제거
     display: flex;

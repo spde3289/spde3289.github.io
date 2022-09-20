@@ -1,5 +1,4 @@
-import {React, useState} from 'react';
-
+import { React, useState, useEffect } from 'react';
 import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
 
@@ -12,6 +11,12 @@ const Paging = (props) => {
         {key: 5, isClicked:0 }
     ]);
     
+    let currentKey = page.find(item=>item.isClicked === 1).key
+    useEffect(()=>{
+        props.propsFunction(currentKey); 
+    },[currentKey])
+    console.log(currentKey);
+
     const dirextPage = (key) => {
         setpage([...page].map(item=>{
             return{
@@ -20,20 +25,20 @@ const Paging = (props) => {
             };
         }));
     };
-    
+
     const pageHandler = (type) => {
         let currentIndex = page.findIndex(item => item.isClicked === 1);
         let updateIndex = type === 'prev'
         ? currentIndex -1
         : currentIndex + 1;
-
+        
         setpage([...page].map((item, index)=>{
             return {
                 key : item.key,
                 isClicked: index === updateIndex ? 1 : 0
             };
         }));
-
+        
         if(updateIndex === page.length ){
             updateIndex = 0;
             setpage([...page].map((item, index)=>{
@@ -62,16 +67,15 @@ const Paging = (props) => {
             };
         };
     };
-    props.propsFunction(page.find(item=>item.isClicked === 1).key);
-    
+
     const pages = page.map(page=>(
-    <Page onClick={()=>{dirextPage(page.key)}} 
+        <Page onClick={()=>{dirextPage(page.key)}} 
         key={page.key} 
         className={page.isClicked ? 'active' : ''}>
         {page.key}
     </Page>
     ));
-    
+
     return(
         <ContentPoint>
             <Pages>
