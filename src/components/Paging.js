@@ -11,11 +11,10 @@ const Paging = (props) => {
         {key: 5, isClicked:0 }
     ]);
     
+    
     let currentKey = page.find(item=>item.isClicked === 1).key
-    useEffect(()=>{
-        props.propsFunction(currentKey); 
-    },[currentKey])
-    console.log(currentKey);
+    props.propsFunction(currentKey); 
+
 
     const dirextPage = (key) => {
         setpage([...page].map(item=>{

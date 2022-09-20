@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -19,17 +19,19 @@ const Home = () => {
         {key: 10, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
         {key: 11, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
     ];
-    const [post, setPost] = useState(content.slice(0,5));
+    const [post, setPost] = useState([]);
     const [currentPage, setCurrentPage] = useState(5);
     
     function keyIndex (key) {
         setCurrentPage(5*key);
+        console.log(currentPage);
+
     };
-    console.log(currentPage)
-    useEffect(() => {
+    console.log(currentPage);
+    React.useEffect(()=>{
         setPost(content.slice(currentPage-5,currentPage))
-    },[currentPage]);
- 
+    },[currentPage])
+    
     const PostList = post.map((items)=>(
         <ContentBox
         key={items.key} 
@@ -57,7 +59,7 @@ const Home = () => {
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
                         {PostList}
-                        <Paging propsFunction={keyIndex} maxPage={content.length}/>
+                        <Paging propsFunction={keyIndex}/>
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
