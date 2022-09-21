@@ -5,43 +5,50 @@ import Footer from '../components/Footer';
 import Paging from '../components/Paging';
 import ContentBox from '../components/ContentBox';
 
+const content = [
+    {key: 1, title: '타이틀1', body: 'This is 1', date:'2022.09.13', category: '웹'},
+    {key: 2, title: '타이틀2', body: 'This is 2', date:'2022.08.17', category: '잡담'},
+    {key: 3, title: '타이틀3', body: 'This is 3', date:'2022.08.13', category: '서버'},
+    {key: 4, title: '타이틀4', body: 'This is 4', date:'2022.06.13', category: '책'},
+    {key: 5, title: '타이틀5', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 6, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 7, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 8, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 9, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 10, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+    {key: 11, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
+];
+
 const Home = () => {
-    const content = [
-        {key: 1, title: '타이틀1', body: 'This is 1', date:'2022.09.13', category: '웹'},
-        {key: 2, title: '타이틀2', body: 'This is 2', date:'2022.08.17', category: '잡담'},
-        {key: 3, title: '타이틀3', body: 'This is 3', date:'2022.08.13', category: '서버'},
-        {key: 4, title: '타이틀4', body: 'This is 4', date:'2022.06.13', category: '책'},
-        {key: 5, title: '타이틀5', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 6, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 7, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 8, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 9, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 10, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-        {key: 11, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    ];
-    const [post, setPost] = useState([]);
-    const [currentPage, setCurrentPage] = useState(5);
+        const [currentkey, setcurrentkey] = useState(5)
+        const [post, setpost] = useState(
+            content.slice(0,5).map((items)=>(
+                <ContentBox
+                key={items.key} 
+            title={items.title} 
+            content={items.body} 
+            date={items.date} 
+            category={items.category}>
+            </ContentBox>
+    ))); 
     
     function keyIndex (key) {
-        setCurrentPage(5*key);
-        console.log(currentPage);
-
-    };
-    console.log(currentPage);
-    React.useEffect(()=>{
-        setPost(content.slice(currentPage-5,currentPage))
-    },[currentPage])
+        console.log(key);
+        if(currentkey !== key*5){
+            setpost(
+                content.slice(key*5-5,key*5).map((items)=>(
+                    <ContentBox
+                    key={items.key} 
+                    title={items.title} 
+                    content={items.body} 
+                    date={items.date} 
+                    category={items.category}>
+                </ContentBox>
+            )));
+        };
+        setcurrentkey(key*5)
+    }; 
     
-    const PostList = post.map((items)=>(
-        <ContentBox
-        key={items.key} 
-        title={items.title} 
-        content={items.body} 
-        date={items.date} 
-        category={items.category}>
-        </ContentBox>
-    ));
-
     return(
         <div>
             <Header/>
@@ -58,8 +65,11 @@ const Home = () => {
                 <Content>
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
-                        {PostList}
-                        <Paging propsFunction={keyIndex}/>
+                        <PostColumn>
+                        {post}
+                        </PostColumn>
+
+                        <Paging totalpost={content.length} onChangekey={keyIndex}/>
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
@@ -90,15 +100,17 @@ const Content = styled.div`
     justify-content: space-evenly;
 `;
 
-
 const ContentBoxArea = styled.div`
     width: 640px;
-    height: 862px;
     margin: 20px;
+    position: relative;
     //border: 0.1px dashed #565655; // 나중에 제거
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+`;
+
+const PostColumn = styled.div`
+    height: 812px;
 `;
 
 const CategoryList = styled.div`

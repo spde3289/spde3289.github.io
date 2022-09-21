@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
 
@@ -10,12 +10,11 @@ const Paging = (props) => {
         {key: 4, isClicked:0 },
         {key: 5, isClicked:0 }
     ]);
-    
-    
-    let currentKey = page.find(item=>item.isClicked === 1).key
-    props.propsFunction(currentKey); 
+    const maxpage = Math.ceil(props.totalpost/5)
 
 
+    console.log(page.find(item=>item.isClicked===1).key)
+    
     const dirextPage = (key) => {
         setpage([...page].map(item=>{
             return{
@@ -38,7 +37,7 @@ const Paging = (props) => {
             };
         }));
         
-        if(updateIndex === page.length ){
+        if(updateIndex === maxpage ){
             updateIndex = 0;
             setpage([...page].map((item, index)=>{
                 return {
@@ -48,7 +47,7 @@ const Paging = (props) => {
             }));
         }else if(updateIndex === -1){
             if(page[0].key !== 1 ){
-                updateIndex = page.length -1;
+                updateIndex = maxpage -1;
                 setpage([...page].map((item, index)=>{
                     return {
                         key : item.key-5 > 0 ? item.key-5 : item.key ,
@@ -68,19 +67,23 @@ const Paging = (props) => {
     };
 
     const pages = page.map(page=>(
-        <Page onClick={()=>{dirextPage(page.key)}} 
+        <Page onClick={()=>{dirextPage(page.key); }} 
         key={page.key} 
         className={page.isClicked ? 'active' : ''}>
         {page.key}
     </Page>
     ));
 
+    useEffect(() => {
+        props.onChangekey(page.find(item=>item.isClicked===1).key);
+    });
+
     return(
         <ContentPoint>
             <Pages>
-                <PrevPage onClick={()=>{pageHandler('prev')}}> <GrPrevious/></PrevPage>
+                <PrevPage onClick={()=>{pageHandler('prev'); }}> <GrPrevious/></PrevPage>
                 {pages}
-                <NextPage onClick={()=>{pageHandler('next')}}> <GrNext/></NextPage>
+                <NextPage onClick={()=>{pageHandler('next'); }}> <GrNext/></NextPage>
             </Pages>
         </ContentPoint>
     );
@@ -92,10 +95,12 @@ const ContentPoint = styled.div`
     -ms-user-select:none;
     user-select:none;
     margin: 0 auto;
+
 `;
 
 const Pages = styled.ul`
     display: flex;
+    justify-content: center;
     align-items: center;
     li:hover{
         cursor: pointer;
