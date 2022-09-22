@@ -75,7 +75,7 @@ const Home = () => {
                             onPrevClick={onPrevClick}
                             onNextClick={onNextClick}
                             onPageChange={onPageChange}/>
-                        : <Box></Box>}
+                        : <div/>}
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
@@ -90,14 +90,14 @@ const Home = () => {
 const Main = styled.main`
     margin: 0 auto;
     width: 1000px;
-    border: 0.1px dashed #565655; // 나중에 제거
+    //border: 0.1px dashed #565655; // 나중에 제거
     font-size: 16px;
 `;
 
 const Introduction = styled.div`
     width: 100%;
     margin-bottom: 80px;
-    border: 0.1px dashed #565655; // 나중에 제거
+    //border: 0.1px dashed #565655; // 나중에 제거
     font-size: 20px;
 `;
 
@@ -107,20 +107,14 @@ const Content = styled.div`
 `;
 
 const ContentBoxArea = styled.div`
-    width: 640px;
     margin: 20px;
-    position: relative;
     //border: 0.1px dashed #565655; // 나중에 제거
     flex-wrap: wrap;
-    justify-content: space-between;
 `;
 
 const CategoryList = styled.div`
     border: 1px solid #000;
     width: 270px;
-`;
-const Box = styled.div`
-    height: 812px;
 `;
 
 export default Home;

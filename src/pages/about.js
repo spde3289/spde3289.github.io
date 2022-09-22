@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Tag from '../components/Tag';
 
 const About = () => {
     return(
@@ -9,15 +10,15 @@ const About = () => {
         <Header></Header>
         <AboutMain>
             <AboutMe>
-                <h2 className="title">Ab ddd 2 out Me</h2>
+                <h2 className="title">About Me</h2>
                 이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
                 개발블로그를 시작한 김지훈 이라고 합니다.<p/>
-                <TechStack>
-                    <Tech>html</Tech>
-                    <Tech>css</Tech>
-                    <Tech>javascript</Tech>
-                    <Tech>react</Tech>
-                </TechStack>
+                <TagArea>
+                    <Tag tagName={'html'}/>
+                    <Tag tagName={'css'}/>
+                    <Tag tagName={'js'}/>
+                    <Tag tagName={'react'}/>
+                </TagArea>
             </AboutMe>
             <TimeLineSection>
                 <h2 className="title">Time Line</h2>
@@ -47,22 +48,14 @@ const AboutMain = styled.main `
 
 const AboutMe = styled.div`
     padding: 15px;
-    
     `;
 
-const TechStack = styled.div`
+const TagArea = styled.div`
+    
     display:flex;
     font-size: 15px;
     font-weight: 500;
     `
-
-const Tech = styled.div`
-    border: 1px solid #f3f3f4;
-    background: #f3f3f4;
-    border-radius: 10px;
-    padding: 5px 7px;
-    margin-right: 10px;
-`;
 
 const TimeLineSection = styled.div`
     margin-top: 50px;
