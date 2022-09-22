@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Paging from '../components/Paging';
-import ContentBox from '../components/ContentBox';
 
 const content = [
     {key: 1, title: '타이틀1', body: 'This is 1', date:'2022.09.13', category: '웹'},
@@ -12,43 +11,50 @@ const content = [
     {key: 4, title: '타이틀4', body: 'This is 4', date:'2022.06.13', category: '책'},
     {key: 5, title: '타이틀5', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
     {key: 6, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 7, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 8, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 9, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 10, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 11, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
 ];
 
 const Home = () => {
-        const [currentkey, setcurrentkey] = useState(5)
-        const [post, setpost] = useState(
-            content.slice(0,5).map((items)=>(
-                <ContentBox
-                key={items.key} 
-            title={items.title} 
-            content={items.body} 
-            date={items.date} 
-            category={items.category}>
-            </ContentBox>
-    ))); 
-    
-    function keyIndex (key) {
-        console.log(key);
-        if(currentkey !== key*5){
-            setpost(
-                content.slice(key*5-5,key*5).map((items)=>(
-                    <ContentBox
-                    key={items.key} 
-                    title={items.title} 
-                    content={items.body} 
-                    date={items.date} 
-                    category={items.category}>
-                </ContentBox>
-            )));
+    const maxPageNumber = 5;
+    const totalPages = Math.ceil(content.length/maxPageNumber)
+    const [pageDate, setPageDate] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [maxPageLimit, setMaxPageLimit] = useState(5);
+    const [minPageLimit, setMinPageLimit] = useState(0);
+
+    useEffect(()=>{
+        setPageDate(content.slice( currentPage*5-5 ,currentPage*5));
+        setLoading(false);
+    },[currentPage]);
+
+    const onPageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const onPrevClick = () => {
+        if((currentPage-1) % maxPageNumber === 0){
+            setMaxPageLimit(maxPageLimit - maxPageNumber);
+            setMinPageLimit(minPageLimit - maxPageNumber);
         };
-        setcurrentkey(key*5)
-    }; 
-    
+        setCurrentPage(prev=> prev-1);
+    };
+
+    const onNextClick = () => {
+        if(currentPage+1 > maxPageLimit){
+            setMaxPageLimit(maxPageLimit + maxPageNumber);
+            setMinPageLimit(minPageLimit + maxPageNumber);
+        };
+        setCurrentPage(prev=>prev+1);
+    };
+
+    const pageInfo = {
+        pageDate,
+        currentPage,
+        maxPageLimit,
+        minPageLimit,
+        totalPages
+    };
+
     return(
         <div>
             <Header/>
@@ -65,11 +71,11 @@ const Home = () => {
                 <Content>
                     <ContentBoxArea>
                         <h2>최신 포스트</h2> 
-                        <PostColumn>
-                        {post}
-                        </PostColumn>
-
-                        <Paging totalpost={content.length} onChangekey={keyIndex}/>
+                        { !loading ? <Paging {...pageInfo}
+                            onPrevClick={onPrevClick}
+                            onNextClick={onNextClick}
+                            onPageChange={onPageChange}/>
+                        : <Box></Box>}
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
@@ -109,13 +115,12 @@ const ContentBoxArea = styled.div`
     justify-content: space-between;
 `;
 
-const PostColumn = styled.div`
-    height: 812px;
-`;
-
 const CategoryList = styled.div`
     border: 1px solid #000;
     width: 270px;
+`;
+const Box = styled.div`
+    height: 812px;
 `;
 
 export default Home;

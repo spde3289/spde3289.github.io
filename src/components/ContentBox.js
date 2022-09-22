@@ -8,7 +8,7 @@ const ContentBox = (props) => {
                 {props.title}
             </PostBoxTitle>
             <PostBoxContent>
-                {props.content}
+                {props.body}
             </PostBoxContent>
             <PostBoxInfo>
                 <div>{props.date}</div>

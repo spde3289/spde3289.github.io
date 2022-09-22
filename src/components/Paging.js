@@ -1,89 +1,72 @@
-import { React, useEffect, useState } from 'react';
+import  React  from 'react';
 import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
+import ContentBox from './ContentBox';
 
 const Paging = (props) => {
-    const [page, setpage] = useState([
-        {key: 1, isClicked:1 },
-        {key: 2, isClicked:0 },
-        {key: 3, isClicked:0 },
-        {key: 4, isClicked:0 },
-        {key: 5, isClicked:0 }
-    ]);
-    const maxpage = Math.ceil(props.totalpost/5)
 
+    const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
 
-    console.log(page.find(item=>item.isClicked===1).key)
-    
-    const dirextPage = (key) => {
-        setpage([...page].map(item=>{
-            return{
-                key: item.key,
-                isClicked: item.key === key ? 1 : 0
-            };
-        }));
-    };
-
-    const pageHandler = (type) => {
-        let currentIndex = page.findIndex(item => item.isClicked === 1);
-        let updateIndex = type === 'prev'
-        ? currentIndex -1
-        : currentIndex + 1;
-        
-        setpage([...page].map((item, index)=>{
-            return {
-                key : item.key,
-                isClicked: index === updateIndex ? 1 : 0
-            };
-        }));
-        
-        if(updateIndex === maxpage ){
-            updateIndex = 0;
-            setpage([...page].map((item, index)=>{
-                return {
-                    key : item.key+5,
-                    isClicked: index === updateIndex ? 1 : 0
-                };
-            }));
-        }else if(updateIndex === -1){
-            if(page[0].key !== 1 ){
-                updateIndex = maxpage -1;
-                setpage([...page].map((item, index)=>{
-                    return {
-                        key : item.key-5 > 0 ? item.key-5 : item.key ,
-                        isClicked: index === updateIndex ? 1 : 0
-                    };
-                }));
-            }else{
-                updateIndex = 0
-                setpage([...page].map((item, index)=>{
-                    return {
-                        key : item.key-5 > 0 ? item.key-5 : item.key ,
-                        isClicked: index === updateIndex ? 1 : 0
-                    };
-                }));
-            };
-        };
-    };
-
-    const pages = page.map(page=>(
-        <Page onClick={()=>{dirextPage(page.key); }} 
-        key={page.key} 
-        className={page.isClicked ? 'active' : ''}>
-        {page.key}
-    </Page>
+    const postList = props.pageDate.map((date) =>(
+        <ContentBox
+        key={date.key}
+        title={date.title}
+        body={date.body}
+        date={date.date}
+        category={date.category}>
+        </ContentBox>
     ));
 
-    useEffect(() => {
-        props.onChangekey(page.find(item=>item.isClicked===1).key);
-    });
+    const page = [];
+    for(let i = 1; i <= totalPages; i++) {
+        page.push(i)
+    };
+
+    const handlePrevClick = ()=>{
+        console.log('실행')
+        props.onPrevClick();
+    }
+
+    const handleNextClick = ()=>{
+        console.log('실행')
+
+        props.onNextClick();
+    }
+
+    const handlePageClick = (e)=>{
+        props.onPageChange(Number(e.target.id));
+    }
+
+    const pageNumber = page.map(page=>{
+        if(page <= maxPageLimit && page > minPageLimit) {
+            return(
+        <Page key={page} id={page} onClick={handlePageClick} 
+            className={currentPage===page ? 'active' : null}>
+            {page}
+        </Page>
+            );
+        }else{
+            return null;
+        }
+    })
 
     return(
         <ContentPoint>
+            <PostColumn>
+               {postList}
+            </PostColumn>
             <Pages>
-                <PrevPage onClick={()=>{pageHandler('prev'); }}> <GrPrevious/></PrevPage>
-                {pages}
-                <NextPage onClick={()=>{pageHandler('next'); }}> <GrNext/></NextPage>
+                <PrevPage 
+                    onClick={handlePrevClick} 
+                    disabled={currentPage === page[0]}> 
+                    <GrPrevious/>
+                </PrevPage>
+                    {pageNumber}
+                <NextPage 
+                    onClick={handleNextClick} 
+                    disabled={currentPage === page[page.length-1]}>
+                    <GrNext/>
+                </NextPage>
             </Pages>
         </ContentPoint>
     );
@@ -98,6 +81,10 @@ const ContentPoint = styled.div`
 
 `;
 
+const PostColumn = styled.div`
+    height: 812px;
+`;
+
 const Pages = styled.ul`
     display: flex;
     justify-content: center;
@@ -109,12 +96,13 @@ const Pages = styled.ul`
         font-weight: bold;
     }
 `
-const PrevPage = styled.li`
+
+const PrevPage = styled.button`
     margin-bottom: -4px;
 
     `;
 
-const NextPage = styled.li`
+const NextPage = styled.button`
     margin-bottom: -4px;
     `;
 
