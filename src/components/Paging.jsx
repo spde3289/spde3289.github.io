@@ -23,13 +23,10 @@ const Paging = (props) => {
     };
 
     const handlePrevClick = ()=>{
-        console.log('실행')
         props.onPrevClick();
     }
 
     const handleNextClick = ()=>{
-        console.log('실행')
-
         props.onNextClick();
     }
 
