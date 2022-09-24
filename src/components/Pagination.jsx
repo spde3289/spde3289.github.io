@@ -75,7 +75,6 @@ const ContentPoint = styled.div`
     -ms-user-select:none;
     user-select:none;
     margin: 0 auto;
-
 `;
 
 const PostColumn = styled.div`
@@ -92,7 +91,7 @@ const Pages = styled.ul`
     .active {
         font-weight: bold;
     }
-    `
+`;
     
 const Page = styled.li`
     margin: 5px;
@@ -102,11 +101,10 @@ const Page = styled.li`
 
 const PrevPage = styled.button`
     margin-bottom: -4px;
-
-    `;
+`;
 
 const NextPage = styled.button`
     margin-bottom: -4px;
-    `;
+`;
 
 export default Pagination;
