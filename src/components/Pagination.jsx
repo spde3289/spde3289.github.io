@@ -7,14 +7,15 @@ const Pagination = (props) => {
 
     const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
 
-    const postList = props.pageDate.map((date) =>(
-        <ContentBox
-        key={date.key}
-        title={date.title}
-        body={date.body}
-        date={date.date}
-        category={date.category}>
-        </ContentBox>
+    const postList = props.pageDate.map(date =>(
+            <ContentBox
+                key={date.key}
+                title={date.title}
+                body={date.body}
+                date={date.date}
+                category={date.category}
+                link={date.link}>
+            </ContentBox>
     ));
 
     const page = [];
@@ -24,28 +25,28 @@ const Pagination = (props) => {
 
     const handlePrevClick = ()=>{
         props.onPrevClick();
-    }
+    };
 
     const handleNextClick = ()=>{
         props.onNextClick();
-    }
+    };
 
     const handlePageClick = (e)=>{
         props.onPageChange(Number(e.target.id));
-    }
+    };
 
     const pageNumber = page.map(page=>{
-        if(page <= maxPageLimit && page > minPageLimit) {
+        if(page <= maxPageLimit && page > minPageLimit){
             return(
-        <Page key={page} id={page} onClick={handlePageClick} 
-            className={currentPage===page ? 'active' : null}>
-            {page}
-        </Page>
+                <Page key={page} id={page} onClick={handlePageClick} 
+                    className={currentPage===page ? 'active' : null}>
+                    {page}
+                </Page>
             );
         }else{
             return null;
-        }
-    })
+        };
+    });
 
     return(
         <ContentPoint>
@@ -87,10 +88,10 @@ const Pages = styled.ul`
     align-items: center;
     li:hover{
         cursor: pointer;
-    }
+    };
     .active {
         font-weight: bold;
-    }
+    };
 `;
     
 const Page = styled.li`
