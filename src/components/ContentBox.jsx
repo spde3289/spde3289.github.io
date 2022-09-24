@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const ContentBox = (props) => {
+    console.log(props)
     return(
-        <PostBox>
-            <PostBoxTitle>
-                {props.title}
-            </PostBoxTitle>
-            <PostBoxContent>
-                {props.body}
-            </PostBoxContent>
-            <PostBoxInfo>
-                <div>{props.date}</div>
-                <div>{props.category}</div>
-            </PostBoxInfo>
-        </PostBox>
+        <Link to={props.link} >
+            <PostBox>
+                <PostBoxTitle>
+                    {props.title}
+                </PostBoxTitle>
+                <PostBoxContent>
+                    {props.body}
+                </PostBoxContent>
+                <PostBoxInfo>
+                    <div>{props.date}</div>
+                    <div>{props.category}</div>
+                </PostBoxInfo>
+            </PostBox>
+        </Link>
     );
 };
 
