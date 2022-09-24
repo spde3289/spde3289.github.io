@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import ContentBox from './ContentBox';
 
-const Paging = (props) => {
+const Pagination = (props) => {
 
     const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
 
@@ -92,7 +92,13 @@ const Pages = styled.ul`
     .active {
         font-weight: bold;
     }
-`
+    `
+    
+const Page = styled.li`
+    margin: 5px;
+    width: 20px;
+    text-align: center;
+`;
 
 const PrevPage = styled.button`
     margin-bottom: -4px;
@@ -103,10 +109,4 @@ const NextPage = styled.button`
     margin-bottom: -4px;
     `;
 
-const Page = styled.li`
-    margin: 5px;
-    width: 20px;
-    text-align: center;
-`;
-
-export default Paging;
+export default Pagination;

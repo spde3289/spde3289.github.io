@@ -1,60 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Header from '../components/Header';
+import Passengers from '../components/Passengers';
 import Footer from '../components/Footer';
-import Paging from '../components/Paging';
-
-const content = [
-    {key: 1, title: '타이틀1', body: 'This is 1', date:'2022.09.13', category: '웹'},
-    {key: 2, title: '타이틀2', body: 'This is 2', date:'2022.08.17', category: '잡담'},
-    {key: 3, title: '타이틀3', body: 'This is 3', date:'2022.08.13', category: '서버'},
-    {key: 4, title: '타이틀4', body: 'This is 4', date:'2022.06.13', category: '책'},
-    {key: 5, title: '타이틀5', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-    {key: 6, title: '타이틀6', body: 'This is 5', date:'2022.01.13', category: '알고리즘'},
-];
 
 const Home = () => {
-    const maxPageNumber = 5;
-    const totalPages = Math.ceil(content.length/maxPageNumber)
-    const [pageDate, setPageDate] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [maxPageLimit, setMaxPageLimit] = useState(5);
-    const [minPageLimit, setMinPageLimit] = useState(0);
-
-    useEffect(()=>{
-        setPageDate(content.slice( currentPage*5-5 ,currentPage*5));
-        setLoading(false);
-    },[currentPage]);
-
-    const onPageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-
-    const onPrevClick = () => {
-        if((currentPage-1) % maxPageNumber === 0){
-            setMaxPageLimit(maxPageLimit - maxPageNumber);
-            setMinPageLimit(minPageLimit - maxPageNumber);
-        };
-        setCurrentPage(prev=> prev-1);
-    };
-
-    const onNextClick = () => {
-        if(currentPage+1 > maxPageLimit){
-            setMaxPageLimit(maxPageLimit + maxPageNumber);
-            setMinPageLimit(minPageLimit + maxPageNumber);
-        };
-        setCurrentPage(prev=>prev+1);
-    };
-
-    const pageInfo = {
-        pageDate,
-        currentPage,
-        maxPageLimit,
-        minPageLimit,
-        totalPages
-    };
-
+ 
     return(
         <div>
             <Header/>
@@ -70,12 +21,7 @@ const Home = () => {
                 </Introduction>
                 <Content>
                     <ContentBoxArea>
-                        <h2>최신 포스트</h2> 
-                        { !loading ? <Paging {...pageInfo}
-                            onPrevClick={onPrevClick}
-                            onNextClick={onNextClick}
-                            onPageChange={onPageChange}/>
-                        : <div/>}
+                        <Passengers/>
                     </ContentBoxArea>
                     <CategoryList>
                         태그들~ 카테고리들~
