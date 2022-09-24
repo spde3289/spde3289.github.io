@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
 
 const content = [
-    {key: 1, title: '첫 글', body: 'This is 1', date:'2022.09.13', category: '웹'},
+    {key: 1, title: '첫 글', body: 'This is 1', date:'2022.09.13', category: '웹', link: '/first'},
+    {key: 2, title: '첫 글', body: 'This is 1', date:'2022.09.13', category: '웹', link: '/second'},
 ];
 
-const Paging = (props) => {
+const Passengers = () => {
 
     const maxPageNumber = 5;
-    const totalPages = Math.ceil(content.length/maxPageNumber)
+    const totalPages = Math.ceil(content.length/maxPageNumber);
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
@@ -48,7 +49,6 @@ const Paging = (props) => {
         totalPages
     };
 
-
     return(
         <>
             { !loading ? <Pagination {...pageInfo}
@@ -61,5 +61,4 @@ const Paging = (props) => {
 
 };
 
-
-export default Paging;
+export default Passengers;
