@@ -24,7 +24,24 @@ const Home = () => {
                         <Passengers/>
                     </ContentBoxArea>
                     <CategoryList>
-                        태그들~ 카테고리들~
+                        <ul>
+                            웹
+                            <li>웹 게시글1</li>
+                            <li>웹 게시글2</li>
+                            <li>웹 게시글3</li>
+                        </ul>
+                        <ul>
+                            알고리즘
+                            <li>알고리즘문제풀이  게시글1</li>
+                            <li>알고리즘문제풀이  게시글2</li>
+                            <li>알고리즘문제풀이  게시글3</li>
+                        </ul>
+                        <ul>
+                            책
+                            <li>책 게시글1</li>
+                            <li>책 게시글2</li>
+                            <li>책 게시글3</li>
+                        </ul>
                     </CategoryList>
                 </Content>
             </Main>
