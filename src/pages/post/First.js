@@ -6,28 +6,20 @@ import Footer from '../../components/Footer';
 
 const MarkDownstyle = styled.div`
     width: 1000px;
+    margin: 0 auto;
     font-size: 1rem;
     line-height: 2.5rem;
     `;
 
 const markdown = `
-# h1
-# 헤딩 h1
-## h2
-### h3
+# useEffect
+첫 글은 내가 블로그를 만들면서 있었던 문제들을 적어보려 한다.
+처음 렌더할때 데이터를 받아와 처리해야하는 일이 있는데 
+useEffect를 
 
-* [ ] to do
-* [x] done
-
-**굵게**
-\`\`\`
-    코드블럭
-\`\`\`
-*기울이기*
-글자 \`배경색\`
-> 인용문
-그냥 글
 `;
+
+
 
 const FirstPost = () => {
     return(
