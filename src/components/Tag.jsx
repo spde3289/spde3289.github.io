@@ -8,7 +8,9 @@ const Tag = (props) => {
 };
 
 const Tech = styled.div`
+    display: inline-block;
     font-size: 14px;
+    font-weight: 400;
     border: 1px solid #f3f3f4;
     background: #f3f3f4;
     border-radius: 10px;

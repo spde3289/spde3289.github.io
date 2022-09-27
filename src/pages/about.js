@@ -14,10 +14,10 @@ const About = () => {
                 이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
                 개발블로그를 시작한 김지훈 이라고 합니다.<p/>
                 <TagArea>
-                    <Tag tagName={'html'}/>
-                    <Tag tagName={'css'}/>
-                    <Tag tagName={'js'}/>
-                    <Tag tagName={'react'}/>
+                    <Tag tagName='html'/>
+                    <Tag tagName='css'/>
+                    <Tag tagName='js'/>
+                    <Tag tagName='react'/>
                 </TagArea>
             </AboutMe>
             <TimeLineSection>
