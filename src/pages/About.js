@@ -6,33 +6,32 @@ import Tag from '../components/Tag';
 
 const About = () => {
     return(
-        <div>
-        <Header></Header>
-        <AboutMain>
-            <AboutMe>
-                <h2 className="title">About Me</h2>
-                이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
-                개발블로그를 시작한 김지훈 이라고 합니다.<p/>
-                <TagArea>
-                    <Tag tagName='html'/>
-                    <Tag tagName='css'/>
-                    <Tag tagName='js'/>
-                    <Tag tagName='react'/>
-                </TagArea>
-            </AboutMe>
-            <TimeLineSection>
-                <h2 className="title">Time Line</h2>
-                <TimeLine>
-                    <div>2021년 12월 개발시작</div>
-                </TimeLine>
-                <TimeLine>
-                    <div>2022년 9월 개발블로그 시작</div>
-                </TimeLine>
-            </TimeLineSection>
-        </AboutMain>
-        <Footer></Footer>
-        </div>
-    
+        <>
+            <Header></Header>
+            <AboutMain>
+                <AboutMe>
+                    <h2 className="title">About Me</h2>
+                    이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
+                    개발블로그를 시작한 김지훈 이라고 합니다.<p/>
+                    <TagArea>
+                        <Tag tagName='html'/>
+                        <Tag tagName='css'/>
+                        <Tag tagName='js'/>
+                        <Tag tagName='react'/>
+                    </TagArea>
+                </AboutMe>
+                <TimeLineSection>
+                    <h2 className="title">Time Line</h2>
+                    <TimeLine>
+                        <div>2021년 12월 개발시작</div>
+                    </TimeLine>
+                    <TimeLine>
+                        <div>2022년 9월 개발블로그 시작</div>
+                    </TimeLine>
+                </TimeLineSection>
+            </AboutMain>
+            <Footer></Footer>
+        </>
     );
 };
 
@@ -51,11 +50,10 @@ const AboutMe = styled.div`
     `;
 
 const TagArea = styled.div`
-    
     display:flex;
     font-size: 15px;
     font-weight: 500;
-    `
+`;
 
 const TimeLineSection = styled.div`
     margin-top: 50px;
