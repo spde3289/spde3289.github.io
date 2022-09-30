@@ -2,20 +2,28 @@ import React from 'react';
 import styled from "styled-components";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Tag from '../../components/Tag';
+import PostHeader from '../../components/PostHeader';
 
 const FirstPost = () => {
     return(
         <>
             <Header/>
             <Main>
-                <ContentHeader>
-                    <h1>useEffect 무한루프</h1>
-                    <Info>
-                        <Tag tagName="react"/>
-                        2022.09.27
-                    </Info>
-                </ContentHeader>
+                <PostHeader 
+                title='useEffect 무한루프' 
+                tagName='react' 
+                date='2022.09.28'/>
+                <div>
+                <PostText>
+                    이 블로그를 만들면서 useEffect를 사용했는데 렌더링이 계속 일어나 사이트가 다운됐었다 
+                </PostText>
+                <CodeBlock>
+                    <code>
+                       
+                    </code>
+                </CodeBlock>
+                </div>
+
                 
             </Main>
             <Footer/>
@@ -26,18 +34,16 @@ const FirstPost = () => {
 const Main = styled.div`
     width: 1000px;
     margin: 0 auto;
-    font-size: 1rem;
 `;
 
-const ContentHeader = styled.header`
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
+const PostText = styled.p`
+    font-size: 16px;
 `;
 
-const Info = styled.div`
-    font-size: 15px;
+const CodeBlock = styled.pre`
+    white-space: normal;
+    word-break: break-all;
+    overflow: auto;
 `;
-
-
 
 export default FirstPost;
