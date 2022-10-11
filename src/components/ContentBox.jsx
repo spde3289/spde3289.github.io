@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 const ContentBox = (props) => {
-    console.log(props)
     return(
         <Link to={props.link} >
             <PostBox>

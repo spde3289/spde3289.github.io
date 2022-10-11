@@ -3,6 +3,7 @@ import Pagination from './Pagination';
 
 const content = [
     {key: 1, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/first'},
+    {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/second'},
 ];
 
 const Passengers = () => {

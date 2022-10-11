@@ -1,18 +1,30 @@
 import React from 'react';
 import styled from "styled-components";
-import ReactMarkdown from 'react-markdown';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Giscus from '@giscus/react';
 
 const SecondPost = () => {
     return(
         <>
         <Header/>
         <MarkDownstyle>
-            <ReactMarkdown>
-                {markdown}
-            </ReactMarkdown>
+            asdasdasdas
         </MarkDownstyle>
+        <Giscus
+                repo="spde3289/spde3289.github.io"
+                repoId="R_kgDOH_0sSg"
+                category="Announcements"
+                categoryId="DIC_kwDOH_0sSs4CR0Ux"
+                mapping="pathname"
+                term="Welcome to @giscus/react component!"
+                reactionsEnabled="1"
+                emitMetadata="0"
+                inputPosition="bottom"
+                theme="light"
+                lang="ko"
+                loading="anonymous"
+            />
         <Footer/>
         </>
     );
@@ -21,23 +33,8 @@ const SecondPost = () => {
 const MarkDownstyle = styled.div`
     font-size: 1rem;
     line-height: 2.5rem;
-    `;
-
-const markdown = `
-# h1
-# 헤딩 h1
-## h2
-### h3
-
-**굵게**
-\`\`\`
-    코드블럭
-\`\`\`
-*기울이기*
-글자 \`배경색\`
-> 인용문
-그냥 글
-두번째 글 
 `;
+
+
 
 export default SecondPost;

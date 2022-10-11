@@ -42,12 +42,12 @@ const AboutMain = styled.main `
     .title{
         margin-bottom: 15px;
         font-size: 24px;
-    }
+    };
 `;
 
 const AboutMe = styled.div`
     padding: 15px;
-    `;
+`;
 
 const TagArea = styled.div`
     display:flex;
@@ -71,7 +71,7 @@ const TimeLine = styled.div`
         border: 1.5px solid #828282;
         border-radius: 10px;
         transform: translatex(-50%);
-    }
+    };
 `;
 
 export default About;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PostHeader from '../../components/PostHeader';
+import Giscus from '@giscus/react';
 
 const FirstPost = () => {
     return(
@@ -43,8 +44,24 @@ const FirstPost = () => {
                         하나 더 배운점 너무 useEffect를 사용하면 같은 state값을 넣어주지 않아도 코드의 복잡성이 올라가 
                         예상하지 못한 문제가 생길 수 있으니 남발하는건 자제하도록 해야겠다.
                     </PostText>
+                    
                 </div>
+
             </Main>
+            <Giscus
+                repo="spde3289/spde3289.github.io"
+                repoId="R_kgDOH_0sSg"
+                category="Announcements"
+                categoryId="DIC_kwDOH_0sSs4CR0Ux"
+                mapping="pathname"
+                term="Welcome to @giscus/react component!"
+                reactionsEnabled="1"
+                emitMetadata="0"
+                inputPosition="bottom"
+                theme="light"
+                lang="ko"
+                loading="anonymous"
+            />
             <Footer/>
         </>
     );
