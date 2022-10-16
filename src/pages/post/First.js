@@ -48,20 +48,23 @@ const FirstPost = () => {
                 </div>
 
             </Main>
-            <Giscus
-                repo="spde3289/spde3289.github.io"
-                repoId="R_kgDOH_0sSg"
-                category="Announcements"
-                categoryId="DIC_kwDOH_0sSs4CR0Ux"
-                mapping="pathname"
-                term="Welcome to @giscus/react component!"
-                reactionsEnabled="1"
-                emitMetadata="0"
-                inputPosition="bottom"
-                theme="light"
-                lang="ko"
-                loading="anonymous"
-            />
+            <Comment>
+                <Giscus
+                    repo="spde3289/spde3289.github.io"
+                    repoId="R_kgDOH_0sSg"
+                    category="Announcements"
+                    categoryId="DIC_kwDOH_0sSs4CR0Ux"
+                    mapping="pathname"
+                    term="Welcome to @giscus/react component!"
+                    reactionsEnabled="1"
+                    emitMetadata="0"
+                    inputPosition="bottom"
+                    theme="light"
+                    lang="ko"
+                    loading="anonymous"
+                />
+
+            </Comment>
             <Footer/>
         </>
     );
@@ -88,6 +91,11 @@ const CodeBlock = styled.pre`
 
 const Code = styled.div`
     color: #CCC;
+`;
+
+const Comment = styled.div`
+    margin: 0 auto;
+    width: 800px;
 `;
 
 
