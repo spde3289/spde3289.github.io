@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
+import Header from './Header';
 
 const content = [
-    {key: 1, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/first'},
+    {key: 1, title: 'useEffect 무한루프', body: 'asdasd', date:'2022.09.13', category: 'react', link: '/first'},
     {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/second'},
 ];
 
 const Passengers = () => {
+    Header(content)
 
     const maxPageNumber = 5;
     const totalPages = Math.ceil(content.length/maxPageNumber);
@@ -24,7 +26,7 @@ const Passengers = () => {
     const onPageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
+    
     const onPrevClick = () => {
         if((currentPage-1) % maxPageNumber === 0){
             setMaxPageLimit(maxPageLimit - maxPageNumber);
