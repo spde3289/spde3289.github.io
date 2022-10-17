@@ -23,26 +23,7 @@ const Home = () => {
                     <ContentBoxArea>
                         <Passengers/>
                     </ContentBoxArea>
-                    <CategoryList>
-                        <ul>
-                            웹
-                            <li>웹 게시글1</li>
-                            <li>웹 게시글2</li>
-                            <li>웹 게시글3</li>
-                        </ul>
-                        <ul>
-                            알고리즘
-                            <li>알고리즘문제풀이  게시글1</li>
-                            <li>알고리즘문제풀이  게시글2</li>
-                            <li>알고리즘문제풀이  게시글3</li>
-                        </ul>
-                        <ul>
-                            책
-                            <li>책 게시글1</li>
-                            <li>책 게시글2</li>
-                            <li>책 게시글3</li>
-                        </ul>
-                    </CategoryList>
+
                 </Content>
             </Main>
             <Footer/>
@@ -75,10 +56,6 @@ const ContentBoxArea = styled.div`
     flex-wrap: wrap;
 `;
 
-const CategoryList = styled.div`
-    border: 1px solid #000;
-    width: 270px;
-`;
 
 export default Home;
 
