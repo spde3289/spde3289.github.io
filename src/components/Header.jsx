@@ -4,12 +4,18 @@ import { useRef } from "react";
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 
-const Header = () => {
+const Header = (props) => {
+    console.log()
+
     const input = useRef();
     
     const inputOnClick = () => {
         input.current.focus();
     };
+
+    const search = (e) => {
+        console.log(e.target.value);
+    }
    
     return(
         <HeaderBar>
@@ -21,7 +27,7 @@ const Header = () => {
                 <Search >
                     <SearchTextara 
                     type='text' 
-                    onChange={(e)=>{console.log(e.target.value)}} 
+                    onChange={(e)=>{search(e)}}
                     ref={input} 
                     placeholder='search'/>
                     <AiOutlineSearch 
