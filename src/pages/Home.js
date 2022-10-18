@@ -4,8 +4,8 @@ import Header from '../components/Header';
 import Passengers from '../components/Passengers';
 import Footer from '../components/Footer';
 
-const Home = () => {
- 
+const Home = (props) => {
+    console.log(props.content)
     return(
         <div>
             <Header/>
