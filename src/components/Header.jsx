@@ -14,8 +14,10 @@ const Header = (props) => {
     };
 
     const search = (e) => {
-        console.log(e.target.value);
+        console.log(props);
     }
+
+
    
     return(
         <HeaderBar>
