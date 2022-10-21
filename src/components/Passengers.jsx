@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
-import Header from './Header';
 
 const content = [
-    {key: 1, title: 'useEffect 무한루프', body: 'asdasd', date:'2022.09.13', category: 'react', link: '/first'},
-    {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/second'},
+    {key: 1, title: 'useEffect 무한루프', body: 'asdasd', date:'2022.09.13', category: 'react', link: '/posts/first'},
+    {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/posts/second'},
 ];
 
 const Passengers = (props) => {
-    Header(content)
+   
 
     const maxPageNumber = 5;
     const totalPages = Math.ceil(content.length/maxPageNumber);
