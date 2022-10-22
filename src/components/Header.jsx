@@ -4,8 +4,14 @@ import { useRef } from "react";
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 
+const content = [
+    {key: 1, title: 'useEffect 무한루프', body: 'asdasd', date:'2022.09.13', category: 'react', link: '/first'},
+    {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/second'},
+];
+
 const Header = (props) => {
-    console.log()
+    console.log(props,content);
+
 
     const input = useRef();
     
@@ -13,9 +19,13 @@ const Header = (props) => {
         input.current.focus();
     };
 
+
     const search = (e) => {
-        console.log(props);
+        let value = e.target.value;
+        let S = content.filter(({title}) => title === value )
+        console.log(S)
     }
+
 
 
    
