@@ -3,15 +3,9 @@ import styled from "styled-components";
 import { useRef } from "react"; 
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
+import content from '../postInfo'
 
-const content = [
-    {key: 1, title: 'useEffect 무한루프', body: 'asdasd', date:'2022.09.13', category: 'react', link: '/first'},
-    {key: 2, title: '첫 글', body: 'asdasd', date:'2022.09.13', category: '웹', link: '/second'},
-];
-
-const Header = (props) => {
-    console.log(props,content);
-
+const Header = () => {
 
     const input = useRef();
     
@@ -19,16 +13,12 @@ const Header = (props) => {
         input.current.focus();
     };
 
-
     const search = (e) => {
         let value = e.target.value;
         let S = content.filter(({title}) => title === value )
         console.log(S)
     }
 
-
-
-   
     return(
         <HeaderBar>
             <NavBar>
@@ -63,7 +53,6 @@ const NavBar = styled.nav`
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
-    
 `
 
 const BlogName = styled.div`
@@ -99,9 +88,6 @@ const Search = styled.span`
     }
     &:hover:after{
         border-bottom: 2px solid #000;
-    }
-    &:click {
-        
     }
 `
 const SearchTextara = styled.input`
