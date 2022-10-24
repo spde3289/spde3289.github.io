@@ -5,7 +5,6 @@ import Passengers from '../components/Passengers';
 import Footer from '../components/Footer';
 
 const Home = (props) => {
-    console.log(props.content)
     return(
         <div>
             <Header/>
@@ -23,7 +22,6 @@ const Home = (props) => {
                     <ContentBoxArea>
                         <Passengers/>
                     </ContentBoxArea>
-
                 </Content>
             </Main>
             <Footer/>
