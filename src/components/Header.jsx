@@ -13,9 +13,9 @@ const Header = () => {
         input.current.focus();
     };
 
-    const search = (e) => {
+    const onsearch = (e) => {
         let value = e.target.value;
-        let S = content.filter(({title}) => title === value )
+        let S = content.filter((list) => list.title.includes(value))
         console.log(S)
     }
 
@@ -29,12 +29,11 @@ const Header = () => {
                 <Search >
                     <SearchTextara 
                     type='text' 
-                    onChange={(e)=>{search(e)}}
+                    onChange={onsearch}
                     ref={input} 
                     placeholder='search'/>
                     <AiOutlineSearch 
-                        onClick={()=>{inputOnClick()
-                        }}/>
+                        onClick={()=>{inputOnClick()}}/>
                 </Search>
             </HeaderMenu>
             </NavBar>
