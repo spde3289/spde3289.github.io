@@ -1,23 +1,37 @@
 import React from 'react';
 import styled from "styled-components";
+import { Routes, Route } from 'react-router-dom';
 import { useRef } from "react"; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 import content from '../postInfo'
+import Search from '../pages/Search';
 
 const Header = () => {
 
+    const his = useNavigate();
     const input = useRef();
-    
+    let value
+
     const inputOnClick = () => {
         input.current.focus();
     };
 
-    const onsearch = (e) => {
-        let value = e.target.value;
+    const onSearch = (e) => {
+        value = e.target.value;
         let S = content.filter((list) => list.title.includes(value))
         console.log(S)
     }
+
+    const onKeyDown = (e) => {
+        if(e.key==='Enter'){
+            his(`/search`);
+        }
+    }
+
+    <Routes>
+        <Route path={`/search`} element={<Search/>}/>
+    </Routes>
 
     return(
         <HeaderBar>
@@ -26,15 +40,16 @@ const Header = () => {
             <HeaderMenu>
                 <HeaderMenuItem><Link to='/posts'>posts</Link></HeaderMenuItem>
                 <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
-                <Search >
+                <SearchArea>
                     <SearchTextara 
                     type='text' 
-                    onChange={onsearch}
+                    onChange={onSearch}
+                    onKeyDown={onKeyDown}
                     ref={input} 
                     placeholder='search'/>
                     <AiOutlineSearch 
                         onClick={()=>{inputOnClick()}}/>
-                </Search>
+                </SearchArea>
             </HeaderMenu>
             </NavBar>
         </HeaderBar>
@@ -69,7 +84,7 @@ const HeaderMenuItem = styled.li`
     margin-right: 10px;
 `;
 
-const Search = styled.span`
+const SearchArea = styled.span`
     position: relative;
     display: flex;
     flex-wrap: wrap;
