@@ -3,7 +3,7 @@ import Pagination from './Pagination';
 import content from '../postInfo';
 
 const Passengers = () => {
-
+    
     const maxPageNumber = 5;
     const totalPages = Math.ceil(content.length/maxPageNumber);
     const [pageDate, setPageDate] = useState([]);
