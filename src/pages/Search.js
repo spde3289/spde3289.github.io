@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Passengers from '../components/Passengers'
 
-const Search = () => {
+const Search = (props) => {
+    console.log(props.value)
     return(
         <>
-            <Header></Header>
-            
-            <Footer></Footer>
+            <Header/>
+            <Passengers value={props.value} />
+            <Footer/>
         </>
     );
 }
