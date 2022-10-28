@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import { Routes, Route } from 'react-router-dom';
 import { useRef } from "react"; 
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 import content from '../postInfo'
 import Search from '../pages/Search';
+
 
 const Header = () => {
 
@@ -20,18 +20,16 @@ const Header = () => {
     const onSearch = (e) => {
         value = e.target.value;
         let S = content.filter((list) => list.title.includes(value))
-        console.log(S)
     }
-
+    
     const onKeyDown = (e) => {
+        console.log(value)
         if(e.key==='Enter'){
-            his(`/search`);
+            his('/search');
+            Search(value)
         }
     }
 
-    <Routes>
-        <Route path={`/search`} element={<Search/>}/>
-    </Routes>
 
     return(
         <HeaderBar>
