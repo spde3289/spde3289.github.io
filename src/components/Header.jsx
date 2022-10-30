@@ -1,32 +1,36 @@
-import React from 'react';
+import {React, useState } from 'react';
 import styled from "styled-components";
 import { useRef } from "react"; 
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 import content from '../postInfo'
-import Search from '../pages/Search';
+
 
 
 const Header = () => {
 
-    const his = useNavigate();
+    const [value, setValue] = useState();
+    
+    const navigate = useNavigate();
     const input = useRef();
-    let value
 
     const inputOnClick = () => {
         input.current.focus();
     };
 
     const onSearch = (e) => {
-        value = e.target.value;
-        let S = content.filter((list) => list.title.includes(value))
+        setValue(e.target.value);
+        content.filter((list) => list.title.includes(value))
     }
     
     const onKeyDown = (e) => {
         console.log(value)
         if(e.key==='Enter'){
-            his('/search');
-            Search(value)
+            navigate('/search',{
+                state: {
+                    value : value
+                }
+            });
         }
     }
 
