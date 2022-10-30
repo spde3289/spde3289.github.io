@@ -4,8 +4,9 @@ import content from '../postInfo';
 
 const Passengers = () => {
     
+    const contentList = [...content]
     const maxPageNumber = 5;
-    const totalPages = Math.ceil(content.length/maxPageNumber);
+    const totalPages = Math.ceil(contentList.length/maxPageNumber);
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
