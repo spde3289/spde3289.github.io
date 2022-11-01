@@ -22,10 +22,13 @@ const Header = () => {
         setValue(e.target.value);
         content.filter((list) => list.title.includes(value))
     }
-    
+ 
     const onKeyDown = (e) => {
         console.log(value)
-        if(e.key==='Enter'){
+        if(value === ''){
+            console.log('asd')
+        }
+        if(e.key ==='Enter'){
             navigate('/search',{
                 state: {
                     value : value
