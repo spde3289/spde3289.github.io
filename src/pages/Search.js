@@ -9,7 +9,7 @@ const Search = () => {
     const location = useLocation();
 
     const value = location.state.value;
-    console.log(value);
+    
     return(
         <>
             <Header/>
