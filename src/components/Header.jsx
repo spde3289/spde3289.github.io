@@ -9,6 +9,9 @@ import content from '../postInfo'
 
 const Header = () => {
 
+    var pattern = /\s/g;   // 공백 체크 정규표현식 - 탭, 스페이스
+
+    
     const [value, setValue] = useState();
     
     const navigate = useNavigate();
@@ -22,13 +25,12 @@ const Header = () => {
         setValue(e.target.value);
         content.filter((list) => list.title.includes(value))
     }
- 
+    
     const onKeyDown = (e) => {
-        console.log(value)
-        if(value === ''){
-            console.log('asd')
-        }
+        
+        
         if(e.key ==='Enter'){
+            console.log(value.match(pattern))
             navigate('/search',{
                 state: {
                     value : value
