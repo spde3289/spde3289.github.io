@@ -9,11 +9,8 @@ import content from '../postInfo'
 
 const Header = () => {
 
-    var pattern = /\s/g;   // 공백 체크 정규표현식 - 탭, 스페이스
-
-    
+    const pattern = /\s\^x/g;   // 공백 체크 정규표현식 - 탭, 스페이스
     const [value, setValue] = useState();
-    
     const navigate = useNavigate();
     const input = useRef();
 
@@ -23,21 +20,19 @@ const Header = () => {
 
     const onSearch = (e) => {
         setValue(e.target.value);
-        content.filter((list) => list.title.includes(value))
-    }
+        content.filter((list) => list.title.includes(value));
+    };
     
     const onKeyDown = (e) => {
-        
-        
         if(e.key ==='Enter'){
-            console.log(value.match(pattern))
+            console.log(value.match(pattern));
             navigate('/search',{
                 state: {
                     value : value
                 }
             });
-        }
-    }
+        };
+    };
 
 
     return(
@@ -74,7 +69,7 @@ const NavBar = styled.nav`
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
-`
+`;
 
 const BlogName = styled.div`
     font-size: 20px;
@@ -85,7 +80,7 @@ const HeaderMenu = styled.ul`
     display:flex;
     font-size: 20px;
     font-weight: bold;
-`
+`;
 
 const HeaderMenuItem = styled.li`
     margin-right: 10px;
@@ -98,7 +93,7 @@ const SearchArea = styled.span`
     align-items: center;
     &:hover {
         cursor: text;
-    }
+    };
     &:after{
         content: '';
         position: absolute;
@@ -106,10 +101,10 @@ const SearchArea = styled.span`
         left: 0;
         bottom: 0;
         border-bottom: 1px solid #000;
-    }
+    };
     &:hover:after{
         border-bottom: 2px solid #000;
-    }
+    };
 `
 const SearchTextara = styled.input`
     border: none;
