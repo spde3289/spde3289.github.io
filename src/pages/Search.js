@@ -9,13 +9,13 @@ const Search = () => {
     const location = useLocation();
 
     const value = location.state.value;
-    
+    console.log(value);
     return(
         <>
             <Header/>
             <Main>
                 <div>{value}</div>
-                <Passengers/>
+                <Passengers value={value} />
             </Main>
             <Footer/>
         </>
