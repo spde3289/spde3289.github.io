@@ -3,13 +3,9 @@ import styled from "styled-components";
 import { useRef } from "react"; 
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
-import content from '../postInfo'
-
-
 
 const Header = () => {
-
-    const pattern = /\s\^x/g;   // 공백 체크 정규표현식 - 탭, 스페이스
+  
     const [value, setValue] = useState();
     const navigate = useNavigate();
     const input = useRef();
@@ -20,17 +16,18 @@ const Header = () => {
 
     const onSearch = (e) => {
         setValue(e.target.value);
-        content.filter((list) => list.title.includes(value));
     };
     
     const onKeyDown = (e) => {
-        if(e.key ==='Enter'){
-            console.log(value.match(pattern));
+        
+        if(e.key ==='Enter' && value !== undefined){
             navigate('/search',{
                 state: {
                     value : value
                 }
             });
+        }else if(value === undefined && e.key ==='Enter' ){
+            alert('검색어를 입력해주세요');
         };
     };
 
