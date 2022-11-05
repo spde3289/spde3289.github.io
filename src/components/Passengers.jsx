@@ -2,21 +2,27 @@ import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
 import content from '../postInfo';
 
-const Passengers = () => {
-    
-    const contentList = [...content]
+const Passengers = (props) => {
+
     const maxPageNumber = 5;
-    const totalPages = Math.ceil(contentList.length/maxPageNumber);
+    const [contentList, setContentList] = useState(content);
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [maxPageLimit, setMaxPageLimit] = useState(5);
     const [minPageLimit, setMinPageLimit] = useState(0);
-
+    const totalPages = Math.ceil(contentList.length/maxPageNumber);
+    
     useEffect(()=>{
-        setPageDate(content.slice( currentPage*5-5 ,currentPage*5));
+        if(props.value){
+        setContentList(content.filter((list) => list.title.includes(props.value)))
+        };
+    },[props.value]);
+    
+    useEffect(()=>{
+        setPageDate(contentList.slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
-    },[currentPage]);
+    },[currentPage, contentList]);
 
     const onPageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
