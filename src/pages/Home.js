@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import Header from '../components/Header';
 import Passengers from '../components/Passengers';
-import Footer from '../components/Footer';
 
 const Home = (props) => {
     return(
         <div>
-            <Header/>
             <Main>
                 <Introduction>
                 <p>
@@ -24,7 +21,6 @@ const Home = (props) => {
                     </ContentBoxArea>
                 </Content>
             </Main>
-            <Footer/>
         </div>
     );
 };

@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import { useLocation } from 'react-router-dom';
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Passengers from '../components/Passengers'
 
 const Search = () => {
@@ -12,12 +10,10 @@ const Search = () => {
     console.log(value);
     return(
         <>
-            <Header/>
             <Main>
                 <div>{value}</div>
                 <Passengers value={value} />
             </Main>
-            <Footer/>
         </>
     );
 };

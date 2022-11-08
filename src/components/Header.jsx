@@ -16,16 +16,14 @@ const Header = () => {
 
     const onSearch = (e) => {
         setValue(e.target.value);
-         navigate('/search',{
+    /*  navigate('/search',{
             state: {
                 value : value
             }
-        }); 
+        });  */
     };
-    
 
-/*     const onKeyDown = (e) => {
-        
+   const onKeyDown = (e) => {
         if(e.key ==='Enter' && value !== undefined){
             navigate('/search',{
                 state: {
@@ -35,7 +33,7 @@ const Header = () => {
         }else if(value === undefined && e.key ==='Enter' ){
             alert('검색어를 입력해주세요');
         };
-    };  */
+    };  
 
 
     return(
@@ -49,7 +47,7 @@ const Header = () => {
                     <SearchTextara 
                     type='text' 
                     onChange={onSearch}
-                   /*  onKeyDown={onKeyDown}  */
+                    onKeyDown={onKeyDown}  
                     ref={input} 
                     placeholder='search'/>
                     <AiOutlineSearch 

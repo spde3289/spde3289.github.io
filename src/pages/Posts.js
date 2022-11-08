@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import Header from '../components/Header'
 import Passengers from '../components/Passengers'
-import Footer from '../components/Footer'
 //import Tag from '../components/Tag';
 
 const Posts = () => {
 
     return(
         <div>
-            <Header></Header>
             <PostMain> 
                 {/* <Filter>
                      <Tag tagName={'all'}/> 
@@ -19,7 +16,6 @@ const Posts = () => {
                     <Passengers/>
                 </PageClum>
             </PostMain>
-            <Footer></Footer>
         </div>
     );
 };

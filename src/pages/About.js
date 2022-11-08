@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Tag from '../components/Tag';
 
 const About = () => {
     return(
         <>
-            <Header></Header>
             <AboutMain>
                 <AboutMe>
                     <h2 className="title">About Me</h2>
@@ -30,7 +27,6 @@ const About = () => {
                     </TimeLine>
                 </TimeLineSection>
             </AboutMain>
-            <Footer></Footer>
         </>
     );
 };
