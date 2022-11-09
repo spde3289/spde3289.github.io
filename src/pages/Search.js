@@ -5,9 +5,7 @@ import Passengers from '../components/Passengers'
 
 const Search = () => {
     const location = useLocation();
-
     const value = location.state.value;
-    console.log(value);
     return(
         <>
             <Main>
