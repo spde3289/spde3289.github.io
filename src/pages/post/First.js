@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
-import GiscusApp from '../../components/GiscusApp'
+import GiscusApp from '../../components/GiscusApp';
 
 const FirstPost = () => {
     return(
@@ -18,12 +18,9 @@ const FirstPost = () => {
                     <PostText>
                         useEffect(함수,[종속성])
                     </PostText>
-                    <CodeBlock>
-                            <Code>const [page, setPage] = useState();</Code>
-                            <Code>useEffect{'(() => {'}</Code>
-                            <Code> setPage();   </Code>
-                            <Code>{'},[page]);'}</Code>      
-                    </CodeBlock>
+                    <div>
+                        <img alt="code1" src='../../imgs/carbon'/>
+                    </div>
                     <PostText>
                         useEffect는 종속성이 변했을 때 useEffect 내부에 있는 함수를 실행시키는 역할을 한다. 
                         자꾸 렌더링이 일어나는 이유를 찾아보니 함수부분에 setState를 하고 종속성에 state 값을 넣어줘서 그런거였다.
