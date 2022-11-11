@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
 import GiscusApp from '../../components/GiscusApp';
 
+
 const FirstPost = () => {
     return(
         <>
@@ -19,7 +20,7 @@ const FirstPost = () => {
                         useEffect(함수,[종속성])
                     </PostText>
                     <div>
-                        <img alt="code1" src='../../imgs/carbon'/>
+                        <img alt="code1" src='/img/useEffect_render1/code_1.png'/>
                     </div>
                     <PostText>
                         useEffect는 종속성이 변했을 때 useEffect 내부에 있는 함수를 실행시키는 역할을 한다. 
