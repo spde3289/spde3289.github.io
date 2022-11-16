@@ -2,7 +2,6 @@ import Giscus from '@giscus/react';
 
 export default function GiscusApp() {
   return (
-
     <Giscus
       repo="spde3289/spde3289.github.io"
       repoId="R_kgDOH_0sSg"
