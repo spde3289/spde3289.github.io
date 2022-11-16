@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 const ContentBox = (props) => {
+    console.log(props)
+
+    const category = props.category.map(date => (
+        <Category>{date}</Category>
+    ))
+
     return(
         <Link to={props.link} >
             <PostBox>
@@ -14,7 +20,9 @@ const ContentBox = (props) => {
                 </PostBoxContent>
                 <PostBoxInfo>
                     <div>{props.date}</div>
-                    <div>{props.category}</div>
+                    <CategoryList>
+                        {category}
+                    </CategoryList>
                 </PostBoxInfo>
             </PostBox>
         </Link>
@@ -53,6 +61,14 @@ const PostBoxInfo = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 13px;
+`;
+
+const CategoryList = styled.ul`
+    display: flex;
+`;
+
+const Category = styled.li`
+    margin-right: 5px;
 `;
 
 export default ContentBox;
