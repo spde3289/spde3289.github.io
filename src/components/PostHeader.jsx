@@ -17,6 +17,7 @@ const PostHeader = (props) => {
 };
 
 const ContentHeader = styled.header`
+    width: 1000px;
     margin-bottom: 50px;
     padding: 15px;
     border-bottom: 1px solid #ccc;
