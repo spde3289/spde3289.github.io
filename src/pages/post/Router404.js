@@ -13,13 +13,21 @@ const Router404 = () => {
                     tagName='react'
                     date='2022.11.10'/>
                     <div>
+                        <SubTitle>
+                            문제발생
+                        </SubTitle>
                         <PostText>
                             블로그에 댓글 기능을 추가하고 싶어 Giscus을 알아보고 바로 블로그에 적용을 한 후 
                             잘 동작하나 확인을 하던 와중 갑자기 404 페이지가 떠서 아주 놀랐던 기억이 있다.
+                            react-router를 사용할때 이동페이시에서 새로고침을 했을 때 생기는 문제였다.
                         </PostText>
+                        <SubTitle>
+                            이유
+                        </SubTitle>
                         <PostText>
-                            처음에는 내가 Giscus를 잘 못 적용해서 생긴 문제인줄 알고 댓글기능을 제거해도
-                            같은 문제가 발생하여 구글링을 해보니 react-router 기능을 사용할떄 
+                            React 는 CSR(클라이언트 사이트 렌더링)이다. 이를 React-Router 로 Path를
+                            이동 시킨다고 생각되지만 이름만 변경될뿐 이동이 되는 것은 아니다. 
+                            최초 접속 이후에 서버에 요청을 하면 index.html 파일을 보내준다 
                         </PostText>
                     </div>
                     <Comment>
@@ -42,8 +50,13 @@ const Main = styled.main`
     width: 1000px;
 `;
 
+const SubTitle = styled.h2`
+    font-size: 26px;
+`;
+
 const PostText = styled.p`
     font-size: 16px;
+    width: 900px;
     margin: 50px 0;
 `;
 
