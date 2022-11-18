@@ -29,6 +29,13 @@ const Router404 = () => {
                             이동 시킨다고 생각되지만 이름만 변경될뿐 이동이 되는 것은 아니다. 
                             최초 접속 이후에 서버에 요청을 하면 index.html 파일을 보내준다 
                         </PostText>
+                        <SubTitle>
+                            해결방법
+                        </SubTitle>
+                        <PostText>
+                            일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
+                            변경을 해주면 될 정도로 간단한 방법인데 단점으로 
+                        </PostText>
                     </div>
                     <Comment>
                         <B>
@@ -56,7 +63,6 @@ const SubTitle = styled.h2`
 
 const PostText = styled.p`
     font-size: 16px;
-    width: 900px;
     margin: 50px 0;
 `;
 
