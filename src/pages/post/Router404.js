@@ -33,8 +33,13 @@ const Router404 = () => {
                             해결방법
                         </SubTitle>
                         <PostText>
-                            일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
-                            변경을 해주면 될 정도로 간단한 방법인데 단점으로 
+                            <ul>
+                                <li>
+                                    일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
+                                    변경을 해주면 될 정도로 간단한 방법인데 단점으로는 못생긴 url과 검색 엔진 최적화(SEO)
+                                    가 안 된 다는 것 이다.
+                                </li>
+                            </ul>
                         </PostText>
                     </div>
                     <Comment>
