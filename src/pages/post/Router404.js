@@ -9,7 +9,7 @@ const Router404 = () => {
             <A>
                 <Main>
                     <PostHeader
-                    title="react-router 404 not found"
+                    title="React-router 404 not found"
                     tagName='react'
                     date='2022.11.10'/>
                     <div>
@@ -33,18 +33,20 @@ const Router404 = () => {
                             해결방법
                         </SubTitle>
                         <PostText>
-                            <ul>
-                                <li>
-                                    일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
-                                    변경을 해주면 될 정도로 간단한 방법인데 단점으로는 못생긴 url과 검색 엔진 최적화(SEO)
-                                    가 안 된 다는 것 이다.
-                                </li>
-                            </ul>
+                            <h3>HashRouter</h3>
+                                일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
+                                변경을 해주면 될 정도로 간단한 방법인데 <br/>단점으로는 못생긴 url과 검색 엔진 최적화(SEO)
+                                가 안 된 다는 것 이다.
+                                <br/>
+                            <h3>index.html 리다이렉션 - 깃허브</h3>
+                                일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
+                                변경을 해주면 될 정도로 간단한 방법인데 <br/>단점으로는 못생긴 url과 검색 엔진 최적화(SEO)
+                                가 안 된 다는 것 이다.
                         </PostText>
                     </div>
                     <Comment>
                         <B>
-                            <GiscusApp />
+                            <GiscusApp/>
                         </B>
                     </Comment>
                 </Main>
