@@ -4,8 +4,9 @@ import { GrNext, GrPrevious } from 'react-icons/gr'
 import ContentBox from './ContentBox';
 
 const Pagination = (props) => {
-
+    
     const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
+    console.log(props.pageDate)
 
     const postList = props.pageDate.map(date =>(
             <ContentBox
@@ -17,7 +18,7 @@ const Pagination = (props) => {
                 link={date.link}>
             </ContentBox>
     ));
-
+    console.log(postList)
     const page = [];
     for(let i = 1; i <= totalPages; i++) {
         page.push(i)
