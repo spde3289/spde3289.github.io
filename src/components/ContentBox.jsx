@@ -6,12 +6,12 @@ const ContentBox = (props) => {
     console.log(props)
 
     const category = props.category.map(date => (
-        <Category>{date}</Category>
+        <Category >{date}</Category>
     ))
 
     return(
-        <Link to={props.link} >
-            <PostBox>
+        <Link to={props.link}>
+            <PostBox >
                 <PostBoxTitle>
                     {props.title}
                 </PostBoxTitle>
