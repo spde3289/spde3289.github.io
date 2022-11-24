@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 const ContentBox = (props) => {
-    console.log(props)
 
-    const category = props.category.map(date => (
-        <Category >{date}</Category>
-    ))
+   const category = props.category.map(date => (
+        <Category key={date.key}>{date.category}</Category>
+    )) 
 
     return(
         <Link to={props.link}>
@@ -21,7 +20,7 @@ const ContentBox = (props) => {
                 <PostBoxInfo>
                     <div>{props.date}</div>
                     <CategoryList>
-                        {category}
+                        {category} 
                     </CategoryList>
                 </PostBoxInfo>
             </PostBox>
