@@ -20,7 +20,7 @@ const Passengers = (props) => {
     },[props.value]);
     
     useEffect(()=>{
-        setPageDate(contentList.slice( currentPage*5-5 ,currentPage*5));
+        setPageDate([...contentList].reverse().slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
     },[currentPage, contentList]);
 
