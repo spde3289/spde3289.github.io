@@ -20,7 +20,7 @@ const Pagination = (props) => {
     
     const page = [];
     for(let i = 1; i <= totalPages; i++) {
-        page.push(i)
+        page.push(i);
     };
 
     const handlePrevClick = ()=>{
