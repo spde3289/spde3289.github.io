@@ -38,9 +38,9 @@ const Router404 = () => {
                                 변경을 해주면 될 정도로 간단한 방법인데 <br/>단점으로는 못생긴 url과 검색 엔진 최적화(SEO)
                                 가 안 된 다는 것 이다.
                                 <br/>
+                                <br/>
                             <h3>index.html 리다이렉션 - 깃허브</h3>
-                                일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로 변경을 해주면 될 정도로 간단한 방법인데 <br/>
-                                단점으로는 못생긴 url과 검색 엔진 최적화(SEO)가 안 된 다는 것 이다.
+                                이 방법은 이 위에 있는 방법보다는 좀 더 복잡한 방법이다.
                         </PostText>
                     </div>
                     <Comment>
