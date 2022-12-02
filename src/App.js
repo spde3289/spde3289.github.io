@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,21 +10,22 @@ import UseEffectInfiniteLoop from './pages/post/UseEffectInfiniteLoop';
 import Router404 from './pages/post/Router404';
 import NotFound from './404NotFound';
 
-function App(props) {
+function App() {
+  console.log(process.env.PUBLIC_URL);
   return (
-    <>
-    <Header/>
-    <Routes>
-      <Route path='/*' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/posts' element={<Posts/>}/>
-      <Route path='/search' element={<Search/>}/>
-      <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
-      <Route path='/posts/Router_404' element={<Router404/>}/>
-      <Route path="*" element={<NotFound/>}/>
-    </Routes>
-    <Footer/>
-    </>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/posts' element={<Posts/>}/>
+          <Route path='/search' element={<Search/>}/>
+          <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
+          <Route path='/posts/Router_404' element={<Router404/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      <Footer/>
+    </BrowserRouter>
   );
 };
 
