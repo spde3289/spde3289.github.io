@@ -8,6 +8,7 @@ import Posts from'./pages/Posts';
 import Search from './pages/Search';
 import UseEffectInfiniteLoop from './pages/post/UseEffectInfiniteLoop';
 import Router404 from './pages/post/Router404';
+import BJ1193 from './pages/post/BJ1193';
 import NotFound from './404NotFound';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/search' element={<Search/>}/>
           <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
           <Route path='/posts/Router_404' element={<Router404/>}/>
+          <Route path='/posts/BJ1193' element={<BJ1193/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       <Footer/>

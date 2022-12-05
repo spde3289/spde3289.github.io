@@ -23,14 +23,14 @@ const content = [
     },
     {
         key: 3, 
-        title: 'useEffect 무한루프', 
+        title: '백준', 
         body: 'asdasd', 
         date:'2022.09.13', 
         category: [{
             key: 3, 
             category: ['웹']
         }], 
-        link: '/posts/useEffect_infinite_loop'
+        link: '/posts/BJ1193'
     },
     {
         key: 4, 
