@@ -25,12 +25,12 @@ const content = [
         key: 3, 
         title: '백준', 
         body: 'asdasd', 
-        date:'2022.09.13', 
+        date:'2022.12.01', 
         category: [{
             key: 3, 
-            category: ['웹']
+            category: ['알고리즘']
         }], 
-        link: '/posts/BJ1193'
+        link: '/posts/BJ1712'
     },
     {
         key: 4, 
