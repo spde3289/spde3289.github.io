@@ -29,7 +29,7 @@ const ContentBox = (props) => {
 };
 
 const PostBox = styled.div`
-    width: 640px;
+    width: 620px;
     height: 120px;
     margin-bottom: 20px;
     padding: 10px;
@@ -39,15 +39,17 @@ const PostBox = styled.div`
 
 const PostBoxTitle = styled.h2`
     margin-bottom: 12px;
+    font-size: 16px;
     ${PostBox}:hover & {
         text-decoration: underline
     };
 `;
 
 const PostBoxContent = styled.p`
-    width: 618px;
+    width: 580px;
     height:51px;
-    margin-bottom: 12px;
+    margin: 0 0 12px 20px;
+    //margin-bottom: 12px;
     font-size: 13px;
     white-space: normal;
     display: -webkit-box;
