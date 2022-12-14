@@ -59,6 +59,7 @@ const Main = styled.main`
 `;
 
 const PostText = styled.p`
+    width: 56em;
     font-size: 16px;
     margin: 50px 0;
 `;
