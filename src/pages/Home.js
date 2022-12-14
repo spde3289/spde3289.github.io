@@ -46,7 +46,6 @@ const Content = styled.div`
 
 const ContentBoxArea = styled.div`
     margin: 20px;
-    //border: 0.1px dashed #565655; // 나중에 제거
     flex-wrap: wrap;
 `;
 
