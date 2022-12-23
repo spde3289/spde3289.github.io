@@ -68,10 +68,10 @@ const PostText = styled.p`
 const CodeImg = styled.div`
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 `;
 
 const Comment = styled.div`
-    
     display: flex;
     justify-content: center;
 `;
