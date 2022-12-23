@@ -2,8 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
 import GiscusApp from '../../components/GiscusApp';
-//import Honeycomb from '../../imgs/BJ2292/honeycomb.png'
-//import Bj4344 from '../../imgs/BJ4344/BJ4344.png';
+import Bj4344 from '../../imgs/BJ4344/BJ4344.png';
 
 const BJ4344 = () => {
     return(
@@ -35,7 +34,7 @@ const BJ4344 = () => {
                             
                         </PostText>
                         <CodeImg>
-                            {/* <img alt="code1" src={Bj4344}/>  */}
+                            <img alt="code1" src={Bj4344}/> 
                         </CodeImg>
 
                     </div>
@@ -71,10 +70,10 @@ const PostText = styled.p`
 const CodeImg = styled.div`
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 `;
 
 const Comment = styled.div`
-    
     display: flex;
     justify-content: center;
 `;
