@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const ContentBox = (props) => {
 
-   const category = props.category.map(date => (
+    const category = props.category.map(date => (
         <Category key={date.key}>{date.category}</Category>
-    )) 
+    ));
 
     return(
         <Link to={props.link}>
