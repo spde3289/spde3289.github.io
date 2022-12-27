@@ -1,14 +1,16 @@
-import {React, useState } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { useRef } from "react"; 
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
+import useTitle from './ChangeTitle';
 
 const Header = () => {
   
-    const [value, setValue] = useState();
+    const [value, setValue] = useState(null);
     const navigate = useNavigate();
     const input = useRef();
+    const changeTitle = useTitle();
 
     const inputOnClick = () => {
         input.current.focus();
@@ -16,11 +18,6 @@ const Header = () => {
 
     const onSearch = (e) => {
         setValue(e.target.value);
-    /*  navigate('/search',{
-            state: {
-                value : value
-            }
-        });  */
     };
 
    const onKeyDown = (e) => {
@@ -30,19 +27,19 @@ const Header = () => {
                     value : value
                 }
             });
-        }else if(value === undefined && e.key ==='Enter' ){
+            changeTitle('Search')
+        }else if(value === null && e.key ==='Enter' ){
             alert('검색어를 입력해주세요');
         };
     };  
 
-
     return(
         <HeaderBar>
             <NavBar>
-                <BlogName><Link to='/'>spde3289.github.io</Link></BlogName>
+                <BlogName><Link onClick={()=>{changeTitle('Home')}} to='/'>spde3289.github.io</Link></BlogName>
             <HeaderMenu>
-                <HeaderMenuItem><Link to='/posts'>posts</Link></HeaderMenuItem>
-                <HeaderMenuItem><Link to='/about'>about</Link></HeaderMenuItem>
+                <HeaderMenuItem><Link onClick={()=>{changeTitle('Posts')}} to='/posts'>posts</Link></HeaderMenuItem>
+                <HeaderMenuItem><Link onClick={()=>{changeTitle('About')}} to='/about'>about</Link></HeaderMenuItem>
                 <SearchArea>
                     <SearchTextara 
                     type='text' 
@@ -106,7 +103,8 @@ const SearchArea = styled.span`
     &:hover:after{
         border-bottom: 2px solid #000;
     };
-`
+`;
+
 const SearchTextara = styled.input`
     border: none;
     outline: none;

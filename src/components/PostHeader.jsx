@@ -3,6 +3,12 @@ import styled from "styled-components";
 import Tag from './Tag';
 
 const PostHeader = (props) => {
+
+    const updateTitle = () => {
+        const htmlTitle = document.querySelector("title");
+        htmlTitle.innerHTML = props.title;
+    };
+
     return(
         <>
             <ContentHeader>

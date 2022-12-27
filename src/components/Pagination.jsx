@@ -6,7 +6,6 @@ import ContentBox from './ContentBox';
 const Pagination = (props) => {
     
     const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
-
     const postList = props.pageDate.map(date =>(
             <ContentBox
                 key={date.key}
