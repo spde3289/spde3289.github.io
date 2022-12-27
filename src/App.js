@@ -11,12 +11,12 @@ import Router404 from './pages/post/Router404';
 import BJ1712 from './pages/post/BJ1712';
 import BJ2292 from './pages/post/BJ2292';
 import BJ4344 from './pages/post/BJ4344';
+import Test from './pages/post/Test';
 import NotFound from './404NotFound';
 
 function App() {
-  console.log(process.env.PUBLIC_URL);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL} >
       <Header/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -25,9 +25,10 @@ function App() {
           <Route path='/search' element={<Search/>}/>
           <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
           <Route path='/posts/Router_404' element={<Router404/>}/>
-          <Route path='/posts/BJ1712' element={<BJ1712/>}/>
+          <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
           <Route path='/posts/BJ2292' element={<BJ2292/>}/>
           <Route path='/posts/BJ4344' element={<BJ4344/>}/>
+          <Route path='/posts/test' element={<Test/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       <Footer/>

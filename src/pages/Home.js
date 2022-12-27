@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers';
 
-const Home = (props) => {
+const Home = () => {
     return(
         <div>
             <Main>
