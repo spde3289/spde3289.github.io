@@ -4,10 +4,8 @@ import Tag from './Tag';
 
 const PostHeader = (props) => {
 
-    const updateTitle = () => {
-        const htmlTitle = document.querySelector("title");
-        htmlTitle.innerHTML = props.title;
-    };
+    const htmlTitle = document.querySelector("title");
+    htmlTitle.innerHTML = props.title;
 
     return(
         <>
