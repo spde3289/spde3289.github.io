@@ -59,6 +59,9 @@ const Router404 = () => {
                                     index.html 리다이렉션 - 깃허브
                                 </SubHeading>
                                 <PostText>
+                                    <a href='https://github.com/sujinleeme/spa-github-pages-ko'>https://github.com/sujinleeme/spa-github-pages-ko</a>
+                                </PostText>
+                                <PostText>
                                     이 방법은 위에 있는 방법보다는 나은 방법이다. 우선 퍼플릭 폴더에 404.html파일을 만든 후에 
                                 </PostText>
                                 <CodeImg>
