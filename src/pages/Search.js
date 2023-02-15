@@ -9,7 +9,6 @@ const Search = () => {
     return(
         <>
             <Main>
-                <div>{value}</div>
                 <Passengers value={value} />
             </Main>
         </>

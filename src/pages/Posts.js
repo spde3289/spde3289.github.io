@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
-import Tag from '../components/Tag';
+//import Tag from '../components/Tag';
 
 const Posts = () => {
 
     return(
         <div>
             <PostMain> 
-                <Filter>
+{/*                 <Filter>
                      <Tag tagName={'all'}/> 
                      <Tag tagName={'웹'}/> 
                      <Tag tagName={'알고리즘'}/> 
-                </Filter>
+                        </Filter> */}
                 <PageClum>
                     <Passengers/>
                 </PageClum>
@@ -26,12 +26,12 @@ const PostMain = styled.main`
     margin: 0 auto;
     font-size: 20px;
 `
-const Filter = styled.div`
+/* const Filter = styled.div`
     padding: 5px;
     display: flex;
     border: 1px dashed black;
     margin-bottom: 25px;
-`;
+`; */
 
 const PageClum = styled.div`
     width: 662px;
