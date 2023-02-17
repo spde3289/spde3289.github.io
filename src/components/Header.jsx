@@ -57,8 +57,11 @@ const Header = () => {
 };
 
 const HeaderBar = styled.header`
+    height: 75px;
     margin-bottom: 70px;
-    border-bottom: 0.5px solid #888;
+    border-bottom: 0.5px solid #a8a8a8;
+    display: flex;
+    align-items: center;
 `;
 
 const NavBar = styled.nav`
@@ -70,7 +73,7 @@ const NavBar = styled.nav`
 `;
 
 const BlogName = styled.div`
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 `;
 
