@@ -7,7 +7,7 @@ import Bj1712 from '../../imgs/BJ1712/BJ1712.png';
 const BJ1712 = () => {
     return(
         <>
-            <A>
+            <PostContainer>
                 <Main>
                     <PostHeader 
                     title='백준 1712번 알고리즘 [node.js]' 
@@ -37,17 +37,17 @@ const BJ1712 = () => {
 
                     </div>
                     <Comment>
-                        <B>
+                        
                             <GiscusApp/>
-                        </B>
+                       
                     </Comment>
                 </Main>
-            </A>
+            </PostContainer>
         </>
     );
 };
 
-const A = styled.div`
+const PostContainer = styled.div`
     display: flex;
     justify-content: center;
 `;
@@ -74,11 +74,10 @@ const CodeImg = styled.div`
 const Comment = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 1000px;
 `;
 
-const B = styled.div`
-    width: 800px;
-`;
 
 
 
