@@ -16,17 +16,17 @@ function App() {
   return (
     <BrowserRouter>  {/*  basename={process.env.PUBLIC_URL}  */}
       <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/posts' element={<Posts/>}/>
-          <Route path='/search' element={<Search/>}/>
-          <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
-          <Route path='/posts/Router_404' element={<Router404/>}/>
-          <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
-          <Route path='/posts/BJ2292' element={<BJ2292/>}/>
-          <Route path='/posts/BJ4344' element={<BJ4344/>}/>
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/posts' element={<Posts/>}/>
+            <Route path='/search' element={<Search/>}/>
+            <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
+            <Route path='/posts/Router_404' element={<Router404/>}/>
+            <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
+            <Route path='/posts/BJ2292' element={<BJ2292/>}/>
+            <Route path='/posts/BJ4344' element={<BJ4344/>}/>
+          </Routes>
       <Footer/>
     </BrowserRouter>
   );
