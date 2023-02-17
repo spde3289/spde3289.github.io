@@ -4,7 +4,6 @@ import Passengers from '../components/Passengers';
 
 const Home = () => {
     return(
-        <div>
             <Main>
                 <Introduction>
                 <p>
@@ -21,7 +20,6 @@ const Home = () => {
                     </ContentBoxArea>
                 </Content>
             </Main>
-        </div>
     );
 };
 
