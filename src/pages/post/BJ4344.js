@@ -7,7 +7,7 @@ import Bj4344 from '../../imgs/BJ4344/BJ4344.png';
 const BJ4344 = () => {
     return(
         <>
-            <A>
+            <PostContainer>
                 <Main>
                     <PostHeader 
                     title='백준 4344번 알고리즘 [node.js]' 
@@ -39,47 +39,43 @@ const BJ4344 = () => {
 
                     </div>
                     <Comment>
-                        <B>
-                            <GiscusApp/>
-                        </B>
+                        <GiscusApp/>
                     </Comment>
                 </Main>
-            </A>
+            </PostContainer>
         </>
     );
 };
 
-const A = styled.div`
-    display: flex;
-    justify-content: center;
+const PostContainer = styled.div`
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
 `;
 const Main = styled.main`
-    width: 1000px;
+    width: ${props => props.theme.boxSize.main};
 `;
 
 const SubTitle = styled.h2`
-    font-size: 26px;
+    font-size: ${props => console.log(props.theme)};
+    margin-bottom: ${props => props.theme.margin.titBtm};
 `;
 
 const PostText = styled.p`
-    width: 56em;
-    font-size: 16px;
-    margin: 50px 0;
+    font-size: ${props => props.theme.fontSize.nomal};
+    margin-bottom: ${props => props.theme.margin.textBtm};
 `;
 
 const CodeImg = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    margin-bottom:  ${props => props.theme.margin.textBtm};
 `;
 
 const Comment = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
-const B = styled.div`
-    width: 800px;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    align-items: ${props => props.theme.display.content};
+    width: ${props => props.theme.boxSize.main};
 `;
 
 

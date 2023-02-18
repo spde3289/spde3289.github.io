@@ -9,7 +9,7 @@ import Script from '../../imgs/Router404/script.png';
 const Router404 = () => {
     return(
         <>
-            <A>
+            <PostContainer>
                 <Main>
                     <PostHeader
                     title="React-router 404 not found"
@@ -34,47 +34,41 @@ const Router404 = () => {
                         <SubTitle>
                             해결방법
                         </SubTitle>
-                        <ul>
-                            <li>
-                                <SubHeading>
-                                    HashRouter
-                                </SubHeading>
-                                <PostText>
-                                    일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
-                                    변경을 해주면 될 정도로 간단한 방법인데 단점으로는 못생긴 url과 검색
-                                    엔진 최적화(SEO)가 안 된 다는 것 이다.                     
-                                </PostText>
-                                <CodeImg>
-                                    <img alt="code1" src={HashRouter}/> 
-                                </CodeImg>
-                                <PostText>
-                                    이와 같이 사용방법은 아주 간단한데 공식문서에서도 나와 있듯이 추천하는 방법은 아니다.                   
-                                </PostText>
-                                <PostText>
-                                    <a href='https://reactrouter.com/en/main/router-components/hash-router'>https://reactrouter.com/en/main/router-components/hash-router</a>
-                                </PostText>
-                            </li>
-                            <li>
-                                <SubHeading>
-                                    index.html 리다이렉션 - 깃허브
-                                </SubHeading>
-                                <PostText>
-                                    <a href='https://github.com/sujinleeme/spa-github-pages-ko'>https://github.com/sujinleeme/spa-github-pages-ko</a>
-                                </PostText>
-                                <PostText>
-                                    이 방법은 위에 있는 방법보다는 나은 방법이다. 우선 퍼플릭 폴더에 404.html파일을 만든 후에 
-                                </PostText>
-                                <CodeImg>
-                                    <img alt="code1" src={Not404}/> 
-                                </CodeImg>
-                                <PostText>
-                                    이 코드를 작성해주면 된다. 그리고 index.html파일에서 아래와 같은 코드를 작성해주면 된다. 
-                                </PostText>
-                                <CodeImg>
-                                    <img alt="code1" src={Script}/> 
-                                </CodeImg>
-                            </li>
-                        </ul>
+                            <SubTitle>
+                                HashRouter
+                            </SubTitle>
+                            <PostText>
+                                일단 HashRouter 를 사용하는 방법이 있다. BrowserRourer를 HashRouter로
+                                변경을 해주면 될 정도로 간단한 방법인데 단점으로는 못생긴 url과 검색
+                                엔진 최적화(SEO)가 안 된 다는 것 이다.                     
+                            </PostText>
+                            <CodeImg>
+                                <img alt="code1" src={HashRouter}/> 
+                            </CodeImg>
+                            <PostText>
+                                이와 같이 사용방법은 아주 간단한데 공식문서에서도 나와 있듯이 추천하는 방법은 아니다.                   
+                            </PostText>
+                            <PostText>
+                                <a href='https://reactrouter.com/en/main/router-components/hash-router'>https://reactrouter.com/en/main/router-components/hash-router</a>
+                            </PostText>
+                            <SubTitle>
+                                index.html 리다이렉션 - 깃허브
+                            </SubTitle>
+                            <PostText>
+                                <a href='https://github.com/sujinleeme/spa-github-pages-ko'>https://github.com/sujinleeme/spa-github-pages-ko</a>
+                            </PostText>
+                            <PostText>
+                                이 방법은 위에 있는 방법보다는 나은 방법이다. 우선 퍼플릭 폴더에 404.html파일을 만든 후에 
+                            </PostText>
+                            <CodeImg>
+                                <img alt="code1" src={Not404}/> 
+                            </CodeImg>
+                            <PostText>
+                                이 코드를 작성해주면 된다. 그리고 index.html파일에서 아래와 같은 코드를 작성해주면 된다. 
+                            </PostText>
+                            <CodeImg>
+                                <img alt="code1" src={Script}/> 
+                            </CodeImg>
                         <SubTitle>
                             마치며
                         </SubTitle>
@@ -90,58 +84,45 @@ const Router404 = () => {
                             이 문제의 가장 큰 성과는 문제를 해결함이 아니라 앞으로 내가 어떤 방법으로 문제를 해결해 나가면 될지를 배웠다고 생각이 든다. 
                         </PostText>
                     <Comment>
-                        <B>
-                            <GiscusApp/>
-                        </B>
+                        <GiscusApp/>
                     </Comment>
                 </Main>
-            </A>
+            </PostContainer>
         </>
     );
 };
 
 
-const A = styled.main`
-    display: flex;
-    justify-content: center;
+const PostContainer = styled.div`
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
 `;
-const Main = styled.div`
-    width: 1000px;
+const Main = styled.main`
+    width: ${props => props.theme.boxSize.main};
 `;
 
 const SubTitle = styled.h2`
-    font-size: 26px;
-    margin: 50px 0 20px;
-`;
-
-const SubHeading =styled.h3`
-    margin: 10px;
+    font-size: ${props => props.theme.fontSize.subTitle};
+    margin-bottom: ${props => props.theme.margin.titBtm};
 `;
 
 const PostText = styled.p`
-    margin-left: 30px;
-    width: 56em;
-    font-size: 16px;
-    letter-spacing: 1.1px;
-    line-height: 1.4;
+    font-size: ${props => props.theme.fontSize.nomal};
+    margin-bottom: ${props => props.theme.margin.textBtm};
 `;
 
 const CodeImg = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    margin-bottom:  ${props => props.theme.margin.textBtm};
 `;
 
 const Comment = styled.div`
-    margin: 40px;
-    display: flex;
-    justify-content: center;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    align-items: ${props => props.theme.display.content};
+    width: ${props => props.theme.boxSize.main};
 `;
-
-const B = styled.div`
-    width: 800px;
-`;
-
 
 
 export default Router404;

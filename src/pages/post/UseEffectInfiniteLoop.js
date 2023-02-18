@@ -8,7 +8,7 @@ import code_2 from '../../imgs/useEffect_render1/code_2.png';
 const UseEffectInfiniteLoop = () => {
 
     return(
-        <A>
+        <PostContainer>
             <Main>
                 <PostHeader 
                 title='useEffect 무한루프' 
@@ -42,8 +42,8 @@ const UseEffectInfiniteLoop = () => {
                         첫번째로는 종속성에 빈 배열을 제공하는 것이다. 빈 배열을 제공함으로써 종속성의 값이 변할 일이 없으니<br/>
                         단 한번만 마운트후 종료된다. <br/>
                     <br/>
-                        허나 위의 방법을 이용하면 처음 의도한 방법과 달리 state를 실행할때 마다 값이 변경되지 않는다. <br/>
-                        그러니 코드를 종속정에 의존하지 않도록 짜는 것 이다. 
+                        허나 위의 방법을 이용하면 처음 의도한 방법과 달리 state를 실행할 때 마다 값이 변경되지 않는다. <br/>
+                        그러니 코드를 종속정에 의존하지 않도록 짜는것 이다. 
                     </PostText>
                     <CodeImg>
                         <img alt='code2' src={code_2}/>
@@ -54,45 +54,42 @@ const UseEffectInfiniteLoop = () => {
                     </PostText>
                 </div>
                 <Comment>
-                    <B>
-                        <GiscusApp/>
-                    </B>
+                    <GiscusApp/>
                 </Comment>
             </Main>
-        </A>
+        </PostContainer>
     );
 };
 
-const A = styled.div`
-    display: flex;
-    justify-content: center;
+const PostContainer = styled.div`
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
 `;
 const Main = styled.main`
-    width: 1000px;
+    width: ${props => props.theme.boxSize.main};
 `;
 
+/* const SubTitle = styled.h2`
+    font-size: ${props => props.theme.fontSize.subTitle};
+    margin-bottom: ${props => props.theme.margin.titBtm};
+`; */
+
 const PostText = styled.p`
-    width: 56em;
-    font-size: 16px;
-    margin: 50px 0;
+    font-size: ${props => props.theme.fontSize.nomal};
+    margin-bottom: ${props => props.theme.margin.textBtm};
 `;
 
 const CodeImg = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    margin-bottom:  ${props => props.theme.margin.textBtm};
 `;
-
 
 const Comment = styled.div`
-    
-    display: flex;
-    justify-content: center;
+    display: ${props => props.theme.display.flex};
+    justify-content: ${props => props.theme.display.content};
+    align-items: ${props => props.theme.display.content};
+    width: ${props => props.theme.boxSize.main};
 `;
-
-const B = styled.div`
-    width: 800px;
-`;
-
 
 export default UseEffectInfiniteLoop;
