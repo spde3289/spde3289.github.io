@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Tag = (props) => {
     return(
-        <Tech>{props.tagName}</Tech>
+        <Tech onClick={()=>{console.log('aaa')}}>{props.tagName}</Tech>
     );
 };
 

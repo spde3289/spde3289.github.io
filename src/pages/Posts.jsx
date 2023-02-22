@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
-//import Tag from '../components/Tag';
+import Tag from '../components/Tag';
 
 const Posts = () => {
 
+    const [text, setText] = useState(' ');
+
+    const ChangeText = (e) => {
+        setText(e.target.value);
+    };
+
+
     return(
-        <div>
             <PostMain> 
-{/*                 <Filter>
-                     <Tag tagName={'all'}/> 
-                     <Tag tagName={'웹'}/> 
-                     <Tag tagName={'알고리즘'}/> 
-                        </Filter> */}
-                <PageClum>
-                    <Passengers/>
-                </PageClum>
+                <Search 
+                type="text" 
+                value={text} 
+                onChange={ChangeText}/>
+                <Filter>
+                     <Tag tagName={'all'} /> 
+                     <Tag tagName={'react'}/> 
+                     <Tag tagName={'react-router'}/> 
+                     <Tag tagName={'백준 문제풀이'}/> 
+                </Filter> 
+                <PostContainer>
+                    <Passengers value={ text.length===0 ? " " : text }/>
+                </PostContainer>
             </PostMain>
-        </div>
     );
 };
 
@@ -25,15 +35,20 @@ const PostMain = styled.main`
     width: 1000px;
     margin: 0 auto;
     font-size: 20px;
-`
-/* const Filter = styled.div`
+`;
+
+const Search = styled.input`
+    width: 200px;
+`;
+
+const Filter = styled.div`
     padding: 5px;
     display: flex;
     border: 1px dashed black;
     margin-bottom: 25px;
-`; */
+`; 
 
-const PageClum = styled.div`
+const PostContainer = styled.div`
     width: 662px;
     margin: 0 auto;
 `;
