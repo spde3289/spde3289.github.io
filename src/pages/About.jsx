@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Tag from '../components/Tag';
 
 const About = () => {
     return(
@@ -10,12 +9,6 @@ const About = () => {
                     <h2 className="title">About Me</h2>
                     이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
                     개발블로그를 시작한 김지훈 이라고 합니다.<p/>
-                    <TagArea>
-                        <Tag tagName='html'/>
-                        <Tag tagName='css'/>
-                        <Tag tagName='js'/>
-                        <Tag tagName='react'/>
-                    </TagArea>
                 </AboutMe>
                 <TimeLineSection>
                     <h2 className="title">Time Line</h2>
@@ -43,12 +36,6 @@ const AboutMain = styled.main `
 
 const AboutMe = styled.div`
     padding: 15px;
-`;
-
-const TagArea = styled.div`
-    display:flex;
-    font-size: 15px;
-    font-weight: 500;
 `;
 
 const TimeLineSection = styled.div`

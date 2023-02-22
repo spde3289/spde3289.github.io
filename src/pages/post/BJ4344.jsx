@@ -56,7 +56,7 @@ const Main = styled.main`
 `;
 
 const SubTitle = styled.h2`
-    font-size: ${props => console.log(props.theme)};
+    font-size: ${props => props.theme.fontSize.subTitle};
     margin-bottom: ${props => props.theme.margin.titBtm};
 `;
 

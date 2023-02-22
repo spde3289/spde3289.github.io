@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 
 const useTitle = () => {
     const [title, setTitle] = useState('Home');
@@ -13,3 +13,4 @@ const useTitle = () => {
 };
 
 export default useTitle;
+ */

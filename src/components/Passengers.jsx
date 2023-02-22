@@ -15,10 +15,10 @@ const Passengers = (props) => {
     
     useEffect(()=>{
         if(props.value){
-        setContentList(content.filter((list) => list.title.includes(props.value)))
+            setContentList(content.filter((list) => list.title.toLowerCase().includes(props.value.toLowerCase() )))
         };
     },[props.value]);
-    
+
     useEffect(()=>{
         setPageDate([...contentList].reverse().slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
@@ -53,7 +53,7 @@ const Passengers = (props) => {
     };
 
     return(
-        <>
+        <> 
             { !loading ? <Pagination {...pageInfo}
                 onPrevClick={onPrevClick}
                 onNextClick={onNextClick}

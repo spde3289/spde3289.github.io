@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route,  useLocation } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import Header from './components/Header';
@@ -17,6 +17,7 @@ import BJ4344 from './pages/post/BJ4344';
 
 function App() {
 
+  
   const theme = {
     boxSize: {
       main: '1000px',
@@ -35,10 +36,19 @@ function App() {
     },
   };
 
+  const location = useLocation(); 
+
+  useEffect(()=>{
+    if(location.state !== null){
+      const htmlTitle = document.querySelector("title");
+      htmlTitle.innerHTML = location.state.Title;
+    }
+  },[location.state])
+
   return (
     <ThemeProvider theme={theme}> 
       <GloblaStyle/>
-      <BrowserRouter>  {/*  basename={process.env.PUBLIC_URL}  */}
+ {/*  basename={process.env.PUBLIC_URL}  */}
         <Header/>
             <Routes>
               <Route path='/' element={<Home/>}/>
@@ -52,14 +62,15 @@ function App() {
               <Route path='/posts/BJ4344' element={<BJ4344/>}/>
             </Routes>
         <Footer/>
-      </BrowserRouter>
-    </ThemeProvider>
+        </ThemeProvider>
   );
 };
 
 const GloblaStyle = createGlobalStyle`
   body {
     margin: 0;
+    font-family: "Gothic A1";
+    font-weight: 500;
   };
 
   ul, li {
@@ -74,7 +85,7 @@ const GloblaStyle = createGlobalStyle`
   };
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   };
 
   p {
@@ -85,6 +96,15 @@ const GloblaStyle = createGlobalStyle`
     text-decoration: none;
     color: #000;
   };
+
+  input {
+    cursor: text;
+  }
+
+  .icon{
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export default App;

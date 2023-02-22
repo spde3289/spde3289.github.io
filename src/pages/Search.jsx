@@ -4,8 +4,11 @@ import { useLocation } from 'react-router-dom';
 import Passengers from '../components/Passengers'
 
 const Search = () => {
+
+
     const location = useLocation();
     const value = location.state.value;
+
     return(
         <>
             <Main>

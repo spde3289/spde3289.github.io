@@ -48,24 +48,29 @@ const Pagination = (props) => {
     });
 
     return(
-        <ContentPoint>
-            <PostColumn>
-               {postList}
-            </PostColumn>
-            <Pages>
-                <PrevPage 
-                    onClick={handlePrevClick} 
-                    disabled={currentPage === page[0]}> 
-                    <GrPrevious/>
-                </PrevPage>
-                    {pageNumber}
-                <NextPage 
-                    onClick={handleNextClick} 
-                    disabled={currentPage === page[page.length-1]}>
-                    <GrNext/>
-                </NextPage>
-            </Pages>
-        </ContentPoint>
+        <>
+            { props.pageDate === 0 ? 
+                <ContentPoint>
+                    <PostColumn>
+                    {postList}
+                    </PostColumn>
+                    <Pages>
+                        <PrevPage 
+                            onClick={handlePrevClick} 
+                            disabled={currentPage === page[0]}> 
+                            <GrPrevious/>
+                        </PrevPage>
+                            {pageNumber}
+                        <NextPage 
+                            onClick={handleNextClick} 
+                            disabled={currentPage === page[page.length-1]}>
+                            <GrNext/>
+                        </NextPage>
+                    </Pages>
+                </ContentPoint>
+             : <div>검색결과가 없습니다.</div> 
+            }
+        </>
     );
 };
 

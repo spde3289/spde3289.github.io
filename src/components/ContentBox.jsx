@@ -9,7 +9,7 @@ const ContentBox = (props) => {
     ));
 
     return(
-        <Link to={props.link}>
+        <Link to={props.link} state={{ Title: props.title }}>
             <PostBox >
                 <PostBoxTitle>
                     {props.title}

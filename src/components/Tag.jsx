@@ -9,13 +9,13 @@ const Tag = (props) => {
 
 const Tech = styled.div`
     display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    border: 1px solid #f3f3f4;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #313161;
     background: #f3f3f4;
     border-radius: 10px;
-    padding: 5px 7px;
-    margin-right: 10px;
+    padding: 7px 9px;
+    margin: 3px;
 `;
 
 export default Tag;

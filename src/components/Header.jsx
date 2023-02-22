@@ -1,55 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from "styled-components";
-import { useRef } from "react"; 
-import { Link, useNavigate } from 'react-router-dom';
-import { AiOutlineSearch } from 'react-icons/ai'
-import useTitle from './ChangeTitle';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  
-    const [value, setValue] = useState(null);
-    const navigate = useNavigate();
-    const input = useRef();
-    const changeTitle = useTitle();
-
-    const inputOnClick = () => {
-        input.current.focus();
-    };
-
-    const onSearch = (e) => {
-        setValue(e.target.value);
-    };
-
-   const onKeyDown = (e) => {
-        if(e.key ==='Enter' && value !== undefined){
-            navigate('/search',{
-                state: {
-                    value : value
-                }
-            });
-            changeTitle('Search')
-        }else if(value === null && e.key ==='Enter' ){
-            alert('검색어를 입력해주세요');
-        };
-    };  
 
     return(
         <HeaderBar>
             <NavBar>
-                <BlogName><Link onClick={()=>{changeTitle('Home')}} to='/'>spde3289.github.io</Link></BlogName>
+                <BlogName>
+                    <Link to='/' state={{ Title: 'Home' }}>spde3289.github.io</Link>
+                </BlogName>
             <HeaderMenu>
-                <HeaderMenuItem><Link onClick={()=>{changeTitle('Posts')}} to='/posts'>posts</Link></HeaderMenuItem>
-                <HeaderMenuItem><Link onClick={()=>{changeTitle('About')}} to='/about'>about</Link></HeaderMenuItem>
-                <SearchArea>
-                    <SearchTextara 
-                    type='text' 
-                    onChange={onSearch}
-                    onKeyDown={onKeyDown}  
-                    ref={input} 
-                    placeholder='search'/>
-                    <AiOutlineSearch 
-                        onClick={()=>{inputOnClick()}}/>
-                </SearchArea>
+                <HeaderMenuItem>
+                    <Link to='/posts' state={{ Title: 'Post' }}>posts</Link>
+                </HeaderMenuItem>
+                <HeaderMenuItem>
+                    <Link to='/about' state={{ Title: 'About' }}>about</Link>
+                </HeaderMenuItem>
             </HeaderMenu>
             </NavBar>
         </HeaderBar>
@@ -72,48 +39,20 @@ const NavBar = styled.nav`
     padding: 10px;
 `;
 
-const BlogName = styled.div`
+const BlogName = styled.h1`
     font-size: 24px;
     font-weight: bold;
 `;
 
 const HeaderMenu = styled.ul`
     display:flex;
+    align-items: center;
     font-size: 20px;
     font-weight: bold;
 `;
 
 const HeaderMenuItem = styled.li`
     margin-right: 10px;
-`;
-
-const SearchArea = styled.span`
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    &:hover {
-        cursor: text;
-    };
-    &:after{
-        content: '';
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        border-bottom: 1px solid #000;
-    };
-    &:hover:after{
-        border-bottom: 2px solid #000;
-    };
-`;
-
-const SearchTextara = styled.input`
-    border: none;
-    outline: none;
-    width: 150px;
-    height: 30px;
-    font-size: 14px;
 `;
 
 export default Header;
