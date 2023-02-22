@@ -15,7 +15,7 @@ const Router404 = () => {
                     title="React-router 404 not found"
                     tagName='react'
                     date='2022.11.10'/>
-
+                    <div>
                         <SubTitle>
                             문제발생
                         </SubTitle>
@@ -83,6 +83,7 @@ const Router404 = () => {
                             성장에 있어서도 안 좋은 방향이다.
                             이 문제의 가장 큰 성과는 문제를 해결함이 아니라 앞으로 내가 어떤 방법으로 문제를 해결해 나가면 될지를 배웠다고 생각이 든다. 
                         </PostText>
+                    </div>
                     <Comment>
                         <GiscusApp/>
                     </Comment>
@@ -97,6 +98,7 @@ const PostContainer = styled.div`
     display: ${props => props.theme.display.flex};
     justify-content: ${props => props.theme.display.content};
 `;
+
 const Main = styled.main`
     width: ${props => props.theme.boxSize.main};
 `;

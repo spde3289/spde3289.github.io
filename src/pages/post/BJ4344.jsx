@@ -51,6 +51,7 @@ const PostContainer = styled.div`
     display: ${props => props.theme.display.flex};
     justify-content: ${props => props.theme.display.content};
 `;
+
 const Main = styled.main`
     width: ${props => props.theme.boxSize.main};
 `;

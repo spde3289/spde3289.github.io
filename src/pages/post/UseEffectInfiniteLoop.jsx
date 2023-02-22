@@ -6,7 +6,7 @@ import code_1 from '../../imgs/useEffect_render1/code_1.png';
 import code_2 from '../../imgs/useEffect_render1/code_2.png';
 
 const UseEffectInfiniteLoop = () => {
-
+    
     return(
         <PostContainer>
             <Main>
@@ -65,6 +65,7 @@ const PostContainer = styled.div`
     display: ${props => props.theme.display.flex};
     justify-content: ${props => props.theme.display.content};
 `;
+
 const Main = styled.main`
     width: ${props => props.theme.boxSize.main};
 `;

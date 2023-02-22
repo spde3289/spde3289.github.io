@@ -4,9 +4,6 @@ import Tag from './Tag';
 
 const PostHeader = (props) => {
 
-    const htmlTitle = document.querySelector("title");
-    htmlTitle.innerHTML = props.title;
-
     return(
         <>
             <ContentHeader>
