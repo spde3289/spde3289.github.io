@@ -16,7 +16,7 @@ const Pagination = (props) => {
                 link={date.link}>
             </ContentBox>
     ));
-    
+
     const page = [];
     for(let i = 1; i <= totalPages; i++) {
         page.push(i);
@@ -49,26 +49,26 @@ const Pagination = (props) => {
 
     return(
         <>
-            { props.pageDate === 0 ? 
-                <ContentPoint>
-                    <PostColumn>
-                    {postList}
-                    </PostColumn>
-                    <Pages>
-                        <PrevPage 
-                            onClick={handlePrevClick} 
-                            disabled={currentPage === page[0]}> 
-                            <GrPrevious/>
-                        </PrevPage>
-                            {pageNumber}
-                        <NextPage 
-                            onClick={handleNextClick} 
-                            disabled={currentPage === page[page.length-1]}>
-                            <GrNext/>
-                        </NextPage>
-                    </Pages>
-                </ContentPoint>
-             : <div>검색결과가 없습니다.</div> 
+            { postList.length === 0 ? 
+            <div>검색결과가 없습니다.</div> :
+            <ContentPoint>
+                <PostColumn>
+                {postList}
+                </PostColumn>
+                <Pages>
+                    <PrevPage 
+                        onClick={handlePrevClick} 
+                        disabled={currentPage === page[0]}> 
+                        <GrPrevious/>
+                    </PrevPage>
+                        {pageNumber}
+                    <NextPage 
+                        onClick={handleNextClick} 
+                        disabled={currentPage === page[page.length-1]}>
+                        <GrNext/>
+                    </NextPage>
+                </Pages>
+            </ContentPoint>
             }
         </>
     );
