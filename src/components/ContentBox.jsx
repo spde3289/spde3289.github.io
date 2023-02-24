@@ -33,8 +33,7 @@ const PostBox = styled.div`
     height: 120px;
     margin-bottom: 20px;
     padding: 10px;
-    border: .3px solid #000;
-    border-radius: 10px;
+    border-bottom: .3px solid #ccc;
 `;
 
 const PostBoxTitle = styled.h2`

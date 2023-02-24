@@ -49,8 +49,9 @@ const Home = () => {
                         <Tag tagName={'CSS'}/>
                         <Tag tagName={'JavaScript'}/>
                         <Tag tagName={'react'}/>
-                        <Tag tagName={'react-Qurey'}/>
-                        <Tag tagName={'react'}/>
+                        <Tag tagName={'문제풀이'}/>
+                        {/* <Tag tagName={'react-Qurey'}/>
+                        <Tag tagName={'recoil'}/> */}
                     </Categories>
                 </IntroductionContainder>
                 <Container>
@@ -90,7 +91,7 @@ const Introduction = styled.p`
 `;
 
 const Categories = styled.div`
-    width: 320px;
+    width: 295px;
     display: flex;
     justify-content: center;
     align-content: center;

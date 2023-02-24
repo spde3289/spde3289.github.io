@@ -15,7 +15,6 @@ const Passengers = (props) => {
     
     useEffect(()=>{
         if(props.value){
-            console.log(props.value);
             setContentList(content.filter((list) => list.title.toLowerCase().includes(props.value.toLowerCase() )))
         };
     },[props.value]);
