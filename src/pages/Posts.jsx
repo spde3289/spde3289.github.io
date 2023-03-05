@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
 import Tag from '../components/Tag';
@@ -11,38 +11,64 @@ const Posts = () => {
     const [text, setText] = useState('');
     const [posState, setposState] = useState(0);
     const ref = useRef();
+
     
+    const [isLoaded, setIsLoaded] = useState(false);
+    const target = useRef(null);
 
     const ChangeText = (e) => {
         setText(e.target.value);
     };
 
     const DeleteText = () => {
-        setText('')
-    }
+        setText('');
+    };
 
     const OnClick = (type) => {
-        const maxWidth = ref.current.offsetWidth
-        const b = 200
+        const maxWidth = ref.current.offsetWidth;
+        const maxMove = 500;
 
         if(type === 'left'){
-            if(posState -b <= 0 ){
-                setposState(0)
+            if(posState - maxMove <= 0 ){
+                setposState(0);
             }else{
-                setposState(posState - b)
-            }
-            console.log('left')
+                setposState(posState - maxMove);
+            };
         }
         if(type === 'right'){
-            if(maxWidth - 800 - posState <=    b){
-                setposState(maxWidth - 800)
+            if(maxWidth - 800 - posState <= maxMove){
+                setposState(maxWidth - 800);
             }else{
-                setposState(posState +   b)
-            }
-            console.log('right')
-        }
+                setposState(posState + maxMove);
+            };
+        };
+    };
+
+
+    const getMoreItem = ()=> {
+        console.log('asd')
+        //setIsLoaded(false);
     }
-    console.log(posState)
+
+    const onIntersect = async ([entry], observer) => {
+        if (entry.isIntersecting && !isLoaded) {
+          observer.unobserve(entry.target);
+          await getMoreItem();
+          observer.observe(entry.target);
+        }
+      };
+    
+      useEffect(() => {
+        let observer;
+        if (target.current) {
+          observer = new IntersectionObserver(onIntersect, {
+            threshold: 0.4,
+          });
+          observer.observe(target.current);
+        }
+        return () => observer && observer.disconnect();
+      }, [target]);
+
     return(
             <PostMain> 
                 <SearchContainer>
@@ -70,11 +96,6 @@ const Posts = () => {
                             <Tag tagName={'# recoil'}/> 
                             <Tag tagName={'# css'}/> 
                             <Tag tagName={'# html'}/> 
-                            <Tag tagName={'# saddsadasdadsa'}/> 
-                            <Tag tagName={'# saddsadasdadsa'}/> 
-                            <Tag tagName={'# saddsadasdadsa'}/> 
-                            <Tag tagName={'# saddsadasdadsa'}/> 
-                            <Tag tagName={'# saddsadasdadsa'}/> 
                         </TagContainer>
                     </TagSlider> 
                     <SliderButton onClick={()=>{OnClick('right')}}>
@@ -84,6 +105,9 @@ const Posts = () => {
                 <PostContainer>
                     <Passengers value={ text.length === 0 ? " " : text }/>
                 </PostContainer>
+                <div ref={target}>
+                    { isLoaded } 여기!
+                 </div>
             </PostMain>
     );
 };
@@ -98,8 +122,8 @@ const SearchContainer = styled.div`
     width: 540px;
     padding: 2px;
     padding-left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+    border-bottom: 1px solid #ccc;
+    //border-radius: 20px;
     margin: 0 auto 25px;
     position: relative;
     display: flex;
@@ -143,8 +167,8 @@ const TagContainer = styled.div`
     position: absolute;
     left: ${ ({left})=>left};
     display: flex;
-    transition: transform ease-out .1s;
-    transform: translateX(110px);
+    //transform: translate3d(0px, 0px, 0px);
+    transition: all 500ms ease-in-out 0s;
 `;
 
 const SliderButton = styled.button`
