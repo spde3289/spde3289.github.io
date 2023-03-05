@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
 
-const Tag = (props) => {
+const Tag = ({tagName}) => {
+
+    const OnClick = () => {
+        console.log(tagName)
+    }
+
     return(
-        <Tech onClick={()=>{console.log(props.tagName)}}>{props.tagName}</Tech>
+        <Tech onClick={OnClick}>{tagName}</Tech>
     );
 };
 
