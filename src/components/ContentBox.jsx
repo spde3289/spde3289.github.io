@@ -2,25 +2,33 @@ import React from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-const ContentBox = (props) => {
+const ContentBox = ({
+    category,
+    link,
+    title,
+    body,
+    date
+}) => {
 
-    const category = props.category.map(date => (
+/*     const category = category.map(date => (
         <Category key={date.key}>{date.category}</Category>
-    ));
+    )); */
 
     return(
-        <Link to={props.link} state={{ Title: props.title }}>
+        <Link to={link} state={{ Title: title }}>
             <PostBox >
                 <PostBoxTitle>
-                    {props.title}
+                    {title}
                 </PostBoxTitle>
                 <PostBoxContent>
-                    {props.body}
+                    {body}
                 </PostBoxContent>
                 <PostBoxInfo>
-                    <div>{props.date}</div>
+                    <div>{date}</div>
                     <CategoryList>
-                        {category} 
+                        {category.map(date => (
+                            <Category key={date.key}>{date.category}</Category>
+                        ))} 
                     </CategoryList>
                 </PostBoxInfo>
             </PostBox>
@@ -48,8 +56,7 @@ const PostBoxContent = styled.p`
     width: 580px;
     height:51px;
     margin: 0 0 12px 20px;
-    //margin-bottom: 12px;
-    font-size: 13px;
+    font-size: 14px;
     white-space: normal;
     display: -webkit-box;
     -webkit-line-clamp: 3;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
-import content from '../postInfo';
+import postInfo from '../postInfo';
 
 const Passengers = (props) => {
 
     const maxPageNumber = 5;
-    const [contentList, setContentList] = useState(content);
+    const [contentList, setContentList] = useState(postInfo);
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +15,7 @@ const Passengers = (props) => {
     
     useEffect(()=>{
         if(props.value){
-            setContentList(content.filter((list) => list.title.toLowerCase().includes(props.value.toLowerCase() )))
+            setContentList(postInfo.filter((list) => list.title.toLowerCase().includes(props.value.toLowerCase() )))
         };
     },[props.value]);
 

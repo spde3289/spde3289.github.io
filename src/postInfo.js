@@ -28,7 +28,7 @@ const content = [
         date:'2022.12.01', 
         category: [{
             key: 3, 
-            category: ['알고리즘']
+            category: ['알고리즘', '백준 문제풀이']
         }], 
         link: '/posts/BJ1712'
     },
@@ -39,7 +39,7 @@ const content = [
         date:'2022.12.12', 
         category: [{
             key: 4, 
-            category: ['알고리즘']
+            category: ['알고리즘', '백준 문제풀이']
         }],  
         link: '/posts/BJ2292'
     },
@@ -50,7 +50,7 @@ const content = [
         date:'2022.12.21', 
         category: [{
             key: 5, 
-            category: ['알고리즘']
+            category: ['알고리즘', '백준 문제풀이']
         }],  
         link: '/posts/BJ4344'
     }

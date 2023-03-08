@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
 import Tag from '../components/Tag';
@@ -9,12 +9,8 @@ import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from '
 const Posts = () => {
 
     const [text, setText] = useState('');
-    const [posState, setposState] = useState(0);
+    const [posState, setPosState] = useState(0);
     const ref = useRef();
-
-    
-    const [isLoaded, setIsLoaded] = useState(false);
-    const target = useRef(null);
 
     const ChangeText = (e) => {
         setText(e.target.value);
@@ -26,48 +22,23 @@ const Posts = () => {
 
     const OnClick = (type) => {
         const maxWidth = ref.current.offsetWidth;
-        const maxMove = 500;
+        const maxMove = 700;
 
         if(type === 'left'){
             if(posState - maxMove <= 0 ){
-                setposState(0);
+                setPosState(0);
             }else{
-                setposState(posState - maxMove);
+                setPosState(posState - maxMove);
             };
         }
         if(type === 'right'){
             if(maxWidth - 800 - posState <= maxMove){
-                setposState(maxWidth - 800);
+                setPosState(maxWidth - 800);
             }else{
-                setposState(posState + maxMove);
+                setPosState(posState + maxMove);
             };
         };
     };
-
-
-    const getMoreItem = ()=> {
-        console.log('asd')
-        //setIsLoaded(false);
-    }
-
-    const onIntersect = async ([entry], observer) => {
-        if (entry.isIntersecting && !isLoaded) {
-          observer.unobserve(entry.target);
-          await getMoreItem();
-          observer.observe(entry.target);
-        }
-      };
-    
-      useEffect(() => {
-        let observer;
-        if (target.current) {
-          observer = new IntersectionObserver(onIntersect, {
-            threshold: 0.4,
-          });
-          observer.observe(target.current);
-        }
-        return () => observer && observer.disconnect();
-      }, [target]);
 
     return(
             <PostMain> 
@@ -95,7 +66,7 @@ const Posts = () => {
                             <Tag tagName={'# 백준 문제풀이'}/> 
                             <Tag tagName={'# recoil'}/> 
                             <Tag tagName={'# css'}/> 
-                            <Tag tagName={'# html'}/> 
+                            <Tag tagName={'# html'}/>
                         </TagContainer>
                     </TagSlider> 
                     <SliderButton onClick={()=>{OnClick('right')}}>
@@ -105,9 +76,6 @@ const Posts = () => {
                 <PostContainer>
                     <Passengers value={ text.length === 0 ? " " : text }/>
                 </PostContainer>
-                <div ref={target}>
-                    { isLoaded } 여기!
-                 </div>
             </PostMain>
     );
 };
@@ -172,7 +140,7 @@ const TagContainer = styled.div`
 `;
 
 const SliderButton = styled.button`
-    border: 0.1px solid black;
+    border: 1px solid black;
     background-color: white;
 `;
 

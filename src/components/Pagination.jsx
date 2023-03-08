@@ -56,17 +56,17 @@ const Pagination = (props) => {
                 {postList}
                 </PostColumn>
                 <Pages>
-                    <PrevPage 
+                    <PageBtn 
                         onClick={handlePrevClick} 
                         disabled={currentPage === page[0]}> 
                         <GrPrevious/>
-                    </PrevPage>
+                    </PageBtn>
                         {pageNumber}
-                    <NextPage 
+                    <PageBtn 
                         onClick={handleNextClick} 
                         disabled={currentPage === page[page.length-1]}>
                         <GrNext/>
-                    </NextPage>
+                    </PageBtn>
                 </Pages>
             </ContentPoint>
             }
@@ -88,8 +88,8 @@ const PostColumn = styled.div`
 
 const Pages = styled.ul`
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-evenly;
     li:hover{
         cursor: pointer;
     };
@@ -104,12 +104,9 @@ const Page = styled.li`
     text-align: center;
 `;
 
-const PrevPage = styled.button`
+const PageBtn = styled.button`
     margin-bottom: -4px;
 `;
 
-const NextPage = styled.button`
-    margin-bottom: -4px;
-`;
 
 export default Pagination;
