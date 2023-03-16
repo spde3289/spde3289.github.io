@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
+//import content from '../postInfo';
 
-const Tag = ({tagName}) => {
+const Tag = ({tagName, currentTag}) => {
 
     const OnClick = () => {
-        console.log(tagName);
-        console.log(tagName);
+        if(tagName.charAt(0) === '#'){
+            const tag = tagName.replace('# ', '')
+            //const list = content.filter(el => el.category === tag )
+            //console.log(list)
+            currentTag(tag)
+        }
         
     };
 

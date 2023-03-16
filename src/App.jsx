@@ -17,8 +17,7 @@ import BJ4344 from './pages/post/BJ4344';
 import ReactFragment from './pages/post/React-Fragment';
 
 function App() {
-
-  
+ 
   const theme = {
     boxSize: {
       main: '1000px',
@@ -49,7 +48,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}> 
       <GloblaStyle/>
- {/*  basename={process.env.PUBLIC_URL}  */}
         <Header/>
             <Routes>
               <Route path='/' element={<Home/>}/>

@@ -2,27 +2,34 @@ import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
 import postInfo from '../postInfo';
 
-const Passengers = (props) => {
+const Passengers = ({value, tag}) => {
 
     const maxPageNumber = 5;
     const [contentList, setContentList] = useState(postInfo);
+    const [newList, setNewList] = useState(contentList)
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [maxPageLimit, setMaxPageLimit] = useState(5);
     const [minPageLimit, setMinPageLimit] = useState(0);
-    const totalPages = Math.ceil(contentList.length/maxPageNumber);
+    const totalPages = Math.ceil(newList.length/maxPageNumber);
     
     useEffect(()=>{
-        if(props.value){
-            setContentList(postInfo.filter((list) => list.title.toLowerCase().includes(props.value.toLowerCase() )))
+        if(value){
+            setNewList(contentList.filter((list) => list.title.toLowerCase().includes(value.toLowerCase() )))
         };
-    },[props.value]);
+    },[value, tag, contentList]);
 
     useEffect(()=>{
-        setPageDate([...contentList].reverse().slice( currentPage*5-5 ,currentPage*5));
+        tag === 'all' ? 
+        setContentList(postInfo)  
+        : setContentList(postInfo.filter(el => el.category === tag ))
+    },[tag])
+
+    useEffect(()=>{
+        setPageDate([...newList].reverse().slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
-    },[currentPage, contentList]);
+    },[currentPage, newList]);
 
     const onPageChange = (pageNumber) => {
         setCurrentPage(pageNumber);

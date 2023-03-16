@@ -10,10 +10,10 @@ const ContentBox = ({
     date
 }) => {
 
-/*     const category = category.map(date => (
-        <Category key={date.key}>{date.category}</Category>
-    )); */
-
+/*      const CategoryList = category.map((date, index) => (
+        <Category key={index}>{date}</Category>
+    )); 
+ */
     return(
         <Link to={link} state={{ Title: title }}>
             <PostBox >
@@ -25,11 +25,11 @@ const ContentBox = ({
                 </PostBoxContent>
                 <PostBoxInfo>
                     <div>{date}</div>
-                    <CategoryList>
-                        {category.map(date => (
-                            <Category key={date.key}>{date.category}</Category>
-                        ))} 
-                    </CategoryList>
+                    <CategoryContainer>
+                        <Category>
+                            {category} 
+                        </Category>
+                    </CategoryContainer>
                 </PostBoxInfo>
             </PostBox>
         </Link>
@@ -70,7 +70,7 @@ const PostBoxInfo = styled.div`
     font-size: 13px;
 `;
 
-const CategoryList = styled.ul`
+const CategoryContainer = styled.ul`
     display: flex;
 `;
 

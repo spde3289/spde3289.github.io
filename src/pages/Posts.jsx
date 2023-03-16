@@ -5,11 +5,21 @@ import Tag from '../components/Tag';
 
 import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
+const taglist = [
+    '# all',
+    '# react',
+    '# react-router',
+    '# 백준 문제풀이',
+    '# recoil',
+    '# css',
+    '# html',
+]
 
 const Posts = () => {
 
     const [text, setText] = useState('');
     const [posState, setPosState] = useState(0);
+    const [tag, setTag] = useState('all');
     const ref = useRef();
 
     const ChangeText = (e) => {
@@ -40,6 +50,10 @@ const Posts = () => {
         };
     };
 
+    const CurrentTag = (e) => {
+        setTag(e)
+    }
+
     return(
             <PostMain> 
                 <SearchContainer>
@@ -60,13 +74,9 @@ const Posts = () => {
                     </SliderButton>
                     <TagSlider>
                         <TagContainer left={`-${posState}px`} ref={ref}>
-                            <Tag tagName={'# all'} /> 
-                            <Tag tagName={'# react'}/> 
-                            <Tag tagName={'# react-router'}/> 
-                            <Tag tagName={'# 백준 문제풀이'}/> 
-                            <Tag tagName={'# recoil'}/> 
-                            <Tag tagName={'# css'}/> 
-                            <Tag tagName={'# html'}/>
+                            {taglist.map(el =>
+                                <Tag key={el} tagName={el} currentTag={CurrentTag}/>
+                            )}
                         </TagContainer>
                     </TagSlider> 
                     <SliderButton onClick={()=>{OnClick('right')}}>
@@ -74,7 +84,7 @@ const Posts = () => {
                     </SliderButton>
                 </SliderContainer>
                 <PostContainer>
-                    <Passengers value={ text.length === 0 ? " " : text }/>
+                    <Passengers tag={tag} value={ text.length === 0 ? " " : text }/>
                 </PostContainer>
             </PostMain>
     );
