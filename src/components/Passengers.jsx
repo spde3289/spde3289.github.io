@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import Pagination from './Pagination';
 import postInfo from '../postInfo';
 
@@ -6,7 +6,7 @@ const Passengers = ({value, tag}) => {
 
     const maxPageNumber = 5;
     const [contentList, setContentList] = useState(postInfo);
-    const [newList, setNewList] = useState(contentList)
+    const [newList, setNewList] = useState(contentList);
     const [pageDate, setPageDate] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
@@ -14,19 +14,20 @@ const Passengers = ({value, tag}) => {
     const [minPageLimit, setMinPageLimit] = useState(0);
     const totalPages = Math.ceil(newList.length/maxPageNumber);
     
-    useEffect(()=>{
+    useMemo(()=>{
         if(value){
-            setNewList(contentList.filter((list) => list.title.toLowerCase().includes(value.toLowerCase() )))
+            setCurrentPage(1);            
+            setNewList(contentList.filter((list) => list.title.toLowerCase().includes(value.toLowerCase())));
         };
-    },[value, tag, contentList]);
+    },[value, contentList]);
 
-    useEffect(()=>{
+    useMemo(()=>{
         tag === 'all' ? 
-        setContentList(postInfo)  
+        setContentList(postInfo) 
         : setContentList(postInfo.filter(el => el.category === tag ))
     },[tag])
 
-    useEffect(()=>{
+    useMemo(()=>{
         setPageDate([...newList].reverse().slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
     },[currentPage, newList]);

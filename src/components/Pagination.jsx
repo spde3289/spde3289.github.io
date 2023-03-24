@@ -1,59 +1,57 @@
-import  React  from 'react';
+import  React, { useState, useMemo }  from 'react';
 import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import ContentBox from './ContentBox';
 
-const Pagination = (props) => {
+const Pagination = ({
+    currentPage,
+    maxPageLimit,
+    minPageLimit,
+    totalPages,
+    pageDate,
+    onPrevClick,
+    onNextClick,
+    onPageChange
+    }) => {
     
-    const {currentPage,maxPageLimit,minPageLimit,totalPages} = props;
-    const postList = props.pageDate.map(date =>(
-            <ContentBox
-                key={date.key}
-                title={date.title}
-                body={date.body}
-                date={date.date}
-                category={date.category}
-                link={date.link}>
-            </ContentBox>
-    ));
+    const [currentNum, setCurrentNum] = useState(1);
+
+    useMemo(()=>{setCurrentNum(currentPage)},[currentPage]);
 
     const page = [];
+
     for(let i = 1; i <= totalPages; i++) {
         page.push(i);
     };
 
     const handlePrevClick = ()=>{
-        props.onPrevClick();
+        onPrevClick();
     };
 
     const handleNextClick = ()=>{
-        props.onNextClick();
+        onNextClick();
     };
 
     const handlePageClick = (e)=>{
-        props.onPageChange(Number(e.target.id));
+        onPageChange(+e.target.id);
     };
-
-    const pageNumber = page.map(page=>{
-        if(page <= maxPageLimit && page > minPageLimit){
-            return(
-                <Page key={page} id={page} onClick={handlePageClick} 
-                    className={currentPage===page ? 'active' : null}>
-                    {page}
-                </Page>
-            );
-        }else{
-            return null;
-        };
-    });
 
     return(
         <>
-            { postList.length === 0 ? 
+            { pageDate.length === 0 ? 
             <div>검색결과가 없습니다.</div> :
             <ContentPoint>
                 <PostColumn>
-                {postList}
+                {pageDate.map(date =>(
+                    <ContentBox
+                        key={date.key}
+                        title={date.title}
+                        body={date.body}
+                        date={date.date}
+                        category={date.category}
+                        link={date.link}>
+                    </ContentBox>
+                ))}
                 </PostColumn>
                 <Pages>
                     <PageBtn 
@@ -61,7 +59,23 @@ const Pagination = (props) => {
                         disabled={currentPage === page[0]}> 
                         <GrPrevious/>
                     </PageBtn>
-                        {pageNumber}
+                        <Number>
+                            {page.map(page=>{
+                                if(page <= maxPageLimit && page > minPageLimit){
+                                    return(
+                                        <Page 
+                                        key={page} 
+                                        id={page} 
+                                        onClick={handlePageClick}
+                                        color={currentNum === page ? '#000' : '#ccc'}>
+                                            {page}
+                                        </Page>
+                                    );
+                                }else{
+                                    return null;
+                                };
+                            })}
+                        </Number>
                     <PageBtn 
                         onClick={handleNextClick} 
                         disabled={currentPage === page[page.length-1]}>
@@ -93,12 +107,14 @@ const Pages = styled.ul`
     li:hover{
         cursor: pointer;
     };
-    .active {
-        font-weight: bold;
-    };
 `;
     
+const Number = styled.div`
+    display: flex;
+`;
+
 const Page = styled.li`
+    color: ${({ color }) => color};
     margin: 5px;
     width: 20px;
     text-align: center;

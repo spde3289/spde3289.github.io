@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
 import Tag from '../components/Tag';
+import Test from '../components/Test';
 
 import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
@@ -50,48 +51,50 @@ const Posts = () => {
         };
     };
 
-    const CurrentTag = (e) => {
-        setTag(e)
-    }
+    const currentTag = (e) => {
+        setTag(e);
+    };
 
     return(
-            <PostMain> 
-                <SearchContainer>
-                    <AiOutlineSearch className='icon'/>
-                    <Search 
-                    type="text" 
-                    value={text}
-                    placeholder='search' 
-                    onChange={ChangeText}/>
-                    <AiOutlineClose 
-                    className={ 'icon positions ' + (text.length === 0 ? 'none' : '')}
-                    onClick={DeleteText}
-                    />
-                </SearchContainer>
-                <SliderContainer>
-                    <SliderButton onClick={()=>{OnClick('left')}}>
-                        <AiOutlineLeft className="icon"/>
-                    </SliderButton>
-                    <TagSlider>
-                        <TagContainer left={`-${posState}px`} ref={ref}>
-                            {taglist.map(el =>
-                                <Tag key={el} tagName={el} currentTag={CurrentTag}/>
-                            )}
-                        </TagContainer>
-                    </TagSlider> 
-                    <SliderButton onClick={()=>{OnClick('right')}}>
-                        <AiOutlineRight className="icon"/>
-                    </SliderButton>
-                </SliderContainer>
-                <PostContainer>
-                    <Passengers tag={tag} value={ text.length === 0 ? " " : text }/>
-                </PostContainer>
-            </PostMain>
+        <PostMain> 
+            <Test/>
+            <SearchContainer>
+                <AiOutlineSearch className='icon'/>
+                <Search 
+                type="text" 
+                value={text}
+                placeholder='search' 
+                onChange={ChangeText}/>
+                <AiOutlineClose 
+                className={ 'icon positions ' + (text.length === 0 ? 'none' : '')}
+                onClick={DeleteText}
+                />
+            </SearchContainer>
+            <SliderContainer>
+                <SliderButton onClick={()=>{OnClick('left')}}>
+                    <AiOutlineLeft className="icon"/>
+                </SliderButton>
+                <TagSlider>
+                    <TagContainer left={`-${posState}px`} ref={ref}>
+                        {taglist.map(el =>
+                            <Tag color={ el.replace('# ', '') === tag ? '#ccc' : '#fff' } key={el} tagName={el} currentTag={currentTag}/>
+                        )}
+                    </TagContainer>
+                </TagSlider> 
+                <SliderButton onClick={()=>{OnClick('right')}}>
+                    <AiOutlineRight className="icon"/>
+                </SliderButton>
+            </SliderContainer>
+            <PostContainer>
+                <Passengers tag={tag} value={ text.length === 0 ? " " : text }/>
+            </PostContainer>
+        </PostMain>
     );
 };
 
 const PostMain = styled.main`
     width: 1000px;
+    height: 100vh;
     margin: 0 auto;
     font-size: 20px;
 `;
@@ -101,7 +104,6 @@ const SearchContainer = styled.div`
     padding: 2px;
     padding-left: 10px;
     border-bottom: 1px solid #ccc;
-    //border-radius: 20px;
     margin: 0 auto 25px;
     position: relative;
     display: flex;
