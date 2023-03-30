@@ -7,8 +7,8 @@ const About = () => {
             <AboutMain>
                 <AboutMe>
                     <h2 className="title">About Me</h2>
-                    이곳에 저의 성장과정과 근황을 올리려고 합니다.<p/>
-                    개발블로그를 시작한 김지훈 이라고 합니다.<p/>
+                    이곳에 저의 성장과정과 근황을 올리려고 합니다.<br/>
+                    개발블로그를 시작한 김지훈 이라고 합니다.<br/>
                 </AboutMe>
                 <TimeLineSection>
                     <h2 className="title">Time Line</h2>

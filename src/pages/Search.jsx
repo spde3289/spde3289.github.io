@@ -4,8 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Passengers from '../components/Passengers'
 
 const Search = () => {
-
-
+    
     const location = useLocation();
     const value = location.state.value;
 
@@ -23,9 +22,8 @@ const Main = styled.main`
     flex-direction: column;
     justify-content: center;
     width: 1000px;
+    height: 100vh;
     margin: 0 auto;
 `;
-
-
 
 export default Search

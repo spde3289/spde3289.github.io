@@ -37,11 +37,10 @@ const ContentBox = ({
 };
 
 const PostBox = styled.div`
-    width: 620px;
-    height: 120px;
-    margin-bottom: 20px;
+    width: 600px;
+    margin: 0 auto 10px;
     padding: 10px;
-    border-bottom: .3px solid #ccc;
+    border-bottom: .3px solid #ccc;    
 `;
 
 const PostBoxTitle = styled.h2`

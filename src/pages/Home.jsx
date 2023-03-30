@@ -24,9 +24,9 @@ const Home = () => {
 
     const OnKeyDown = (e) => {
         if(e.key ==='Enter' && text !== undefined){
-            navigate('/search',{
+            navigate('/posts',{
                 state: {
-                    Title: 'Search',
+                    Title: 'post',
                     value : text
                 }
             });

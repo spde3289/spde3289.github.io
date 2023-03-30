@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from "styled-components";
 import Passengers from '../components/Passengers'
 import Tag from '../components/Tag';
-import Test from '../components/Test';
 
 import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
@@ -22,6 +22,12 @@ const Posts = () => {
     const [posState, setPosState] = useState(0);
     const [tag, setTag] = useState('all');
     const ref = useRef();
+    const location = useLocation();
+    const value = location.state.value;
+
+    useEffect(()=>{
+        value === undefined ? setText('') : setText(value);
+    },[value])
 
     const ChangeText = (e) => {
         setText(e.target.value);
@@ -57,7 +63,6 @@ const Posts = () => {
 
     return(
         <PostMain> 
-            <Test/>
             <SearchContainer>
                 <AiOutlineSearch className='icon'/>
                 <Search 

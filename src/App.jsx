@@ -15,6 +15,7 @@ import BJ1712 from './pages/post/BJ1712';
 import BJ2292 from './pages/post/BJ2292';
 import BJ4344 from './pages/post/BJ4344';
 import ReactFragment from './pages/post/React-Fragment';
+import ClipBoardCopy from './pages/post/ClipBoardCopy';
 
 function App() {
  
@@ -48,21 +49,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}> 
       <GloblaStyle/>
-        <Header/>
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/about' element={<About/>}/>
-              <Route path='/search' element={<Search/>}/>
-              <Route path='/posts' element={<Posts/>}/>
-              <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
-              <Route path='/posts/Router_404' element={<Router404/>}/>
-              <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
-              <Route path='/posts/BJ2292' element={<BJ2292/>}/>
-              <Route path='/posts/BJ4344' element={<BJ4344/>}/>
-              <Route path='/posts/React-Fragment' element={<ReactFragment/>}/>
-            </Routes>
-        <Footer/>
-        </ThemeProvider>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/search' element={<Search/>}/>
+        <Route path='/posts' element={<Posts/>}/>
+        <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
+        <Route path='/posts/Router_404' element={<Router404/>}/>
+        <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
+        <Route path='/posts/BJ2292' element={<BJ2292/>}/>
+        <Route path='/posts/BJ4344' element={<BJ4344/>}/>
+        <Route path='/posts/React-Fragment' element={<ReactFragment />}/>
+        <Route path='/posts/ClipBoardCopy' element={<ClipBoardCopy />}/>
+      </Routes>
+      <Footer/>
+    </ThemeProvider>
   );
 };
 
