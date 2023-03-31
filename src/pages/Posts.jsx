@@ -11,7 +11,7 @@ const taglist = [
     '# react',
     '# react-router',
     '# 백준 문제풀이',
-    '# recoil',
+    '# javascript',
     '# css',
     '# html',
 ]

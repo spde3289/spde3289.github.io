@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
 import GiscusApp from '../../components/GiscusApp';
 import code_1 from '../../imgs/useEffect_render1/code_1.png';
 import code_2 from '../../imgs/useEffect_render1/code_2.png';
+import { PostContainer, Main, PostText, CodeImg, Comment } from './style'
 
 const UseEffectInfiniteLoop = () => {
     
@@ -61,36 +61,5 @@ const UseEffectInfiniteLoop = () => {
     );
 };
 
-const PostContainer = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-`;
-
-const Main = styled.main`
-    width: ${props => props.theme.boxSize.main};
-`;
-
-/* const SubTitle = styled.h2`
-    font-size: ${props => props.theme.fontSize.subTitle};
-    margin-bottom: ${props => props.theme.margin.titBtm};
-`; */
-
-const PostText = styled.p`
-    font-size: ${props => props.theme.fontSize.nomal};
-    margin-bottom: ${props => props.theme.margin.textBtm};
-`;
-
-const CodeImg = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    margin-bottom:  ${props => props.theme.margin.textBtm};
-`;
-
-const Comment = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    align-items: ${props => props.theme.display.content};
-    width: ${props => props.theme.boxSize.main};
-`;
 
 export default UseEffectInfiniteLoop;

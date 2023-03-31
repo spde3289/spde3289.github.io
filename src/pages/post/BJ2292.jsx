@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
 import GiscusApp from '../../components/GiscusApp';
 //import Honeycomb from '../../imgs/BJ2292/honeycomb.png'
 import Bj2292 from '../../imgs/BJ2292/BJ2292.png';
+import { PostContainer, Main, PostText, CodeImg, Comment, SubTitle } from './style'
+
 
 const BJ2292 = () => {
     return(
@@ -47,39 +48,6 @@ const BJ2292 = () => {
         </>
     );
 };
-
-const PostContainer = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-`;
-
-const Main = styled.main`
-    width: ${props => props.theme.boxSize.main};
-`;
-
-const SubTitle = styled.h2`
-    font-size: ${props => props.theme.fontSize.subTitle};
-    margin-bottom: ${props => props.theme.margin.titBtm};
-`;
-
-const PostText = styled.p`
-    font-size: ${props => props.theme.fontSize.nomal};
-    margin-bottom: ${props => props.theme.margin.textBtm};
-`;
-
-const CodeImg = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    margin-bottom:  ${props => props.theme.margin.textBtm};
-`;
-
-const Comment = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    align-items: ${props => props.theme.display.content};
-    width: ${props => props.theme.boxSize.main};
-`;
-
 
 
 export default BJ2292;

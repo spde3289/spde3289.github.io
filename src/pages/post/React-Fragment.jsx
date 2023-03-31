@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
 import PostHeader from '../../components/PostHeader';
 import GiscusApp from '../../components/GiscusApp';
-//import Bj1712 from '../../imgs/BJ1712/BJ1712.png';
+import { PostContainer, Main, PostText, Comment, CodeContainer } from './style'
+
 
 const ReactFragment = () => {
 
@@ -136,50 +136,5 @@ const ReactFragment = () => {
         </>
     );
 };
-
-
-const PostContainer = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-`;
-
-const Main = styled.main`
-    width: ${props => props.theme.boxSize.main};
-`;
-/* 
-const SubTitle = styled.h2`
-    font-size: ${props => props.theme.fontSize.subTitle};
-    margin-bottom: ${props => props.theme.margin.titBtm};
-`; 
-*/
-const PostText = styled.p`
-    font-size: ${props => props.theme.fontSize.nomal};
-    margin  : ${props => props.theme.margin.textBtm};
-`;
-
-/* 
-    const CodeImg = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    margin-bottom:  ${props => props.theme.margin.textBtm};
-`;
- */
-const Comment = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    align-items: ${props => props.theme.display.content};
-    width: 1000px;
-`;
-
-const CodeContainer = styled.div`
-    background-color: #282c34;
-    //width: 800px;
-    //margin: 0 auto;
-    text-align: left;
-    color: #abb2bf;
-    font-size: 15px;
-`;
-
-
 
 export default ReactFragment;
