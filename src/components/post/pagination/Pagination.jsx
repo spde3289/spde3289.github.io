@@ -1,7 +1,7 @@
 import  React, { useState, useMemo }  from 'react';
 import styled from "styled-components";
 import { GrNext, GrPrevious } from 'react-icons/gr'
-import ContentBox from './ContentBox';
+import ContentBox from '../ContentBox';
 
 const Pagination = ({
     currentPage,
@@ -39,7 +39,7 @@ const Pagination = ({
     return(
         <>
             { pageDate.length === 0 ? 
-            <div>검색결과가 없습니다.</div> :
+            <NotFound>검색결과가 없습니다.</NotFound> :
             <ContentPoint>
                 <PostColumn>
                 {pageDate.map(date =>(
@@ -124,5 +124,8 @@ const PageBtn = styled.button`
     margin-bottom: -4px;
 `;
 
+const NotFound = styled.div`
+    text-align: center;
+`;
 
 export default Pagination;

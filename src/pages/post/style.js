@@ -14,7 +14,7 @@ export const SubTitle = styled.h2`
     margin-bottom: ${props => props.theme.margin.titBtm};
 `; 
 
-export const PostText = styled.p`
+export const TextBox = styled.p`
     font-size: ${props => props.theme.fontSize.nomal};
     margin  : ${props => props.theme.margin.textBtm};
 `;
@@ -25,16 +25,14 @@ export const CodeImg = styled.div`
     margin-bottom:  ${props => props.theme.margin.textBtm};
 `;
 
-export const Comment = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    align-items: ${props => props.theme.display.content};
-    width: 1000px;
-`;
-
 export const CodeContainer = styled.div`
     background-color: #282c34;
     text-align: left;
     color: #abb2bf;
     font-size: 15px;
+`;
+
+export const ReferenceLink = styled.a`
+    text-decoration: underline;
+
 `;

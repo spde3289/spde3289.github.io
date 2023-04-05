@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from "styled-components";
-import Passengers from '../components/Passengers'
+import Passengers from '../components/post/pagination/Passengers'
 import Tag from '../components/Tag';
 
 import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'

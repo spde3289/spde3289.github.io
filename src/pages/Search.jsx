@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { useLocation } from 'react-router-dom';
-import Passengers from '../components/Passengers'
+import Passengers from '../components/post/pagination/Passengers'
 
 const Search = () => {
     

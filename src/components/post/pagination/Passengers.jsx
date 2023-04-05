@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import Pagination from './Pagination';
-import postInfo from '../postInfo';
+import postInfo from '../../../postInfo';
 
 const Passengers = ({value, tag}) => {
 

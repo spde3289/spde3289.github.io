@@ -35,7 +35,6 @@ const Home = () => {
         };
     };  
 
-
     return(
             <Main>
                 <IntroductionContainder> 

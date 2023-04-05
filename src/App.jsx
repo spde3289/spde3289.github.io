@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route,  useLocation } from 'react-router-dom';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { GlobleStyle } from './GlobleStyled';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,33 +10,15 @@ import About from'./pages/About';
 import Posts from'./pages/Posts';
 import Search from './pages/Search';
 // 포스트
-import UseEffectInfiniteLoop from './pages/post/UseEffectInfiniteLoop';
-import Router404 from './pages/post/Router404';
-import BJ1712 from './pages/post/BJ1712';
-import BJ2292 from './pages/post/BJ2292';
-import BJ4344 from './pages/post/BJ4344';
-import ReactFragment from './pages/post/React-Fragment';
-import ClipBoardCopy from './pages/post/ClipBoardCopy';
+import UseEffectInfiniteLoop from './pages/post/react/UseEffectInfiniteLoop';
+import Router404 from './pages/post/react/Router404';
+import BJ1712 from './pages/post/BaekjunProblem/BJ1712';
+import BJ2292 from './pages/post/BaekjunProblem/BJ2292';
+import BJ4344 from './pages/post/BaekjunProblem/BJ4344';
+import ReactFragment from './pages/post/react/React-Fragment';
+import ClipBoardCopy from './pages/post/javascript/ClipBoardCopy';
 
 function App() {
- 
-  const theme = {
-    boxSize: {
-      main: '1000px',
-    },
-    fontSize: {
-      subTitle: '26px',
-      nomal: '16px',
-    },
-    margin: {
-      titBtm: '20px',
-      textBtm: '50px',
-    },
-    display : {
-      flex: 'flex',
-      content: 'center'
-    },
-  };
 
   const location = useLocation(); 
 
@@ -48,7 +31,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}> 
-      <GloblaStyle/>
+      <GlobleStyle/>
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -68,45 +51,24 @@ function App() {
   );
 };
 
-const GloblaStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    font-family: "Gothic A1";
-    font-weight: 500;
-  };
 
-  ul, li {
-  text-decoration: none;
-  list-style:none;
-  padding-left:0px;
-  margin: 0;
-  };
+const theme = {
+  boxSize: {
+    main: '1000px',
+  },
+  fontSize: {
+    subTitle: '26px',
+    nomal: '16px',
+  },
+  margin: {
+    titBtm: '20px',
+    textBtm: '50px',
+  },
+  display : {
+    flex: 'flex',
+    content: 'center'
+  },
+};
 
-  h2, p {
-    margin: 0;
-  };
-
-  h3 {
-    font-size: 1.2rem;
-  };
-
-  p {
-    font-size: 1rem;
-  };
-
-  a {
-    text-decoration: none;
-    color: #000;
-  };
-
-  input {
-    cursor: text;
-  }
-
-  .icon{
-    width: 24px;
-    height: 24px;
-  }
-`;
 
 export default App;
