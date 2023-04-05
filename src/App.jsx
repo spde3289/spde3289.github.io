@@ -17,6 +17,7 @@ import BJ2292 from './pages/post/BaekjunProblem/BJ2292';
 import BJ4344 from './pages/post/BaekjunProblem/BJ4344';
 import ReactFragment from './pages/post/react/React-Fragment';
 import ClipBoardCopy from './pages/post/javascript/ClipBoardCopy';
+import StyledComponent from './pages/post/styledComponent/styledComponent';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path='/posts/BJ4344' element={<BJ4344/>}/>
         <Route path='/posts/React-Fragment' element={<ReactFragment />}/>
         <Route path='/posts/ClipBoardCopy' element={<ClipBoardCopy />}/>
+        <Route path='/posts/StyledComponent' element={<StyledComponent />}/>
       </Routes>
       <Footer/>
     </ThemeProvider>
