@@ -23,7 +23,7 @@ const Posts = () => {
     const [tag, setTag] = useState('all');
     const ref = useRef();
     const location = useLocation();
-    const value = location.state.value;
+    const value = location.state?.value;
 
     useEffect(()=>{
         value === undefined ? setText('') : setText(value);
