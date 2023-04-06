@@ -63,6 +63,14 @@ const content = [
         category: 'styled-component',  
         link: 'StyledComponent'
     },
+    {
+        key: 9, 
+        title: 'styled-component 전역 스타일링에 대해 알아보자', 
+        body: '텍스트를 복사하는 기능을 만들고 싶을 때 클립보드 기능을 이용하면 쉽게 만들 수 있다 이렇게 클립보드API를 이용하면 간단하게 클립보드를 이용한 복사기능을 만들 수 있다. 이때 주의사항이 있는데 클립보드에 엑세스 하면 암호나 신용카드 번호와 같이 중요한 정보에 엑세스 할 수 있는 문제가 생긴다 이와 같은 이유 때문에 http가 없는 임시 서버에서 실험을 할 경우 동작하지 않을 수 있다.', 
+        date:'2023.02.05', 
+        category: 'styled-component',  
+        link: 'StyledComponent-GlobleStyle'
+    },
 ];
 
 export default content

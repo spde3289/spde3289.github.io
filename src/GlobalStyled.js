@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobleStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: "Gothic A1";
@@ -40,3 +40,5 @@ export const GlobleStyle = createGlobalStyle`
     height: 24px;
   }
 `;
+
+export default GlobalStyle;

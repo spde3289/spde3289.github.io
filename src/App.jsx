@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Routes, Route,  useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { GlobleStyle } from './GlobleStyled';
+import GlobalStyle from './GlobalStyled';
+
+import theme from './theme';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -18,6 +20,7 @@ import BJ4344 from './pages/post/BaekjunProblem/BJ4344';
 import ReactFragment from './pages/post/react/React-Fragment';
 import ClipBoardCopy from './pages/post/javascript/ClipBoardCopy';
 import StyledComponent from './pages/post/styledComponent/styledComponent';
+import StyledComponentGlobleStyle from './pages/post/styledComponent/styledComponentGlobleStyle';
 
 function App() {
 
@@ -32,7 +35,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}> 
-      <GlobleStyle/>
+      <GlobalStyle/>
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -47,30 +50,11 @@ function App() {
         <Route path='/posts/React-Fragment' element={<ReactFragment />}/>
         <Route path='/posts/ClipBoardCopy' element={<ClipBoardCopy />}/>
         <Route path='/posts/StyledComponent' element={<StyledComponent />}/>
+        <Route path='/posts/StyledComponent-GlobleStyle' element={<StyledComponentGlobleStyle />}/>
       </Routes>
       <Footer/>
     </ThemeProvider>
   );
 };
-
-
-const theme = {
-  boxSize: {
-    main: '1000px',
-  },
-  fontSize: {
-    subTitle: '26px',
-    nomal: '16px',
-  },
-  margin: {
-    titBtm: '20px',
-    textBtm: '50px',
-  },
-  display : {
-    flex: 'flex',
-    content: 'center'
-  },
-};
-
 
 export default App;
