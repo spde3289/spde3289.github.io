@@ -1,8 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 import PostHeader from '../../../components/post/PostHeader'
 import GiscusApp from '../../../components/post/GiscusApp';
-import code2 from './code2.txt'
-import { PostContainer, Main, SubTitle, TextBox, CodeContainer, ReferenceLink } from '../style'
+import { 
+    PostContainer, 
+    Main, 
+    SubTitle, 
+    TextBox, 
+    CodeContainer, 
+    ReferenceLink, } from '../style'
 
 export default function StyledComponent(){
 
@@ -23,7 +29,7 @@ export default function StyledComponent(){
                         styled-component의 장점으로는 css의 컴포넌트화로 유지보수가 쉬워지고 재사용성이 올라간다.
                     </TextBox>
                     <SubTitle>
-                        패기지 설치
+                        패키지 설치
                     </SubTitle>
                     <CodeContainer>
                         <pre>
@@ -55,10 +61,79 @@ export default function StyledComponent(){
         text-align: center;
         color: palevioletred;
     \`;
+
+    render(
+        <Title>타이틀1</Title>
+    )
                                 `}
                             </code>
                         </pre>
                     </CodeContainer>
+                    <Box>
+                        <Title>타이틀1</Title>
+                    </Box>
+                    <TextBox>
+                        태그이름을 선언해 준후에 styled.태그 뒤에 ``(백틱)을 사용해서 원하는 css를 작성하면 된다. <br />
+                        이때 Title이라는 태그를 중복해서 사용할 때 color색상만 다르게 하고 싶다면 props로 값을 넘겨줄 수 있다.
+                    </TextBox>
+                    <CodeContainer>
+                        <pre>
+                            <code>
+                                {`
+    import styled from "styled-components";
+
+    const Title = styled.h1\`
+        font-size: 1.5em;
+        text-align: center;
+        color: \${({color})=> color ? color : 'palevioletred'}
+    \`;
+
+    render(
+        <Title>타이틀1</Title>
+        <Title color='blue'>타이틀2</Title>
+    )
+                                `}
+                            </code>
+                        </pre>
+                    </CodeContainer>
+                    <Box>
+                        <Title>타이틀1</Title>
+                        <Title color='blue'>타이틀2</Title>
+                    </Box>
+                    <TextBox>
+                        그리고 이전에 선언했던 태그를 상속하여 작성할 수 있다.
+                    </TextBox>
+                    <CodeContainer>
+                        <pre>
+                            <code>
+                                {`
+    import styled from "styled-components";
+
+    const Title = styled.h1\`
+        font-size: 1.5em;
+        text-align: center;
+        color: \${({color})=> color ? color : 'palevioletred'}
+    \`;
+    
+    const SubscribeTitle = styled(Title)\`
+        border: 1px solid palevioletred;
+    \`;
+
+    render(
+        <Title>타이틀1</Title>
+        <SubscribeTitle color='blue'>타이틀2</SubscribeTitle>
+    )
+                                `}
+                            </code>
+                        </pre>
+                    </CodeContainer>
+                    <Box>
+                        <Title>타이틀1</Title>
+                        <SubscribeTitle color='blue'>타이틀2</SubscribeTitle>
+                    </Box>
+                    <ReferenceLink href='https://styled-components.com/'>
+                        styled-component 공식문서
+                    </ReferenceLink>
                 </div>
                 <GiscusApp />
             </Main>
@@ -66,3 +141,21 @@ export default function StyledComponent(){
         </PostContainer>
     )
 }
+
+const Box = styled.div`
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: ${({color})=> color ? color : 'palevioletred'};
+`;
+
+const SubscribeTitle = styled(Title)`
+    border: 1px solid palevioletred;
+`;
+

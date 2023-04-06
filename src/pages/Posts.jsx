@@ -14,6 +14,7 @@ const taglist = [
     '# javascript',
     '# css',
     '# html',
+    '# styled-component',
 ]
 
 const Posts = () => {

@@ -58,7 +58,7 @@ const content = [
     {
         key: 8, 
         title: 'styled-component를 사용해보자', 
-        body: '텍스트를 복사하는 기능을 만들고 싶을 때 클립보드 기능을 이용하면 쉽게 만들 수 있다 이렇게 클립보드API를 이용하면 간단하게 클립보드를 이용한 복사기능을 만들 수 있다. 이때 주의사항이 있는데 클립보드에 엑세스 하면 암호나 신용카드 번호와 같이 중요한 정보에 엑세스 할 수 있는 문제가 생긴다 이와 같은 이유 때문에 http가 없는 임시 서버에서 실험을 할 경우 동작하지 않을 수 있다.', 
+        body: 'react를 처음 공부할 때 html과 js는 한 파일에서 작성하는데 css도 한 파일에서 작성 할 수 있지않을까 란 생각이 들어 찾아보다가 styled-component를 알게 되었다. styled-component는 js in css 로 말 그대로 js파일 내부에 css를 작성한다는 뜻으로 styled-component의 장점으로는 css의 컴포넌트화로 유지보수가 쉬워지고 재사용성이 올라간다. 패키지 설치 사용 방법 설치가 잘 되었다면 사용방법에 대해 알아보자 ', 
         date:'2023.02.03', 
         category: 'styled-component',  
         link: 'StyledComponent'
