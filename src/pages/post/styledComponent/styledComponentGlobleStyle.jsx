@@ -86,13 +86,14 @@ export default function StyledComponentGlobleStyle(){
                                 {`
     //theme.js
 
-    export const theme = {
+    const theme = {
         color: {
-          background: '1000px',
+          container: 'pink',
           box: 'blue',
         },
-
     };
+
+    export default theme;
                                 `}
                             </code>
                         </pre>
@@ -116,30 +117,37 @@ export default function StyledComponentGlobleStyle(){
 
     function BoxContainer(){
         return(
-            <>
-
-            </>
+            <Container>
+                <Box></Box>
+            </Container>
         );
     };
 
     const Container = styled.div\`
-        color: \${sad}
+        background-color: \${ ({theme}) => theme.color.container };
     \`;
 
     const Box = styled.div\`
-        color: \${}
+        background-color: \${ ({theme}) => theme.color.box };
     \`;
                                 `}
                             </code>
                         </pre>
                     </CodeContainer>
-                    <ReferenceLink href='#'>
-                        링크 어쩌구 저쩌구
+                    <TextBox>
+                        ThemeProvider 함수를 잘 응용하면 다크모드도 간단하게 만들 수 있다.
+                    </TextBox>
+                    <ReferenceLink href='https://styled-components.com/docs/api#createglobalstyle'>
+                        공식문서 : createGlobalStyle
+                    </ReferenceLink>
+                    <br />
+                    <ReferenceLink href='https://styled-components.com/docs/api#themeprovider'>
+                        공식문서 : themeprovider
                     </ReferenceLink>
                 </div>
                 <GiscusApp />
             </Main>
 
         </PostContainer>
-    )
-}
+    );
+};
