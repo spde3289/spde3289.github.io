@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState} from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
-const Header = () => {
+const Header = ({handleDarkMode, darkMode}) => {
 
     return(
         <HeaderBar>
@@ -16,6 +17,9 @@ const Header = () => {
                 </HeaderMenuItem>
                 <HeaderMenuItem>
                     <Link to='/about' state={{ Title: 'About' }}>about</Link>
+                </HeaderMenuItem>
+                <HeaderMenuItem onClick={handleDarkMode}>
+                    { darkMode ? <BsFillSunFill /> : <BsFillMoonFill /> }
                 </HeaderMenuItem>
             </HeaderMenu>
             </NavBar>

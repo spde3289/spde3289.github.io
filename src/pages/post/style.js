@@ -1,28 +1,28 @@
 import styled from "styled-components";
 
 export const PostContainer = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
+    display: flex;
+    justify-content: center;
 `;
 
 export const Main = styled.main`
-    width: ${props => props.theme.boxSize.main};
+    width: 1000px;
 `;
 
 export const SubTitle = styled.h2`
-    font-size: ${props => props.theme.fontSize.subTitle};
-    margin-bottom: ${props => props.theme.margin.titBtm};
+    font-size: 26px;
+    margin-bottom: 20px;
 `; 
 
 export const TextBox = styled.p`
-    font-size: ${props => props.theme.fontSize.nomal};
-    margin  : ${props => props.theme.margin.textBtm};
+    font-size: 16px;
+    margin  : 50px;
 `;
 
 export const CodeImg = styled.div`
-    display: ${props => props.theme.display.flex};
-    justify-content: ${props => props.theme.display.content};
-    margin-bottom:  ${props => props.theme.margin.textBtm};
+    display: flex;
+    justify-content: center;
+    margin-bottom:  50px;
 `;
 
 export const CodeContainer = styled.div`

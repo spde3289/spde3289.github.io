@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    background-color: ${({theme}) => theme.color.body};
+    color : ${({theme}) => theme.color.font};
     margin: 0;
     font-family: "Gothic A1";
     font-weight: 500;
@@ -28,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: #000;
+    color: ${({theme}) => theme.color.font};
   };
 
   input {

@@ -1,19 +1,13 @@
-const theme = {
-    boxSize: {
-      main: '1000px',
-    },
-    fontSize: {
-      subTitle: '26px',
-      nomal: '16px',
-    },
-    margin: {
-      titBtm: '20px',
-      textBtm: '50px',
-    },
-    display : {
-      flex: 'flex',
-      content: 'center'
-    },
+export const light = {  
+  color : {
+    body : '#fff',
+    font : '#000',
+  },
 };
 
-export default theme;
+export const dark = {
+  color : {
+    body : '#000',
+    font : '#fff',
+    },
+};
