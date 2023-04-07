@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from'./pages/About';
 import Posts from'./pages/Posts';
-import Search from './pages/Search';
 // 포스트
 import UseEffectInfiniteLoop from './pages/post/react/UseEffectInfiniteLoop';
 import Router404 from './pages/post/react/Router404';
@@ -25,7 +24,7 @@ import StyledComponentGlobleStyle from './pages/post/styledComponent/styledCompo
 function App() {
 
   const location = useLocation(); 
-
+  console.log(location);
   useEffect(()=>{
     if(location.state !== null){
       const htmlTitle = document.querySelector("title");
@@ -38,10 +37,9 @@ function App() {
       <GlobalStyle/>
       <Header/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/search' element={<Search/>}/>
-        <Route path='/posts' element={<Posts/>}/>
+        <Route path='/'  state={{ Title: 'Home' }} element={<Home/>}/>
+        <Route path='/about' state={{ Title: 'About' }} element={<About/>}/>
+        <Route path='/posts' state={{ Title: 'Post' }} element={<Posts/>}/>
         <Route path='/posts/UseEffect_infinite_loop' element={<UseEffectInfiniteLoop/>}/>
         <Route path='/posts/Router_404' element={<Router404/>}/>
         <Route path='/posts/BJ1712'  element={<BJ1712/>}/>
