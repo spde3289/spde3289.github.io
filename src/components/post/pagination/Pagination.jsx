@@ -1,6 +1,6 @@
 import  React, { useState, useMemo }  from 'react';
 import styled from "styled-components";
-import { GrNext, GrPrevious } from 'react-icons/gr'
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import ContentBox from '../ContentBox';
 
 const Pagination = ({
@@ -25,11 +25,15 @@ const Pagination = ({
     };
 
     const handlePrevClick = ()=>{
-        onPrevClick();
+        if(currentPage !== page[0]){
+            onPrevClick();
+        }
     };
 
     const handleNextClick = ()=>{
-        onNextClick();
+        if(currentPage !== page[page.length-1]){
+            onNextClick();
+        }
     };
 
     const handlePageClick = (e)=>{
@@ -54,32 +58,24 @@ const Pagination = ({
                 ))}
                 </PostColumn>
                 <Pages>
-                    <PageBtn 
-                        onClick={handlePrevClick} 
-                        disabled={currentPage === page[0]}> 
-                        <GrPrevious/>
+                    <PageBtn onClick={handlePrevClick}>
+                        <AiOutlineLeft/>
                     </PageBtn>
                         <Number>
-                            {page.map(page=>{
-                                if(page <= maxPageLimit && page > minPageLimit){
-                                    return(
-                                        <Page 
-                                        key={page} 
-                                        id={page} 
-                                        onClick={handlePageClick}
-                                        color={currentNum === page ? '#000' : '#ccc'}>
-                                            {page}
-                                        </Page>
-                                    );
-                                }else{
-                                    return null;
-                                };
-                            })}
+                            {page.map(page => (
+                                page <= maxPageLimit && page > minPageLimit ?
+                                <Page 
+                                key={page} 
+                                id={page} 
+                                onClick={handlePageClick}
+                                scale={currentNum === page ? '1.2' : '1'}>
+                                    {page}
+                                </Page> 
+                                : null
+                            ))}
                         </Number>
-                    <PageBtn 
-                        onClick={handleNextClick} 
-                        disabled={currentPage === page[page.length-1]}>
-                        <GrNext/>
+                    <PageBtn onClick={handleNextClick}>
+                        <AiOutlineRight/>
                     </PageBtn>
                 </Pages>
             </ContentPoint>
@@ -102,7 +98,7 @@ const PostColumn = styled.div`
 
 const Pages = styled.ul`
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-evenly;
     li:hover{
         cursor: pointer;
@@ -114,13 +110,16 @@ const Number = styled.div`
 `;
 
 const Page = styled.li`
-    color: ${({ color }) => color};
+    color: ${({ theme }) => theme.color.font };
+    scale: ${({ scale }) => scale };
     margin: 5px;
     width: 20px;
     text-align: center;
 `;
 
-const PageBtn = styled.button`
+const PageBtn = styled.div`
+    color : ${({ theme }) => theme.color.font};
+    cursor: pointer;
     margin-bottom: -4px;
 `;
 

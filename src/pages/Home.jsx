@@ -126,6 +126,8 @@ const SearchContainer = styled.div`
 `;
 
 const Search = styled.input`
+    background-color: ${({theme}) => theme.color.body};
+    color: ${({theme}) => theme.color.font};
     font-size: 16px;
     height: 34px;
     width: 460px;

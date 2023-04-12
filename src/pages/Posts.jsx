@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Passengers from '../components/post/pagination/Passengers'
 import Tag from '../components/Tag';
 
@@ -24,6 +24,7 @@ const Posts = () => {
     const [tag, setTag] = useState('all');
     const ref = useRef();
     const location = useLocation();
+    const theme = useTheme();
     const value = location.state?.value;
 
     useEffect(()=>{
@@ -83,7 +84,7 @@ const Posts = () => {
                 <TagSlider>
                     <TagContainer left={`-${posState}px`} ref={ref}>
                         {taglist.map(el =>
-                            <Tag color={ el.replace('# ', '') === tag ? '#ccc' : '#fff' } key={el} tagName={el} currentTag={currentTag}/>
+                            <Tag color={ el.replace('# ', '') === tag ? theme.color.currentTag : '' } key={el} tagName={el} currentTag={currentTag}/>
                         )}
                     </TagContainer>
                 </TagSlider> 
@@ -126,6 +127,8 @@ const SearchContainer = styled.div`
 `;
 
 const Search = styled.input`
+    background-color: ${({theme}) => theme.color.body};
+    color: ${({theme}) => theme.color.font};
     font-size: 16px;
     height: 34px;
     width: 460px;
@@ -136,6 +139,7 @@ const Search = styled.input`
 
 const SliderContainer = styled.div`  
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-bottom: 30px;
 `;
@@ -153,13 +157,12 @@ const TagContainer = styled.div`
     position: absolute;
     left: ${ ({left})=>left};
     display: flex;
-    //transform: translate3d(0px, 0px, 0px);
     transition: all 500ms ease-in-out 0s;
 `;
 
-const SliderButton = styled.button`
-    border: 1px solid black;
-    background-color: white;
+const SliderButton = styled.div`
+    color : ${({ theme }) => theme.color.font};
+    margin-bottom: -4px;
 `;
 
 const PostContainer = styled.div`

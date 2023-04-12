@@ -1,10 +1,13 @@
-import Giscus from '@giscus/react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
+//import Giscus from '@giscus/react';
 
 export default function GiscusApp() {
+
+  const theme = useTheme()
+
   return (
     <Container>
-      <Giscus
+      <giscus-widget
         id='comments'
         repo="spde3289/spde3289.github.io"
         repoId="R_kgDOH_0sSg"
@@ -15,7 +18,7 @@ export default function GiscusApp() {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        theme="light"
+        theme={theme.color.comment}
         lang="ko"
         loading="lazy"
       />
