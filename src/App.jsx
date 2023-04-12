@@ -20,6 +20,7 @@ import ReactFragment from './pages/post/react/React-Fragment';
 import ClipBoardCopy from './pages/post/javascript/ClipBoardCopy';
 import StyledComponent from './pages/post/styledComponent/styledComponent';
 import StyledComponentGlobleStyle from './pages/post/styledComponent/styledComponentGlobleStyle';
+import SementicTag from './pages/post/html/sementic-tag';
 
 function App() {
 
@@ -30,7 +31,6 @@ function App() {
   }
   
   const theme = darkMode ? light : dark
-
   const location = useLocation(); 
   useEffect(()=>{
     if(location.state !== null){
@@ -56,6 +56,7 @@ function App() {
         <Route path='/posts/ClipBoardCopy' element={<ClipBoardCopy />}/>
         <Route path='/posts/StyledComponent' element={<StyledComponent />}/>
         <Route path='/posts/StyledComponent-GlobleStyle' element={<StyledComponentGlobleStyle />}/>
+        <Route path='/posts/sementic-tag' element={<SementicTag />}/>
       </Routes>
       <Footer/>
     </ThemeProvider>

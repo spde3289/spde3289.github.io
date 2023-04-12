@@ -163,6 +163,7 @@ const TagContainer = styled.div`
 const SliderButton = styled.div`
     color : ${({ theme }) => theme.color.font};
     margin-bottom: -4px;
+    cursor: pointer;
 `;
 
 const PostContainer = styled.div`

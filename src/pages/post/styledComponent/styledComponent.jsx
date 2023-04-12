@@ -18,8 +18,7 @@ export default function StyledComponent(){
                 <PostHeader 
                 title='styled-component를 사용해보자'
                 tagName='styled-component'
-                date='2023.02.03'
-                />
+                date='2023.02.03' />
                 <div>
                     <TextBox>
                         react를 처음 공부할 때 html과 js는 한 파일에서 작성하는데 css도 한 파일에서 작성 할 수 있지 

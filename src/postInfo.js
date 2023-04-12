@@ -71,6 +71,14 @@ const content = [
         category: 'styled-component',  
         link: 'StyledComponent-GlobleStyle'
     },
+    {
+        key: 10, 
+        title: '[HTML] Sementic Tag란?', 
+        body: 'Sementic Tag란? 우선 Sementic Tag의 뜻은 의미가 있는 태그라는 뜻이다. 반대로 div와 span태그와 같은 태그는 non-sementic tag라고 한다 그럼 div 태그로 만들 수 있는데 왜 의미가 있는 태그가 필요할까? Sementic Tag 가 필요한 이유 3가지 1. seo ( Search engine optimization ) 마크업을 통해 보다 많은 검색에 노출 시킬 수 있다.', 
+        date:'2023.02.07', 
+        category: 'html',  
+        link: 'sementic-tag'
+    },
 ];
 
 export default content
