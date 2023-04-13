@@ -26,5 +26,6 @@ export default function GiscusApp() {
 };
 
 const Container = styled.div`
+  width: 800px;
   margin-top: 50px;
 `;
