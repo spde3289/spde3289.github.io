@@ -106,7 +106,7 @@ const content = [
     {
         key: 11, 
         title: 'react-router에 대해서 알아보자', 
-        body: 'Sementic Tag란? 우선 Sementic Tag의 뜻은 의미가 있는 태그라는 뜻이다. 반대로 div와 span태그와 같은 태그는 non-sementic tag라고 한다 그럼 div 태그로 만들 수 있는데 왜 의미가 있는 태그가 필요할까? Sementic Tag 가 필요한 이유 3가지 1. seo ( Search engine optimization ) 마크업을 통해 보다 많은 검색에 노출 시킬 수 있다.', 
+        body: 'react-router란? react-router는 클라이언트 측 라우팅이 가능하게 도와주는 라이브러리다. react-router를 사용하면 간단하게 url을 변경하면서 여러 페이지로 이루어진 어플리케이션을 만들 수 있다. 패키지 설치 사용방법 위에 코드에 대해 설명을 하면 우선 최상위 컴포넌트에서 BrowserRouter로 감싸준후 Route를 Routes로 감싸준다. Route에 path에는 url경로를 element에는 보여주고자 하는 컴포넌트를 넣어준다. ', 
         date:'2023.02.09', 
         category: 'react-router',  
         link: 'react_router_learn',
