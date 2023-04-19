@@ -3,19 +3,9 @@ import { useLocation } from 'react-router-dom';
 import styled, { useTheme } from "styled-components";
 import Passengers from '../components/post/pagination/Passengers'
 import Tag from '../components/Tag';
+import content from '../postInfo';
 
 import { AiOutlineSearch, AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-
-const taglist = [
-    '# all',
-    '# react',
-    '# react-router',
-    '# 백준 문제풀이',
-    '# javascript',
-    '# css',
-    '# html',
-    '# styled-component',
-]
 
 const Posts = () => {
 
@@ -26,6 +16,13 @@ const Posts = () => {
     const location = useLocation();
     const theme = useTheme();
     const value = location.state?.value;
+
+    const category = content.map(el=>el.category)
+    const uniqueArr = category.filter((element, index) => {
+        return category.indexOf(element) === index;
+    }).map(el => '# ' + el)
+    const newTagList = [...uniqueArr]
+    newTagList.unshift('# all')
 
     useEffect(()=>{
         value === undefined ? setText('') : setText(value);
@@ -83,7 +80,7 @@ const Posts = () => {
                 </SliderButton>
                 <TagSlider>
                     <TagContainer left={`-${posState}px`} ref={ref}>
-                        {taglist.map(el =>
+                        {newTagList.map(el =>
                             <Tag color={ el.replace('# ', '') === tag ? theme.color.currentTag : '' } key={el} tagName={el} currentTag={currentTag}/>
                         )}
                     </TagContainer>

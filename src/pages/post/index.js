@@ -9,6 +9,8 @@ import StyledComponent from './styledComponent/styledComponent';
 import StyledComponentGlobleStyle from './styledComponent/styledComponentGlobleStyle';
 import SementicTag from './html/sementic-tag';
 import ReactRouterLearn from './react-router/react-router-learn';
+import DisplayGridLearn from './css/displayGridLearn';
+import ThemProjectChim_1 from './react/chimPlanet/ThemProjectChim_1';
 
 export {
     UseEffectInfiniteLoop,
@@ -22,4 +24,6 @@ export {
     StyledComponentGlobleStyle,
     SementicTag,
     ReactRouterLearn,
+    DisplayGridLearn,
+    ThemProjectChim_1
 };

@@ -10,6 +10,8 @@ import {
     StyledComponentGlobleStyle,
     SementicTag,
     ReactRouterLearn,
+    DisplayGridLearn,
+    ThemProjectChim_1
 } from "./pages/post";
 
 const content = [
@@ -111,6 +113,24 @@ const content = [
         category: 'react-router',  
         link: 'react_router_learn',
         element: <ReactRouterLearn />
+    },
+    {
+        key: 12, 
+        title: 'display Grid를 배워보자', 
+        body: 'dsad', 
+        date:'2023.02.11', 
+        category: 'css',  
+        link: 'grid_learn',
+        element: <DisplayGridLearn />
+    },
+    {
+        key: 13, 
+        title: '팀프로젝트 기록 - 1', 
+        body: 'dsad', 
+        date:'2023.02.13', 
+        category: 'react',  
+        link: 'team_project_chim_1',
+        element: <ThemProjectChim_1 />
     },
 ];
 
