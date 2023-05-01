@@ -11,7 +11,7 @@ import {
     SementicTag,
     ReactRouterLearn,
     DisplayGridLearn,
-    ThemProjectChim_1
+    ThemProjectChim1
 } from "./pages/post";
 
 const content = [
@@ -125,12 +125,21 @@ const content = [
     },
     {
         key: 13, 
+        title: 'display Grid를 배워보자', 
+        body: 'dsad', 
+        date:'2023.02.11', 
+        category: 'css',  
+        link: 'grid_learn',
+        element: <DisplayGridLearn />
+    },
+    {
+        key: 16, 
         title: '팀프로젝트 기록 - 1', 
         body: 'dsad', 
-        date:'2023.02.13', 
+        date:'2023.02.22', 
         category: 'react',  
         link: 'team_project_chim_1',
-        element: <ThemProjectChim_1 />
+        element: <ThemProjectChim1 />
     },
 ];
 

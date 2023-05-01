@@ -1,17 +1,14 @@
 import React from "react";
 import PostHeader from '../../../../components/post/PostHeader'
 import GiscusApp from '../../../../components/post/GiscusApp';
-import styled from "styled-components";
 import { 
     PostContainer, 
     Main, 
     SubTitle, 
     TextBox, 
-    } from '../../style'
+} from '../../style'
 
-
-
-export default function ThemProjectChim_1(){
+export default function ThemProjectChim1(){
     return(
         <PostContainer>
             <PostHeader 
@@ -32,20 +29,66 @@ export default function ThemProjectChim_1(){
                     구인 구직에 대한 양식이 없다보니 내가 원하는 분야의 구인 구직글을 따로 모아 보기힘들 뿐더러  <br />
                     이미 마감이 된 게시글과 구인중인 게시글이 섞여있어 불편함을 느낄 수 있다. <br />
                     그래서 인력사무소 게시글을 모아서 정렬해주는 사이트를 만들어보자는 내용이였다. <br />
-
                 </TextBox>
                 <SubTitle>
-                    1주차 회의 
+                    팀원과의 첫 만남
                 </SubTitle>
                 <TextBox>
                     팀장님과 면접을 본 후 디스코드에 들어가보니 이미 백엔드 개발자 2명 프론트 개발자 1분 기획자 1분 디자이너 1분 <br />
                     이 계셨고 초기 기획이 끝나 있는 상태 였다. <br />
                     첫 회의는 그동안 기획한 내용과 앞으로 프로젝트를 어떻게 진행할지에 대해서 서로 의견을 나누는 시간이였다.<br />
-                    앞으로 프로젝트 진행상황은 노션으로 공유하기로 했다. <br />
-                    전체 회의를 마친 후 2차로 프론트 회의를 가졌는데 프론트 회의에서는 어떤 기술을 사용할건지 의논 했다. <br />
-                    react, react-router(라우팅), styled-component(css), recoil(상태관리), jest(테스트)를 사용하기로 하고 <br />
-                    Material UI라이브러리를 사용해서 ui작업을 하기로 했다. <br />
                 </TextBox> 
+                <SubTitle>
+                    첫 회의 2.20(화)
+                </SubTitle>
+                <TextBox>
+                    전체 회의 : <br />
+                    우선 MVP를 완성한 후 유저의 요청사항이나 반응에 따라 추가로 기능들을 만들어나가기로 했다 <br />
+                    MVP: 왁물원 인력사무소 게시글 스크랩/분류 기능 구현, 관리자 페이지(회원 기능 없으므로 url로) 구현
+                    관리자 페이지 내에서 자동으로 분류되지 못한 부분들 추가로 수정 가능하도록 구현 <br />
+                    <br />
+                    디자인에 대한 레퍼런스는 원티드를 참고하기로 했다. 
+                    빠르면 02.21일 오후까지 메인페이지와 구인페이지에 대한 와이어프레임을 우선으로 작성하기로 했다.
+                    <br /><br />
+                    크롤링 : 카페의 게시글을 크롤링 해와서 나름의 기준대로 마감여부와 카테고리를 구분해 보여줘야 하는데 <br />
+                    카페에 게시글이 등록될 때 마다 크롤링을 하게 되면 횟수 제한에 걸릴 뿐더러 서버에도 부담을 줄 수 있어 <br />
+                    특정 시간마다 크롤링이 가능하게 해야한다. <br /><br />
+                    관리자 페이지 : 크롤링한 데이터를 자동으로 카테고리를 분류를 해준후 분류가 되지 않은 데이터를 관리자 페이지에서 수정할 수 있도록 한다. <br /><br />
+                    공고글 : 공고글에 사진이 있는 경우 게시글 내용과 같이 보여줄 수 있는지 확인필요 <br /><br />
+                    카테고리 : 카테고리 하위에 태그가 있는 형태로 수평적으로 분류하기로 했다 (원티드 참고) <br /><br /><br />
+
+                    프론트 회의 : <br />
+                    프론트 회의에서는 어떤 기술을 사용할지에 대해 정했다. <br />
+                    react, react-router, styled-components, jest, recoil, axios, react-query를 사용하기로 했다 <br />
+                    기능 구현분배에 대해선 디자인이 나온 후에 정하기로 했다.
+                </TextBox>
+                <SubTitle>
+                    두번째 회의 02.25(토)
+                </SubTitle>
+                <TextBox>
+                    전체 회의: <br />
+                    백엔드 : 공고글에 이미지가 있을 경우 URL형태로 이미지를 보여줄 수 있음을 확인했다. <br />
+                    게시글을 태그정보만 분류해 DB에 저장해두고 유저가 요청할 때 마다 보여주기로 했다. <br />
+                    프론트 : 디자인이 나온 후 역활 분담을 다 했고 다음주 회의 까지 클라이언트 페이지를 만들기로 했다. <br />
+                    디자인 : 클라이언트쪽 디자인은 완료됐고 관리자페이지 디자인 예정이다. <br />
+                    <br />
+                    내가 할 일 : 디자인이 나온 후 내가 게시글에 대한 상세페이지와 구인페이지를 담당하기로 했다.
+                </TextBox>
+                <SubTitle>
+                    세번째 회의 03.04(토)
+                </SubTitle>
+                <TextBox>
+                    전체 회의: <br />
+                    백엔드 : 
+                    프론트 : 클라이언트 페이지는 거의 진행 되었다. 앞으로 관리자 페이지를 진행 할 예정
+                    디자인 : 관리자 페이지 디자인 90%정도 완료, 완료 후 태블릿 버젼 디자인 작업 예정
+                </TextBox>
+                <SubTitle>
+                    소감
+                </SubTitle>
+                <TextBox>
+                    다른 사람과 진행하는 첫 프로젝트라 많이 떨리지만 
+                </TextBox>
             </Main>
             <GiscusApp />
         </PostContainer>
