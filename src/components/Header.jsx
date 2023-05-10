@@ -57,6 +57,9 @@ const HeaderMenu = styled.ul`
 
 const HeaderMenuItem = styled.li`
     margin-right: 10px;
+    &:last-child{
+        margin-bottom: -3px;
+    }
 `;
 
 export default Header;

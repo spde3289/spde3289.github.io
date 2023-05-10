@@ -12,13 +12,14 @@ export const Main = styled.main`
 `;
 
 export const SubTitle = styled.h2`
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 `; 
 
 export const TextBox = styled.p`
     font-size: 16px;
-    margin  : 50px;
+    padding: 7px;
+    margin : 20px;
 `;
 
 export const CodeImg = styled.div`
@@ -35,5 +36,35 @@ export const CodeContainer = styled.div`
 `;
 
 export const ReferenceLink = styled.a`
-    text-decoration: underline;
+  text-decoration: underline;  
 `;
+
+export const List = styled.ul`
+  font-size: 16px;
+  padding: 7px;
+  margin-left : 37px;
+  margin-bottom: 20px;
+  li{
+    list-style: circle;
+  };
+`;
+
+export const Table = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 20px;
+`;
+
+export const Th = styled.th`
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+`;
+
+export const Td = styled.td`
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+`;
+

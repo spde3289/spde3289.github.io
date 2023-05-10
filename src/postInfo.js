@@ -11,7 +11,8 @@ import {
     SementicTag,
     ReactRouterLearn,
     DisplayGridLearn,
-    ThemProjectChim1
+    ThemProjectChimONE,
+    Restful
 } from "./pages/post";
 
 const content = [
@@ -125,21 +126,21 @@ const content = [
     },
     {
         key: 13, 
-        title: 'display Grid를 배워보자', 
-        body: 'dsad', 
-        date:'2023.02.11', 
-        category: 'css',  
-        link: 'grid_learn',
-        element: <DisplayGridLearn />
+        title: 'REST FUL에 대해서 알아보자', 
+        body: 'RESTful API는 클라이언트와 서버의 통신을 REST형태로 지원하는 API이다 그럼 REST는 무엇일까? REST는 (Representational state transfer)의 약어로 자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다. REST는 클라이언트 측에서 URL형태로 Server에 요청을 할 수 있다.', 
+        date:'2023.02.16', 
+        category: 'network',  
+        link: 'restful_learn',
+        element: <Restful />
     },
-    {
-        key: 16, 
+    { 
+        key: 14, 
         title: '팀프로젝트 기록 - 1', 
-        body: 'dsad', 
-        date:'2023.02.22', 
+        body: '그동안 클론코딩을 하면서 기본적인 html과 css를 js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
+        date:'2023.03.06', 
         category: 'react',  
         link: 'team_project_chim_1',
-        element: <ThemProjectChim1 />
+        element: <ThemProjectChimONE />
     },
 ];
 
