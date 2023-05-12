@@ -142,6 +142,15 @@ const content = [
         link: 'team_project_chim_1',
         element: <ThemProjectChimONE />
     },
+    { 
+        key: 14, 
+        title: 'test', 
+        body: '그동안 클론코딩을 하면서 기본적인 html, css, js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
+        date:'2023.03.06', 
+        category: 'react',  
+        link: 'team_project_chim_1',
+        element: <ThemProjectChimONE />
+    },
 ];
 
 export default content
