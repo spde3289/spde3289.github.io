@@ -118,7 +118,7 @@ const content = [
     {
         key: 12, 
         title: 'display Grid를 배워보자', 
-        body: 'dsad', 
+        body: 'gird는 행과 열이 있는 레이아웃 시스템을 제공한다. 1차원 레이아웃을 지원하는 flex와 다르게 좀 더 복잡한 레이아웃을 위해 grid를 사용할 수 있다. gird는 flex와 같이 Container와 Item이라는 두가지 개념으로 구분되어 있는데 Container는 Item을 감싸는 부모 요소이며 그 안에 Item을 배치 할 수 있다. Grid Container Properties Container를 위한 속성은 아래와 같다.', 
         date:'2023.02.11', 
         category: 'css',  
         link: 'grid_learn',
@@ -136,7 +136,7 @@ const content = [
     { 
         key: 14, 
         title: '팀프로젝트 기록 - 1', 
-        body: '그동안 클론코딩을 하면서 기본적인 html과 css를 js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
+        body: '그동안 클론코딩을 하면서 기본적인 html, css, js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
         date:'2023.03.06', 
         category: 'react',  
         link: 'team_project_chim_1',
