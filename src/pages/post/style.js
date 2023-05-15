@@ -14,11 +14,17 @@ export const Main = styled.main`
 export const SubTitle = styled.h2`
     font-size: 1.5rem;
     margin-bottom: 15px;
+    ${({size})=>
+      size && 
+      {
+        "font-size": "1.2rem", 
+        "padding-left": "20px"
+      }  
+    };
 `; 
 
 export const TextBox = styled.p`
     font-size: 16px;
-    padding: 7px;
     margin : 20px;
 `;
 
