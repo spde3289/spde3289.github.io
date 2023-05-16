@@ -13,7 +13,9 @@ import {
     DisplayGridLearn,
     AxiosLearn,
     ThemProjectChimONE,
-    Restful
+    Restful,
+    Jsdoc,
+    OSI7Layer,
 } from "./pages/post";
 
 const content = [
@@ -135,23 +137,41 @@ const content = [
         element: <Restful />
     },
     {
-        key: 14, 
-        title: 'Axios를 배워보자', 
-        body: 'dsad', 
-        date:'2023.02.15', 
-        category: 'network',  
-        link: 'axios_learn',
-        element: <AxiosLearn />
+      key: 14, 
+      title: 'Axios를 배워보자', 
+      body: 'Axios란? Axios는 Promiss기반 HTTP 클라이언트이다. 간단하게 백엔드랑 통신을 쉽게 해주는 라이브러리이다. 특징으로는 HTTP요청과 응답을 JSON형태로 할 수 있다는 점이다. 사용방법 axios로 백엔드와 통신을 할 때는 get(조회), post(등록및 전송), put(수정), delete(삭제) 이렇게 4가지의 HTTP 메서드를 이용하여 통신할 수 있다. ', 
+      date:'2023.02.21', 
+      category: 'Front_end',  
+      link: 'axios_learn',
+      element: <AxiosLearn />
     },
     {
-        key: 16, 
-        title: '팀프로젝트 기록 - 1', 
-        body: '그동안 클론코딩을 하면서 기본적인 html, css, js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
-        date:'2023.03.06', 
-        category: 'react',  
-        link: 'team_project_chim_1',
-        element: <ThemProjectChimONE />
+      key: 15, 
+      title: 'Jsdoc주석에 대해서 알아보자', 
+      body: 'JSDoc 주석은 JavaScript 코드에 추가되는 문서화 주석이다. 이 주석은 함수, 변수, 객체의 설명, 타입정보 등을 제공할 수 있다. JSDoc 주석 사용법 이와 같이 함수를 호출 할 때 주석를 보여주게 된다. 해당태그를 사용하면 취소선을 그어준다 해당태그를 사용하면 타입을 명시 할 수 있다. 해당태그를 리소스를 참조할 떄 사용할 수 있다. ', 
+      date:'2023.02.26', 
+      category: 'javascript',  
+      link: 'jsdoc_learn',
+      element: <Jsdoc />
     },
-];
+    {
+      key: 16, 
+      title: '팀프로젝트 기록 - 1', 
+      body: '그동안 클론코딩을 하면서 기본적인 html, css, js 익혔고 이번에는 팀프로젝트에 참여해서 협업을 하는 경험을 하고 싶었다. 그래서 동아리같이 팀 단위로 개발하는 곳 을 알아보던 와중 왁물원이라는 네이버 카페에서 카페회원들 끼리 자체적으로 카페 내부 서비스를 만들어 보고 싶다는 글이 올라와 얼른 신청을 했다.', 
+      date:'2023.03.06', 
+      category: 'react',  
+      link: 'team_project_chim_1',
+      element: <ThemProjectChimONE />
+    },
+    {
+      key: 17, 
+      title: '7계층에 대해 알아보자', 
+      body: ' 7계층이란? 7계층은 네트워크 통신이 일어나는 과정을 7단계로 나눈 것 을 말한다. 각각 물리층, 데이터링크층, 네트워크층, 전송층, 세션층, 표현층, 가장 상위계층에 속하는 응용층 으로 나뉘고 두 컴퓨터가 네트워크를 형성하여 데이터를 주고 받기 위해서는 7계층이 모두 필요하여 각각의 계층은 독립된 기능을 제공한다', 
+      date:'2023.03.12', 
+      category: 'cs',  
+      link: 'Layer',
+      element: <OSI7Layer />
+    },
+]
 
 export default content

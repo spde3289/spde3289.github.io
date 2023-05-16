@@ -13,12 +13,15 @@ const Passengers = ({value, tag}) => {
     const [maxPageLimit, setMaxPageLimit] = useState(5);
     const [minPageLimit, setMinPageLimit] = useState(0);
     const totalPages = Math.ceil(newList.length/maxPageNumber);
-    
+
     useMemo(()=>{
-        if(value){
+        if(value === null){
             setCurrentPage(1);            
-            setNewList(contentList.filter((list) => list.title.toLowerCase().includes(value.toLowerCase())));
-        };
+            setNewList(contentList);
+        }else{
+          setCurrentPage(1);            
+          setNewList(contentList.filter((list) => list.title.toLowerCase().includes(value.toLowerCase())));
+        }
     },[value, contentList]);
 
     useMemo(()=>{
@@ -26,7 +29,7 @@ const Passengers = ({value, tag}) => {
         setContentList(postInfo) 
         : setContentList(postInfo.filter(el => el.category === tag ))
     },[tag])
-
+    
     useMemo(()=>{
         setPageDate([...newList].reverse().slice( currentPage*5-5 ,currentPage*5));
         setLoading(false);
@@ -43,7 +46,6 @@ const Passengers = ({value, tag}) => {
         };
         setCurrentPage(prev=> prev-1);
     };
-
     const onNextClick = () => {
         if(currentPage+1 > maxPageLimit){
             setMaxPageLimit(maxPageLimit + maxPageNumber);

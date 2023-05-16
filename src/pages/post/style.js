@@ -1,44 +1,44 @@
 import styled from "styled-components";
 
 export const PostContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Main = styled.main`
-    width: 1000px;
+  width: 1000px;
 `;
 
 export const SubTitle = styled.h2`
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    ${({size})=>
-      size && 
-      {
-        "font-size": "1.2rem", 
-        "padding-left": "20px"
-      }  
-    };
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  ${({size})=>
+    size && 
+    {
+      "font-size": "1.2rem", 
+    }  
+  };
 `; 
 
 export const TextBox = styled.p`
-    font-size: 16px;
-    margin : 20px;
+  font-size: 16px;
+  margin : 20px;
+  margin-left: 0;
 `;
 
 export const CodeImg = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-bottom:  50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom:  50px;
 `;
 
 export const CodeContainer = styled.div`
-    background-color: #282c34;
-    text-align: left;
-    color: #abb2bf;
-    font-size: 15px;
+  background-color: #282c34;
+  text-align: left;
+  color: #abb2bf;
+  font-size: 15px;
 `;
 
 export const ReferenceLink = styled.a`

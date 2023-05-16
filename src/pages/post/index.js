@@ -12,7 +12,9 @@ import ReactRouterLearn from './react-router/react-router-learn';
 import DisplayGridLearn from './css/displayGridLearn';
 import ThemProjectChimONE from './react/chimPlanet/ThemProjectChimOne';
 import Restful from './network/Restful';
+import Jsdoc from './javascript/Jsdoc';
 import AxiosLearn from './network/AxoisLearn';
+import OSI7Layer from './Cs/OSI7Layer';
 
 export {
   UseEffectInfiniteLoop,
@@ -29,5 +31,7 @@ export {
   DisplayGridLearn,
   AxiosLearn,
   Restful,
+  Jsdoc,
   ThemProjectChimONE,
+  OSI7Layer,
 };

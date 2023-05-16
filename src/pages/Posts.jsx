@@ -90,7 +90,7 @@ const Posts = () => {
                 </SliderButton>
             </SliderContainer>
             <PostContainer>
-                <Passengers tag={tag} value={ text.length === 0 ? " " : text }/>
+                <Passengers tag={tag} value={ text.length === 0 ? null : text }/>
             </PostContainer>
         </PostMain>
     );

@@ -30,8 +30,6 @@ function App() {
     }
   },[location.state])
 
-
-
   return (
     <ThemeProvider theme={theme}> 
       <GlobalStyle/>
@@ -42,7 +40,7 @@ function App() {
         <Route path='/posts'>
           <Route path='/posts' element={<Posts />}/>
           {content.map(post => (
-            <Route key={post.link} path={post.link} element={post.element} />
+            <Route key={post.key} path={post.link} element={post.element} />
           ))}
         </Route>
       </Routes>
