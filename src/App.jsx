@@ -5,6 +5,7 @@ import GlobalStyle from './GlobalStyled';
 
 import { light, dark } from './theme';
 
+import AlertBar from './components/AlertBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -33,6 +34,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}> 
       <GlobalStyle/>
+      <AlertBar />
       <Header darkMode={darkMode} handleDarkMode={handleDarkMode}/>
       <Routes>
         <Route path='/' element={<Home />} />

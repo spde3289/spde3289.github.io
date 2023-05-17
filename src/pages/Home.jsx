@@ -6,8 +6,8 @@ import Tag from '../components/Tag';
 
 const Home = () => {
 
-    const [text, setText] = useState('')
-    const navigate = useNavigate()
+    const [text, setText] = useState('');
+    const navigate = useNavigate();
     const inputRef = useRef();
 
     const inputOnClick = () => {

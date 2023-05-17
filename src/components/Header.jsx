@@ -6,24 +6,26 @@ import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 const Header = ({handleDarkMode, darkMode}) => {
 
     return(
-        <HeaderBar>
-            <NavBar>
-                <BlogName>
-                    <Link to='/' state={{ Title: 'Home' }}>spde3289.github.io</Link>
-                </BlogName>
-            <HeaderMenu>
-                <HeaderMenuItem>
-                    <Link to='/posts' state={{ Title: 'Post' }}>posts</Link>
-                </HeaderMenuItem>
-                <HeaderMenuItem>
-                    <Link to='/about' state={{ Title: 'About' }}>about</Link>
-                </HeaderMenuItem>
-                <HeaderMenuItem onClick={handleDarkMode}>
-                    { darkMode ? <BsFillSunFill /> : <BsFillMoonFill /> }
-                </HeaderMenuItem>
-            </HeaderMenu>
-            </NavBar>
-        </HeaderBar>
+      <>
+          <HeaderBar>
+              <NavBar>
+                  <BlogName>
+                      <Link to='/' state={{ Title: 'Home' }}>spde3289.github.io</Link>
+                  </BlogName>
+                  <HeaderMenu>
+                      <HeaderMenuItem>
+                          <Link to='/posts' state={{ Title: 'Post' }}>posts</Link>
+                      </HeaderMenuItem>
+                      <HeaderMenuItem>
+                          <Link to='/about' state={{ Title: 'About' }}>about</Link>
+                      </HeaderMenuItem>
+                      <HeaderMenuItem onClick={handleDarkMode}>
+                          { darkMode ? <BsFillSunFill /> : <BsFillMoonFill /> }
+                      </HeaderMenuItem>
+                  </HeaderMenu>
+              </NavBar>
+          </HeaderBar>
+      </>
     );
 };
 
